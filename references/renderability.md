@@ -41,7 +41,7 @@ One camera verb per shot · fixed camera grammar per sequence, repeated verbatim
 | Model | Strengths | Limits / slop accent |
 |---|---|---|
 | **Seedance 2.0** | Native 4K (in-platform), 15-s takes, cost/quality champion, UGC home turf | Peak at take end fails; plastic skin tendency |
-| **Seedance 2.5** | 30-s takes (extensions to 180 s beta), 50 refs (30i/10v/10a), complex continuous camera, choreography with weight, in-shot transformations, multi-stage emotions, reflections, skin texture | ~2× price; resolution platform-dependent (Dreamina 720p; official 4K claims unconfirmed); baked-in artifacts → upscaler; logic decays with take length; in-frame text still broken |
+| **Seedance 2.5** | 30-s takes (extensions to 180 s beta), 50 refs (30i/10v/10a), complex continuous camera, choreography with weight, in-shot transformations, multi-stage emotions, reflections, skin texture | ~2× price; resolution platform-dependent (Higgsfield 1080p since Aug 2026, Dreamina 480/720p; 2K/4K unlock plausible — verify current caps); baked-in artifacts → upscaler; logic decays with take length; in-frame text still broken |
 | **Veo 3.1** | Polished cinematic realism, environments, ingredients/first-last/extension | Physics-correct motion fights stylized looks |
 | **Kling 3.0** | Directed movement, multi-shot storytelling, strongest stylization of the photoreal class, MotionControl | Style drifts per generation → repeat keywords+style ref every prompt; 2–3× rerolls for anime |
 | **MiniMax H3 (Hailuo 3)** | 2D/anime line quality, stable on-screen text/UI 🟡, LoRA style lock, physics (passes glass test), cheap, up to 2K | Plastic under realism demands, audio loops, one beat per shot, weak IP moderation (legally risky) |
