@@ -5,6 +5,7 @@ Standalone reference for everything style-related across image AND video models.
 ## 1. Style stack hierarchy (all models)
 🟢 Descending force: **(1) reference images that carry the look → (2) platform settings (CS 4.0 palette/lighting/camera) → (3) prompt style block → (4) model default (usually photorealism).** Video models do not re-stylize on their own: photoreal plate + Pixar prompt = photoreal video; stylized plate + Pixar prompt = stylized video. The look is won in the STILLS (stills-first, pipeline ch. 1); the prompt only secures it.
 🟢 Why a single style word fails: models default to photorealism; a label without an anchor is overruled or decays after beat 1. Style needs the stack, not a word.
+🟢 **Image block vs. video prompt — do not confuse them.** For IMAGE models (GPT Image 2) the style block goes FIRST and works (§2). For VIDEO prompts there is NO glued style-prefix at the top: style is distributed into the blocks that govern each aspect (pipeline ch. 12, placement rule 1). The old "paste one style prefix on every video prompt" idea came from a single creator's convenience note and did not hold up — GPT Image 2 and Seedance both ignore a floating style prefix; the reference image and the per-block placement carry the look instead.
 
 ## 2. GPT Image 2 — style mechanics
 🟢 **Reasoning model, not a keyword matcher:** plans composition before generating; natural descriptive sentences beat adjective/tag chains ("8k, masterpiece, trending" do nothing). Conflicting style mixes produce mud — ONE dominant style per prompt.
@@ -41,78 +42,47 @@ The overall look is warm, handcrafted, and unmistakably animated.
 🟢 Soul Cinema: cinematic (photoreal) default look — first choice for REALISTIC characters/locations from scratch, not the stylization specialist. For stylized sheets: GPT Image 2 (with §2 stack) or Nano Banana Pro (§3). Seedream 4.5: edits with texture preservation.
 
 ## 5. Video layer (Seedance 2.x / Cinema Studio)
-🟢 Style comes from the references (§1); the video prompt holds it: style declaration as opening line (as a feature package), style as its own line before the shot list (doesn't decay), style repeated in POSITIVE LOCKS, exclusions against style bleed from photoreal references ("Use @X for layout and light only. Do not copy its photographic rendering."). Declare mixed styles explicitly ("photorealistic environment, stylized characters"). Motion must match the style (limited animation = static bodies + tableau camera; Pixar = squash & stretch, weight). Official formula: "@image is the first keyframe and style reference."
+🟢 Style comes from the references (§1); the video prompt only secures it, and it does so **distributed, not as a prefix** (pipeline ch. 12): light in LIGHTING, colour in COLOR GRADE or LOCATION, optics in OPTICS, acting/skin in PERFORMANCE, physics in PHYSICS; only the technical look word (photoreal, grain, format) sits in the STYLE suffix near the end. Repeat the load-carrying style aspects in POSITIVE LOCKS. Exclude style bleed from photoreal references ("Use @X for layout and light only. Do not copy its photographic rendering."). Declare mixed styles explicitly ("photorealistic environment, stylized characters"). Motion must match the style (limited animation = static bodies + tableau camera; Pixar = squash & stretch, weight). Official formula: "@image is the first keyframe and style reference."
 🟢 CS 4.0: style additionally via settings (palette/lighting/era) — dials before prompt, avoid double control (pipeline ch. 13).
 
 ## 5b. Style control per video model
 🟢 **Meta-finding (multi-source):** no universal style winner — run a **motion ladder** per style and model (subtle portrait → head turn → walk → fast action → interaction). Never copy prompts 1:1 between models.
 
-### Seedance 2.0/2.5
-🟢 **Flat 2D is harder than stylized 3D** — the counterintuitive core finding: Pixar-ish 3D forgives (gradients hide frame errors), flat cel punishes every wobble ("lines crawl, the whole frame boils"). Flat 2D needs simpler motion and stricter control.
-🟢 **Anti-3D fix for flat anime:** (1) explicit flat rendering terminology: "solid vector lineart, unlit flat tones, traditional anime cel-shading, flat sRGB color space" — suppresses depth maps and forced ambient occlusion, holds line weights in fast motion; (2) targeted negative constraints against 3D depth (conforms with the revised negative rule, pipeline ch. 14).
-🟢 **Style anchor workflow:** declare flat cel style in the first line + limited palette + character references; drafts on Mini/2.0, finals on the full model. Name the production technique, never a mood ("flat cel shading, bold outlines, no motion blur" not "anime feeling").
-🟢 **Official whole-video style lock pattern:** "The entire video must match this exact 2D anime illustration aesthetic. Maintain consistent 2D anime illustration style throughout all frames." And mixed media **per element**: "photorealistic environment with real people, cel-shaded flat coloring on hero only, cartoon physics and expressions on hero only."
-🟢 Style transfer: attach a style reference + "in the visual style of the reference"; director/DoP/film references as anchors ("Wes Anderson symmetrical framing") — **one** style reference per prompt.
-🟡 Also viable: pixel art (limited palette, hard edges, no anti-aliasing, four-frame gait cycle) and oil paint with moving brushstrokes.
+🟢 **Seedance 2.x / CS:** style distributed across the block structure (pipeline ch. 12); references carry the look, blocks secure it. Photoreal default is strong — stylized needs look-carrying references AND an explicit anchor.
+🟢 **MiniMax H3:** LoRA training is the strongest style-lock path (train a style/character/motion LoRA, then prompt against it); without it, one committed style word + a style reference image, restated per shot.
+🟢 **Kling 3.0:** each generation is interpreted independently — repeat the style keywords AND re-attach the style reference image in EVERY prompt of a sequence, or the look drifts. Never mix realism + anime in one prompt.
+🟢 **Veo 3.1:** physics-correct realism is the default gravity well; stylized looks need the motion grammar prompted along ("2D limited animation, held cels, no physical inertia") or Veo pulls back toward realism.
+🟢 **Grok Imagine:** native stylization bias (cartoon/anime) — style qualifier at the very START; for photoreal intent, push the other way with realism cues, or it drifts cartoonish.
 
-### MiniMax H3 (Hailuo 3)
-🟢 Stylization strengths: **holds line quality and proportions in 2D/anime** ("which most video models struggle with"); realism trends plastic. Specs: 4–15 s, 24 fps, 768p base + 2K-regenerate module; one beat per shot.
-🟢 **Unique capability — LoRA:** trained LoRAs (own clips/keyframes) hard-lock style, character, or motion — the strongest available style lock when a look must stay identical across many clips.
-🟢 Prompt logic: action chain (cause→motion→reaction, chronological) instead of scene description; official modes T2VA/I2VA/FL2VA.
+## 6. Style vocabularies (starting points — verify per motion ladder)
 
-### Kling 3.0
-🟢 **Strongest stylization flexibility of the photoreal class**; multi-shot mode holds the art style across shots — hence the anime recommendation of several comparisons. But: anime sits outside the comfort zone → **2–3× reroll budget** vs. realism.
-🟢 **Style drifts per generation:** Kling interprets each generation independently — repeat identical style keywords in EVERY prompt of the sequence + reuse the same style reference image. Never mix realism and anime in one prompt.
-🟢 MotionControl: reference action video + face binding for body/face/hand motion.
+### 6a. Animation styles
+🟢 **Pixar / feature 3D:** "3D animated feature film, painted CG materials, subsurface scattering, soft global illumination, rounded chunky geometry, caricatured proportions, warm-cool grade." Motion: squash & stretch, weight, anticipation. Full look bible: pixar-look.md.
+🟢 **Hanna-Barbera / limited TV animation:** flat color fills, bold outlines, minimal shading, repeating backgrounds. Motion: static bodies, isolated limb movement, tableau camera — do NOT prompt fluid full-body motion.
+🟢 **Rubber hose (1930s):** bendable limbs without joints, circular hands, bouncy pie-cut eyes, black-and-white or muted, "on the beat" motion; pairs with old-film grain.
+🟢 **Anime (modern TV):** cel shading, hard shadow steps, expressive eyes, speed lines for action, motion-blur smears, held dramatic poses. Anime is a Seedance/Kling strength — high-action is the sweet spot.
+🟢 **Chibi:** oversized head, tiny body, minimal features, bouncy motion; keep scenes simple.
+🟢 **Stop-motion / claymation:** fingerprint texture on surfaces, slight frame-step judder ("on twos"), handmade imperfections, felt/clay materials.
 
-### Veo 3.1
-🟢 Photorealism-first: overly smooth physics-correct motion works **against** anime aesthetics (stylized movement is exaggerated, not correct). Can stylize when the motion grammar is prompted along: stop-motion via "12 fps judder, frame-to-frame jitter, no motion blur, preserve handmade imperfection"; anime via "squash-and-stretch, impact frames, speed lines" + "keep character on-model across shots"; vector flat for explainers.
+### 6b. Footage & era styles (rescue-capable — degradation hides artifacts)
+🟢 **VHS / 90s home video:** chroma bleed, scan lines, tracking wobble, timestamp overlay (in post, not in-frame), soft focus, blown highlights.
+🟢 **16mm / Super 8:** organic grain, gate weave, halation on highlights, slightly desaturated warm cast.
+🟢 **CCTV / surveillance:** fixed high angle, fisheye edge distortion, low frame rate, monochrome or desaturated, timestamp (post).
+🟢 **Found footage / handheld doc:** operator breathing, whip corrections, focus hunting, lens flares — the UGC realism lane.
+🟢 **35mm cinema:** fine grain, anamorphic flares, shallow DoF, filmic highlight roll-off; the "expensive" look.
 
-### Grok Imagine (1.5)
-🟢 **Native stylization bias:** drifts cartoonish/Pixar-like on its own (even converts photoreal intent) — several aggregator matrices list it as THE pick for "stylized: anime, cyberpunk, cartoon, music-video, art-directed". Negatives unreliable → style qualifiers at the prompt START. 720p cap (1.5: 1080p in modes).
+### 6c. Optical / lens character
+🟢 Anamorphic (oval bokeh, horizontal blue flares, 2.39:1 feel) · vintage (low contrast, warm halation, soft corners) · clinical (edge-to-edge sharp, deep focus) · macro (extreme close, razor DoF). Tie to FOV from pipeline ch. 12d.
 
-### Wan 2.5/2.6 · LTX
-🟡 Wan: open-weight, cheap, LoRA-capable, multi-shot + reference-to-video (2.6), 1080p — budget alternative with pipeline ownership; LTX-2.3 for own LoRA pipelines, LTX-2 Retake for partial repairs without full regeneration.
+## 7. Reference integration protocol
+🟢 **Attach → address:** every reference image must be (a) attached in the platform AND (b) addressed in the prompt with a job and exclusions. A reference the prompt does not name does not exist for the model; a reference named but not attached forces the model to invent it into frame.
+🟢 **One line per reference:** `@tag controls only [job: e.g. face + hair]; do not copy [exclusions: e.g. the photographic rendering, the background]`. End every reference-using prompt with an attachment checklist in upload order.
+🟢 **Job separation:** split a reference's roles explicitly — "@plate for layout and light only", "@char for identity only", "@style for rendering medium only" — so the model doesn't blend a photoreal plate's rendering into a stylized character.
+🟢 **Per-scene selection:** with large reference pools (2.5: up to 50), select only the references a scene needs — "a casting pool, not a shopping list" (pipeline ch. 14). Unused references drift into frame.
 
-### Restyle path (video-to-video, distinct production route)
-🟢 Fully restyling existing footage (live action → anime/Pixar/claymation/pixel art) is production-ready — reference class **Runway Aleph** (in-context V2V: re-skinning, object edits, relighting with preserved motion); alternatives Luma Modify, GoEnhance et al. Prompt pattern: short and specific — "Detailed anime film aesthetic, **stable facial structure**, soft cel shading, cinematic anime lighting"; specificity beats length. ⚠️ The quality test is MOTION: many "restyle" apps are frame filters that fall apart in movement. 🟡 Hard limits (clip length, resolution caps) of the Aleph class are not reliably documented — test with a short clip before planning a sequence around it. Complements the VFX hybrid path (pipeline ch. 9) with the inverse direction: live footage as a motion scaffold for a style.
-
-## 6. Style vocabularies (opening-line packages)
-- **Pixar/stylized 3D:** whimsical Pixar-style stylized 3D animation, rounded simplified forms, exaggerated character proportions, oversized expressive eyes, soft global illumination, subsurface-scattering skin, rim light on shoulders + soft face light, warm three-point lighting, family-film cinematic composition, believable-not-photoreal. Pixar look = **80% rendering quality, 20% character design** — the rendering cues carry, not the word. Grade: warm-cool contrast (classic teal shadows/warm highlights) — projects with their own color script replace the concrete colors; the warm-cool principle stays. Proven viral format: emotional close-up, big eyes, warm light. First frame locks style, last frame locks the motion target; one variation axis per run. ⚠️ Render-engine tokens ("Unreal Engine 5", "Octane") risk the game-render look; "Pixar Renderman quality" is the safer token. IP line: the glossy 3D style is free; Pixar CHARACTERS and film titles are protected IP (documented C&D one day after a model launch) — never reference named characters. Full look definition: `pixar-look.md`.
-- **Uncanny valley rule:** ~70% realism is the discomfort zone — either clearly stylized OR fully photoreal, never the middle. Environments: chunkier/rounder forms, simplified geometry, soft shadows without photographic edges.
-- **Hanna-Barbera/limited TV animation:** 1960s Hanna-Barbera-style limited television animation, thick tapered black outlines + thin interior lines, flat color fills, desaturated/pastel palette, minimal shading, geometric simplified shapes, strong silhouettes, static hand-painted painterly background, economical movement (bodies mostly static, expression via face/small gestures), tableau camera.
-- **Rubber hose (1920s/30s):** 1930s rubber-hose animation, bendy tube limbs, pie-cut eyes, white gloves, ink-black flat fills, bouncy synchronized motion, film grain/dust, off-white paper background.
-- **Anime (modern):** anime style, cel shading, consistent linework, speed lines + anime motion blur, held poses before action beats; high-action = model sweet spot.
-- **Retro-90s anime:** retro 90s anime screenshot, VHS film grain, hand-painted background textures, high-contrast white highlights on hair and eyes, muted color palette, 4:3.
-- **Monochrome manga:** strictly black-and-white ink, no grayscale, dense screen-tone dot patterns for shadows, bold ink strokes, exaggerated speed lines, dramatic angles, manga panel aesthetic.
-- **Chibi:** super-deformed proportions (head ≈ body), huge sparkling eyes, tiny limbs, bright cel shading, kawaii sticker aesthetic.
-- **Ghibli-like / painterly anime:** hand-painted cel animation, soft watercolor/gouache background with visible brushwork, warm golden palette (amber, sage, dusty rose, warm cream — even night scenes warm lamplit, not cold blue), dappled afternoon light, lush botanical background detail, gentle pastoral mood. Strongest single words per community tests: "watercolor" and "cel animation"; "golden hour" as the strongest lighting lever. Actively suppress (negative block): photorealistic, 3D render, CGI, sharp edges, neon/high-contrast — photorealism tokens (4K, Unreal) fight the aesthetic directly. Over-describe the background, under-describe the subject (Ghibli lives in the environment).
-- **Claymation/stop-motion (Aardman-like):** plasticine/polymer clay, visible fingerprint and thumbprint texture, hand-sculpted imperfections, slightly lopsided handmade shapes, matte clay surface, button eyes, miniature diorama set (felt grass, paper trees), tilt-shift/shallow DoF, warm soft studio lighting, 12 fps stop-motion stutter (video). Core principle: **imperfection descriptors ARE the style** — without "handmade/slight imperfections" the model renders too polished and the look tips into smooth 3D. Reuse the vocabulary identically across all scenes.
-- **Flat 2D TV cartoon / paper cutout (describe generically — named shows are IP):** flat 2D cartoon, thick black outlines (bold 2px vector linework), flat color fills — no gradients, minimal cel-shading, flat ambient light without realistic shadows, simplified geometric shapes, pastel/bright palette; cutout variant adds: paper-cutout aesthetic, crisp cutout edges, round heads, simple dot eyes, paper texture.
-- **Saturday-morning cartoon:** classic hand-drawn cartoon, bold shapes, thick outlines, bright primary palette, clean line, minimal background detail.
-
-🟢 **Meta rule for all vocabularies:** the style anchor is a COMPACT package (4–8 specific tokens) reused verbatim across all prompts — "more style words = more style soup = more drift": a 30-word style line gets averaged into unpredictability. One sub-style per prompt; style mixes (Ghibli + cyberpunk) cause drift — mixed styles only as explicit per-element declarations (§5).
-
-## 6b. Non-animation styles: footage authenticity, era looks, technical optics
-### A. Footage authenticity (found-footage family)
-🟢 **Four-tell rule:** a clip only reads as "genuinely recorded" when FOUR things are named: (1) the recording format (camcorder/VHS shoulder cam, dashcam, bodycam, CCTV, livestream/webcam), (2) a burned-in tell (timecode lower right, REC icon, battery red-light — "battery red-light reflected in breath"), (3) exactly ONE in-frame light source (headlamp, headlights, fluorescent strip), (4) a camera that does NOT behave cinematically (fixed mount or panicked handheld). Name the artifacts in language instead of hoping for filters — "scanline softness on a 1990s shoulder-camcorder, dust in a headlamp beam."
-🟢 **Restraint rule:** the scene must stay readable under the damage — "build the fear first, then add only enough tracking drift, timecode, and tape wear to make the clip feel recovered instead of overprocessed."
-🟡 Sub-vocabularies: **VHS** — tape grain, tracking errors, scanlines, static bursts, chromatic drift, faded colors, timestamp overlay. **CCTV** — fixed high angle, b/w or IR green-gray, muted tones, noisy shadows, edge blur, burned-in timestamp, corner brackets. **CRT monitor feed** — cool blue tint, phosphor glow, screen curvature, analog noise. **Bodycam/dashcam** — chest-height ultra-wide, motion blur on head/vehicle movement, close distorted audio.
-🟢 **Anti-slop bonus:** degraded-media looks have built-in fault tolerance — grain, blur, and compression mask model artifacts (same principle as the UGC path). A footage format is a legitimate rescue style for risk shots.
-
-### B. Era & film-stock looks (prompt layer of the era selector)
-🟢 **Named film stocks are precision tools** — models know their signatures: Kodak Portra 400 (soft natural skin, faded blacks), Kodachrome 64 (rich, warm), CineStill 800T (tungsten + halation), Fuji Pro 400H (greenish shadows), Kodak Tri-X (b/w, hard grain), Fujifilm Velvia (hyper-saturated landscape). "Scanned film negative" adds realistic imperfections.
-🟡 Look building blocks: **16mm** — blooming highlights, heavy grain, jitter texture, vignette, "avoiding any digital sharpness"; **Super 8/8mm home movie** — warm, flickering, family nostalgia; **newsreel** — 16mm b/w, scratches, slightly sped motion; **Polaroid/Instax** — creamy highlights, chemical streaks, white frame border, pastel fade; **1990s disposable** — harsh direct flash, red-eye, date stamp, washed colors; **daguerreotype/Victorian** — sepia-metallic, oval vignette, long-exposure stillness; plus silent-film 1920s, Technicolor 1950s, French New Wave, Y2K digicam flash as established shorthand.
-🟢 **Vintage vs. retro — decide explicitly:** vintage = authentically "shot back then" (period-correct fashion, set, imperfections included); retro = modern subjects in old capture technique. The model needs the decision or it mixes. Always couple an era look with period-correct production design.
-🟡 **Director signatures as composition shortcuts** (legally safe — style, not work): "Wes Anderson style" = perfectly symmetrical central composition + flat pastel palette + deadpan storybook framing; works cross-model as shorthand for a whole rule set. Similarly usable: noir 1940s (hard shadows, venetian-blind light), European arthouse (muted, soft, emotional).
-
-### C. Technical optics & special cameras
-🟡 Prompt vocabulary for optics beyond preset lenses: **FPV drone** — rapid low-altitude weaving, motion blur at frame edges, lens flare through obstacles (opposite of gimbal drone: "flat, stable, horizon-level" is the anti-FPV look); **action cam/GoPro** — ultra-wide FOV, horizon-locked, hyper-stabilized, helmet/chest mount; **thermal** — heat-signature rendering, white-hot/black-hot, temperature gradients instead of texture; **night vision** — IR green, glowing highlights, noisy shadows, pupil glow; **tilt-shift miniature** — extreme selective focus plane turns real scenes into model worlds. Optics choice = genre signal (military, survival, documentary).
-
-## 7. Reference integration protocol (for prompt-writing agents)
-🟢 **Rule 0 — a reference only exists if the prompt addresses it.** "Attach an image in the UI" without a prompt role = undefined behavior. Every prompt with references contains a REFERENCE block. Motto: "Use text to direct. Use images to preserve appearance."
-🟢 **Rule 1** — one line per reference: tag/name + "controls only [exactly one job]" + "Do not copy [concrete non-transfers]". No tag without a job, no job without a tag.
-🟢 **Rule 2** — clarify platform syntax BEFORE writing: @image numbers (upload order!), @element_name (Higgsfield), or Mode B (describe the visible feature). Tags are not portable.
-🟢 **Rule 3** — every prompt deliverable ends with an **attachment checklist in upload order** ("Attach: 1. @image1 = sheet X, 2. @image2 = style still Y …").
-🟢 **Rule 4** — style references get the same role discipline: "@image2 controls only the rendering style. Do not copy its subject or composition."
-🟢 **Diagnosis:** output comes back photoreal despite a style word → the style was a word, not an anchor. Fix order: (1) look-carrying reference/start frame, (2) upgrade opening line to the vocabulary package (+ negation anchor on GPT Image 2), (3) style into the locks. Never just sprinkle the style word a third time.
+## 8. Style diagnosis (when the look is wrong)
+🟢 **Photoreal when you wanted stylized:** the anchor is too weak or a photoreal reference is bleeding rendering → strengthen the style anchor, add rendering cues (§2), exclude the reference's rendering ("do not copy its photographic look").
+🟢 **Style decays after beat 1:** the style block sits too late or isn't restated → for images move it first (§2); for video distribute it into home blocks and restate in POSITIVE LOCKS (§5, pipeline ch. 12).
+🟢 **Face generalizes under style transfer:** unique features not named → lock markers by text token (§3, Nano Banana).
+🟢 **Look drifts across a sequence:** references not re-attached / keywords not repeated (Kling especially) → repeat both every prompt (§5b).
+🟢 **Motion contradicts style:** fluid motion on a limited-animation look → match motion to the style medium (§6a).
