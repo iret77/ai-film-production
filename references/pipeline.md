@@ -1,10 +1,11 @@
 # Production Pipeline & Prompting Doctrine
 
-Source-tagged knowledge base. Confidence labels: 🟢 multi-source/official/production-proven · 🟡 plausible, single-source or untested · 🔴 marketing claim, verify yourself. Source tags: [A]=platform academy docs, [P1–P16]=practitioner video protocols (archive file), [W]=web research (multi-source), [H-off]=Higgsfield official, [BD-off]=ByteDance official guide (via verified reproductions), [F]=fal.ai official, [R-off]=Runway official, [X-ext]=community skill (partially officially confirmed), [OAI-off]=OpenAI cookbook, [G2]/[NB]=image-model guide clusters.
+Source-tagged knowledge base. Confidence labels: 🟢 multi-source/official/production-proven · 🟡 plausible, single-source or untested · 🔴 marketing claim, verify yourself. Source tags: [A]=platform academy docs, [P1–P16]=practitioner video protocols (archive file), [PP]=first-party production-session evidence, [W]=web research (multi-source), [H-off]=Higgsfield official, [BD-off]=ByteDance official guide (via verified reproductions), [F]=fal.ai official, [R-off]=Runway official, [X-ext]=community skill (partially officially confirmed), [OAI-off]=OpenAI cookbook, [G2]/[NB]=image-model guide clusters.
 
 ## 1. Pipeline principles
 🟢 **Stills-first:** every shot exists as an approved still (start frame) before any video generation. The look is won in the image; video inherits it. Cheap iteration happens at the image stage.
 🟢 **Order: location plates → characters → props → composite stills → motion tests → production takes.** Characters are shot INTO approved plates, never invented alongside them.
+🟢 **Inverted order for Pixar/stylized projects (hard rule) [PP]:** stylized environments generated WITHOUT a figure default to photoreal on every image model — because stylized-feature environments are themselves near-photoreal, the model has nothing to stylize against. The figure in frame forces the whole render into the stylized mode; figure + environment together IS the look. Build order therefore inverts: (1) character sheets (neutral grey, no location needed) → (2) location ANCHOR plates generated WITH a figure in frame → (3) empty location backgrounds derived via edit model (remove the figure — the style stays baked in). Applies to Pixar and comparable stylized-3D looks; photoreal projects keep the location-first order above.
 🟢 **Review loop:** generate → review against acceptance criteria → fix the weakest instruction in the NEXT prompt (not only in post) → regenerate. Worth knowing: a defect accepted at the still stage propagates into motion, so a still that is "close enough" often costs more later — the user decides when it is good enough to move on.
 🟢 **Sheets vs. in-scene stills:** reference sheets (neutral light) maximize consistency; in-scene stills (scene light) maximize realism. Both exist; sheets feed identity, in-scene stills feed the take.
 🟢 **Label discipline:** every asset gets a stable ID (@name) reused verbatim in prompts, filenames, and the continuity ledger (ch. 19).
@@ -21,6 +22,12 @@ Source-tagged knowledge base. Confidence labels: 🟢 multi-source/official/prod
 🟢 Voice: the sheet locks the voice along with the face on audio-capable models — accept the native voice where it fits; otherwise replace via the voice pipeline (ch. 18).
 🟢 **Crowd sheet:** one multi-variant sheet (6–12 distinct extras) referenced for background population — prevents clone crowds.
 
+### Copy-ready sheet & board templates [G2-gallery]
+🟢 **Character reference sheet (image prompt, works verbatim):** "Based on this character [reference attached], create a character reference sheet similar to official setting materials: three-view drawings (front, side, back) · facial expression variations · detailed parts breakdown of clothing and equipment · a color palette · organized layout, white background, [style] illustration." Adapt the style word; keep the structure.
+🟢 **Expression grid (feeds the expression-sheet order):** "Create a [N]-panel expression grid of [character, reference attached]. Face shape, hairstyle, and clothing must remain highly consistent across all panels. Expressions: [list them explicitly — happy, sad, angry, surprised, shy, contemplative, scared…]." Naming each expression beats "various emotions".
+🟢 **Multi-variant cast grid (THE crowd-sheet tool):** "A single landscape image containing a clean [2×5] character grid. Each panel shows a different [role archetype list — one distinct hairstyle, outfit, prop, and expression each]. Keep all panels consistent in art direction: [style tokens], tidy white gutters, small name tag per panel — a collectible cast-sheet feel." Distinct archetypes per panel prevent clone crowds; the shared art-direction line prevents style drift across panels.
+🟢 **Multi-panel consistency rules (all grids/sheets/boards):** state the grid count exactly (3×3, 2×5, 16-panel) · give each panel a role or beat · one shared art-direction sentence covering all panels · white gutters + per-panel labels where identification matters. Structure (canvas, ratio, grid) goes BEFORE subject description — otherwise the model spends its detail budget on the subject and improvises the layout.
+
 ## 4. Locations & props
 🟢 Per location: one master wide plate + 2–3 detail plates at ONE shared exposure/palette. **Reverse decision up front:** does this location need counter-angles (dialogue, cross-room action)? → build the multi-plate set (ch. 13). Pass-through/B-roll → one wide suffices. Missing reverse plates ordered late are the most expensive single mistake in the pipeline (ch. 16).
 🟢 Props with narrative state changes get a **state pair/series of stills** (before/after), treated like character state sheets.
@@ -30,8 +37,8 @@ Source-tagged knowledge base. Confidence labels: 🟢 multi-source/official/prod
 | Model | Use for | Notes |
 |---|---|---|
 | Soul Cinema | Photoreal characters/locations from scratch | Cinematic default; not the stylization specialist |
-| **GPT Image 2** | Stylized plates/sheets, reverse angles WITH layout-map input, structured/text-dense assets | Reasoning model; style-block-first mechanics → style-control §2 |
-| Nano Banana Pro | Style transfer with identity lock, multi-character scaffolding, manga pages, edits | Style-medium-LAST mechanics → style-control §3 |
+| **GPT Image 2** | Geography consistency, reverse angles WITH layout-map input, edits/derivatives, structured/text-dense assets; stylized stills via the proven 4-section structure (style-control §2) | Reasoning model; for Pixar from scratch, Nano Banana Pro renders stronger [PP] |
+| **Nano Banana Pro** | **Strongest model for Pixar/stylized stills from scratch (environment+figure in one render, 4K) [PP]**; style transfer with identity lock, multi-character scaffolding, manga pages, props, edits | Beats GPT Image 2 on CG render quality (AO, subsurface scattering); weakness: ruler-symmetry and stock-photo lifelessness on figure-LESS scenes — pair with the figure-anchor rule (ch. 1). Style-medium-LAST mechanics → style-control §3 |
 | Seedream | Edits with texture preservation | |
 | Midjourney | Discovery/moodboards | Not a pipeline production tool |
 
@@ -55,6 +62,7 @@ Source-tagged knowledge base. Confidence labels: 🟢 multi-source/official/prod
 
 ## 9. Alternative production paths
 🟢 **Storyboard-to-sequence:** a clean storyboard grid (<15 panels, clean line art, minimal text, stated reading order, grid style excluded) drives a sequence at ~70–80% adherence — cheap pre-viz, not final control. **Higgsfield Popcorn** is the platform's sequence-aware storyboard generator: Auto (one prompt → arc) or Manual (per-frame direction), up to 8 frames/run, longer arcs via bridge-frame chaining (last frame = next run's reference), 1–4 reference inputs, export toward video models. [H-off]
+🟢 **Copy-ready storyboard prompt template [G2-gallery]:** "A [6]-panel film storyboard laid out as a [3×2] grid, landscape 16:9. Each panel is a rectangular pencil-and-marker sketch with a white margin border and a small information strip underneath. Scene: [one-line sequence description]. Panel 1 — [SHOT TYPE + content]. Info: 'PANEL 1 · [INT/EXT. LOCATION · TIME] · [WIDE/OTS/CU/LOW ANGLE] / [static|pan-L 45°|tilt-up|crane-down] / [2s]' … [repeat per panel] … Art direction: classic animation-school storyboard — pencil line-work, grey marker shading, red-pencil arrow annotations for camera moves and action arcs, off-white paper texture." The per-panel info strips (shot type / camera move / duration / SFX) are exactly the panel annotations Seedance reads as direction (storyboard-to-sequence above); the arrow annotations double as geometry input (ch. 8).
 🟢 **VFX hybrid:** shoot real plates, generate elements/extensions; and the inverse **restyle path** (live footage as motion scaffold → full style transfer) — style-control §5b.
 🟢 **Extension chains:** forward/backward extension to build beyond single-take limits (2.5: toward 180 s beta) with the guards from ch. 14; long single generations (60 s+) only for montage content, not held scenes.
 🟢 **Audio-to-video:** a finished audio track (dialogue/music beat) as timing skeleton for generation where supported.
@@ -204,6 +212,7 @@ Guiding principle, verbatim: "**The prompt describes what happens. The settings 
 🟢 **Preset choice is causal, not aesthetic:** the wrong lighting preset feeds the model wrong world information (lavender field + Overhead Fall = parking-lot look; candle scene + Soft Cross = hidden fill destroys the atmosphere). Practicals for any scene whose light lives IN frame.
 🟢 Official settings recipes as starting points: war = Action + Bleach Bypass + Raw Chaos + Practicals + Fine Film + Clinical Sharp 14mm f/4 · rally chase = Action + Cold Steel + Raw Chaos + Practicals + Fine Film + Anamorphic 14mm f/4 · epic fantasy = Epic + Teal & Orange Epic + Epic Scale + Contre-jour + Fine Film + Anamorphic 35mm f/4. FAQ rules: portrait → 50/75 mm; landscape → f/11.
 🟢 **Dials before prompt:** camera, optics/aperture, light, color, tempo go into SETTINGS; the prompt carries scene, action, reference roles, timeline, continuity. Avoid double control (settings AND prompt text) — conflicts.
+🟢 **Settings are VIDEO controls, not still controls [PP]:** the CS settings panel (Genre, Palette, Lighting, Camera, Era, Tempo…) applies at video generation. Still prompts in the stills-first phase do NOT reference these settings — the still carries its look entirely in prompt + references; the settings become relevant at the motion test. Keep the two control layers strictly separate in any prompt document.
 🟢 **Style anchor duty for stylized looks:** CS and Seedance default to photorealism; Pixar/cartoon/anime must be anchored actively — look-carrying references AND/OR an explicit style anchor; weak anchoring tips into photorealism (full mechanics: style-control).
 
 ### CS 4.0 platform (official pages, Aug 2026)
@@ -247,7 +256,7 @@ Guiding principle, verbatim: "**The prompt describes what happens. The settings 
 🟡 Prompt pack as a constant benchmark: identical brief + references across platforms/models for fair comparisons.
 
 ## 15. Style enforcement & reference integration
-Fully externalized to **`style-control.md`** (style stack hierarchy, model-specific mechanics for GPT Image 2 / Nano Banana Pro / video models, 15 style vocabularies, footage/era/optics styles, reference integration protocol, diagnosis). Read that file for ANY stylized-look task and whenever writing prompts that use references.
+Fully externalized to **`style-control.md`** (style stack hierarchy, model-specific mechanics for GPT Image 2 / Nano Banana Pro / video models — incl. the production-proven 4-section Pixar prompt structure in §2 — 15 style vocabularies, footage/era/optics styles, reference integration protocol, diagnosis). Read that file for ANY stylized-look task and whenever writing prompts that use references.
 
 ## 16. Perspective changes & coverage (cost-ranked)
 **Core problem:** image models lack true spatial understanding — free-text reverse/new-angle stills of the same scene are unreliable. Video models switch angles reliably WITHIN a take. Hence the ladder — cheap/reliable to expensive/risky; exhaust each rung first:
