@@ -37,6 +37,11 @@ Single-subject action with one camera move · dialogue in shot/reverse-shot cove
 ## 5. Camera & cut rules
 One camera verb per shot · fixed camera grammar per sequence, repeated verbatim · open takes with a wide establishing to lock positions · never cross the axis (state it) · match cuts across scene borders bind on identical motion · hectic cuts exactly at hard motion = model hiding failure → reject take.
 
+## 5b. Lighting consistency: directional light vs. whole-body brightness [PP]
+🟢 **Directional light and whole-body brightness adjectives on the same object are mutually exclusive.** Once a prompt demands a light DIRECTION, phase, or partial shading on an object (moon phase, backlight, terminator, half-shadow, rim light), never pair it with global brightness words for that same object — "bright", "fully lit", "luminous", "brightly glowing", "strong contrast". Whole-body words grab the entire object and override the phase: documented failure — a moon prompted with a side-lit phase (lit side toward a low sun, shadow side away) PLUS "clear bright lunar disc" rendered as a fully lit disc with no shadow side, physically inconsistent with the stated sun position.
+🟢 **Instead:** describe light exclusively per direction — which side/surface is lit, which lies in shadow. If contrast is wanted, name the contrast of the LIT EDGE against the background ("the lit edge stands out against the black sky"), never the brightness of the whole object.
+Memory hook: a phase instruction only wins when no contradicting brightness word stands next to it.
+
 ## 6. Model quick profiles (for shot assignment)
 | Model | Strengths | Limits / slop accent |
 |---|---|---|
