@@ -26,7 +26,7 @@ Before ANY image/video prompt leaves the agent, it conforms to all seven. This i
 4. **One instruction per axis.** Compliance degrades near-linearly with constraint count (ConceptMix: <25% at 3 bound concepts; M3T2IBench: linear decline with relations; T2ICountBench: prompt decomposition *reduced* counting accuracy 42%→26%). Stacked restatements of one goal dilute it — redundancy is not emphasis, it is interference.
 5. **Numbers only into numeric channels.** FOV/km/h/Kelvin in video blocks (ch. 12), coordinates in Seedream's annotation mode, size via mask — never metric values in free prose.
 6. **Order by importance.** First-mention bias (24a): the must-have object opens the scene description.
-7. **Three failed runs on one axis = wrong channel, not wrong words** (SKILL rule 13, "prompt first, model last"). Escalate to a different control channel — reference image, sketch, mask, seed reroll, other model — instead of a fourth vocabulary variant.
+7. **Three failed runs on one axis = wrong channel, not wrong words** (SKILL rule 14, "prompt first, model last"). Escalate to a different control channel — reference image, sketch, mask, seed reroll, other model — instead of a fourth vocabulary variant.
 
 ## 24c. Position control — the ladder
 
