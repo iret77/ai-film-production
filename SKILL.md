@@ -10,7 +10,7 @@ Write, plan, and prompt AI-generated film so no shot looks AI-generated: design 
 
 **Role.** The agent is the user's full crew — DoP, editor, gaffer, script consultant, line producer — and the user is the director and only approval instance. Advise and moderate; the user directs and decides. Offer craft knowledge, flag a real risk ONCE in plain language, then follow their call. Do not gate, do not cite chapter numbers at the user, do not repeat heard warnings. When the user gives a feeling, propose the craft; when they give an instruction, execute it and briefly note its effect; when they name a style, start from the recipes.
 
-**Scope & version:** v2.1-en (2026-08). Universal — nothing project- or person-specific. Prompt syntax is Seedance-2.x/Higgsfield-first with full cross-model profiles. Every rule carries a confidence label (🟢 verified/production-proven · 🟡 single-source · 🔴 marketing claim) and source tags; source conflicts are marked ⚠️, and [PP] marks first-party production evidence.
+**Scope & version:** v2.2-en (2026-08). Universal — nothing project- or person-specific. Prompt syntax is Seedance-2.x/Higgsfield-first with full cross-model profiles. Every rule carries a confidence label (🟢 verified/production-proven · 🟡 single-source · 🔴 marketing claim) and source tags; source conflicts are marked ⚠️, and [PP] marks first-party production evidence.
 
 ## Task routing — read exactly this, then act
 
@@ -23,6 +23,7 @@ Write, plan, and prompt AI-generated film so no shot looks AI-generated: design 
 | Prompt for H3 / Kling / Veo / Grok; Higgsfield UI/settings questions | `references/platforms-models.md` |
 | Treatment, script, shot list; asset orders (sheets, plates, props); model choice for stills; QA batches; reverse angles/coverage | `references/production-pipeline.md` |
 | Any stylized look; any prompt that uses reference images; image-model mechanics | `references/style-control.md` |
+| Position/size/count/exclusion problems in image prompts; a model "ignoring" an instruction; how generators process prompts | `references/image-model-logic.md` — ch. 24: generator writing contract (24b), control ladders, negation channel table, mask strictness |
 | Lint a script/shot for feasibility; assign models; rescue risky action; lighting-consistency check | `references/renderability.md` |
 | Cinematography/editing/light/color/dramaturgy advice; "how should this scene feel" | `references/film-craft.md` |
 | User wants a style starting point or names a director or DoP | `references/director-recipes.md` — selection index (brief signal → shortlist + constraint filter), 31 director recipes + 11 DoP signatures, each with a Verify line (the reroll gate for stills/takes) |
@@ -39,13 +40,13 @@ Chapter numbers are global IDs — "ch. 12" always means the block structure, wh
 3. **Complexity budget per shot:** one main action + one camera move + max two characters; split across cuts.
 4. **Every video prompt uses the ch. 12 block structure** — standalone prompt in a code block, no style prefix, CAMERA in 3rd position, FOV in degrees, quantified values (km/h, %, Kelvin).
 5. **References: attach → address.** Every reference gets a job line + exclusions; end with an attachment checklist in upload order. Assets carry stable @names, verbatim everywhere — approved shot anchors are registered as named elements too (`@anchor_1A`) and addressed by tag, never manually attached.
-6. **Write the visible:** micro-cues instead of emotion labels, cause before reaction, positive locks next to what they protect. Descriptions of appearance/emotion stay positive; prohibitions may be negative.
+6. **Write the visible, in generator logic:** a prompt is a scene description for a caption-trained generator, not instructions to a reader (ch. 24b) — micro-cues instead of emotion labels, cause before reaction, positive locks next to what they protect, and ZERO internal contradictions (the model blends conflicts silently, it never warns). Descriptions of appearance/emotion stay positive; prohibitions may be negative — in the channel ch. 24f / ch. 14 assigns for the target model.
 7. **Red-list lint before delivery:** no readable in-frame text, no mirror beats, no hand close-up actions, no readable-face crowds, no hero physics — ellipsis over simulation; write a rescue cut for every kept risk.
 8. **Stylized 3D needs an anchor:** a figure in frame or the style-forcing blocks (pixar-look ch. 9) — a style word alone will be ignored.
 9. **Audio:** diegetic only, describe it always, never generate music in the video model — the score is built in post.
 10. **Deliver complete prompts** (named 1A/1B/2A…), then a short risk register: kept yellow/red shots, why, and their rescues.
 11. **The production bible is canon:** multi-session projects keep ONE living bible (ch. 22) — read it first, update it last; statuses move only on user approval; if it isn't in the bible, it isn't canon.
-12. **Prompt first, model last:** when a generation fails repeatedly, the default suspect is YOUR prompt, not the model — in production ~8 of 10 presumed "model limits" were badly written prompts. Before blaming the model, switching methods, or proposing to cut the shot, lint your own prompt: internal contradictions (e.g. tiny size + rich visible detail), missing positive lock on exactly the failing aspect, several stacked instructions on one axis (they average out, not add up), meta-commentary addressed at the model. Then rewrite short from scratch — never patch the same prompt past 3 iterations. A model limit may be declared only after a clean, minimal, contradiction-free prompt has failed on the same axis twice.
+12. **Prompt first, model last:** when a generation fails repeatedly, the default suspect is YOUR prompt, not the model — in production ~8 of 10 presumed "model limits" were badly written prompts. Before blaming the model, switching methods, or proposing to cut the shot, lint your own prompt: internal contradictions (e.g. tiny size + rich visible detail), missing positive lock on exactly the failing aspect, several stacked instructions on one axis (they average out, not add up), meta-commentary addressed at the model. Then rewrite short from scratch — never patch the same prompt past 3 iterations. A model limit may be declared only after a clean, minimal, contradiction-free prompt has failed on the same axis twice — and three failed runs on one axis mean the wrong CHANNEL, not the wrong words: escalate to reference/sketch/mask/seed/model (ch. 24b.7), never to a fourth vocabulary variant.
 
 ## Workflow
 
@@ -62,6 +63,7 @@ Chapter numbers are global IDs — "ch. 12" always means the block structure, wh
 - `platforms-models.md` — ch. 13 Higgsfield CS settings/platform, ch. 21 H3/Kling/Veo/Grok syntax profiles.
 - `post-audio-legal.md` — ch. 17 post & delivery, ch. 18 audio/music/voices, ch. 19 continuity checklists, ch. 20 legal & AI disclosure.
 - `style-control.md` — style stack, GPT Image 2/Nano Banana mechanics, 15+ vocabularies, reference-integration protocol.
+- `image-model-logic.md` — ch. 24: how generators read prompts; binding writing contract, position/scale/count ladders, negation channel table, edit locality & mask strictness per platform.
 - `production-bible.md` — ch. 22 project-state convention: living bible template, session rules, platform mapping (Higgsfield Elements · Runway re-uploads · local/fal file tree), reroll budget.
 - `story-structures.md` — ch. 23 dramaturgical containers: story intake gate, classic/alternative/format-specific structures, choosing and mixing rules.
 - `renderability.md` — green/red lists, rescue paths, format matrix, lighting-consistency rule, model quick profiles.
