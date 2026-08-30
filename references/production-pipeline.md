@@ -61,7 +61,7 @@ Before stage one: the story intake gate and container choice (story-structures c
 ## 7. Dialogue scenes
 🟢 **Framing recycling:** exactly two repeated framings (single ↔ over-shoulder); "shot 3 repeats shot 1's framing" — repetition is what sells coverage.
 🟢 Reverse-environment references are mandatory (multi-plate, platforms-models ch. 13); **180° lock:** name the axis and forbid crossing it in every dialogue prompt. Strongest spatial lock for multi-person dialogue: the 3D blockout path (ch. 8) — seat positions, eye-lines, and cuts pre-decided in gray boxes hold where text-only prompting swaps seats [P18].
-🟢 One line per shot beat; speaker tags per platform syntax (video-prompting ch. 12/21); never two characters speaking simultaneously.
+🟢 One line per shot beat; speaker tags per platform syntax (video-prompting ch. 12 · platforms-models ch. 21); never two characters speaking simultaneously.
 
 ## 7b. Interview scenes (documentary path)
 (Dramaturgy of interviews — voice functions, contradiction editing, hook/reveal placement, the held silence — lives in story-structures ch. 23d; this chapter is the production mechanics.)

@@ -10,7 +10,7 @@ Write, plan, and prompt AI-generated film so no shot looks AI-generated: design 
 
 **Role.** The agent is the user's full crew — DoP, editor, gaffer, script consultant, line producer — and the user is the director and only approval instance. Advise and moderate; the user directs and decides. Offer craft knowledge, flag a real risk ONCE in plain language, then follow their call. Do not gate, do not cite chapter numbers at the user, do not repeat heard warnings. When the user gives a feeling, propose the craft; when they give an instruction, execute it and briefly note its effect; when they name a style, start from the recipes.
 
-**Scope & version:** v2.4-en (2026-08). Universal — nothing project- or person-specific. Prompt syntax is Seedance-2.x/Higgsfield-first with full cross-model profiles. Every rule carries a confidence label (🟢 verified/production-proven · 🟡 single-source · 🔴 marketing claim) and source tags; source conflicts are marked ⚠️, and [PP] marks first-party production evidence.
+**Scope & version:** v2.1-en (2026-08). Universal — nothing project- or person-specific. Prompt syntax is Seedance-2.x/Higgsfield-first with full cross-model profiles. Every rule carries a confidence label (🟢 verified/production-proven · 🟡 single-source · 🔴 marketing claim) and source tags; source conflicts are marked ⚠️, and [PP] marks first-party production evidence.
 
 ## Task routing — read exactly this, then act
 
@@ -41,7 +41,7 @@ Chapter numbers are global IDs — "ch. 12" always means the block structure, wh
 5. **References: attach → address.** Every reference gets a job line + exclusions; end with an attachment checklist in upload order. Assets carry stable @names, verbatim everywhere — approved shot anchors are registered as named elements too (`@anchor_1A`) and addressed by tag, never manually attached.
 6. **Write the visible:** micro-cues instead of emotion labels, cause before reaction, positive locks next to what they protect. Descriptions of appearance/emotion stay positive; prohibitions may be negative.
 7. **Red-list lint before delivery:** no readable in-frame text, no mirror beats, no hand close-up actions, no readable-face crowds, no hero physics — ellipsis over simulation; write a rescue cut for every kept risk.
-8. **Stylized 3D needs an anchor:** a figure in frame or the ch.-9 style-forcing blocks — a style word alone will be ignored.
+8. **Stylized 3D needs an anchor:** a figure in frame or the style-forcing blocks (pixar-look ch. 9) — a style word alone will be ignored.
 9. **Audio:** diegetic only, describe it always, never generate music in the video model — the score is built in post.
 10. **Deliver complete prompts** (named 1A/1B/2A…), then a short risk register: kept yellow/red shots, why, and their rescues.
 11. **The production bible is canon:** multi-session projects keep ONE living bible (ch. 22) — read it first, update it last; statuses move only on user approval; if it isn't in the bible, it isn't canon.
@@ -52,7 +52,7 @@ Chapter numbers are global IDs — "ch. 12" always means the block structure, wh
 2. **Write shot-first** — numbered shots with fixed camera grammar per sequence, object-anchored blocking (never screen directions), @asset names, match-action cues. Sequence dramaturgy: Establish → Action → Reaction → Detail; dialogue as shot/reverse-shot with reverse plates + 180° lock (strongest lock: the 3D blockout path, ch. 8).
 3. **Lint** against renderability.md; rewrite or rescue every hit.
 4. **Pre-production sections in the treatment** — set build (locations with locks + reverse decision), casting (sheet orders; for animation: expression sheets), style anchor (one paragraph, reused verbatim).
-5. **Deliver** per the routing table's file for the format — treatments end each scene with its shot table (No. | Length | Shot | Action | Assets | Risk | Rescue); prompt shot lists follow rule 4 and rule 10. Close every work block by updating the production bible (rule 11).
+5. **Deliver** per the routing table's file for the format — treatments end each scene with its shot table (No. | Length | Shot | Action | Assets | Risk | Rescue); prompt shot lists follow rule 4 and rule 10. Close every work block by updating the production bible where the project keeps one (rule 11).
 
 ## Reference files (one line each)
 
@@ -63,13 +63,13 @@ Chapter numbers are global IDs — "ch. 12" always means the block structure, wh
 - `style-control.md` — style stack, GPT Image 2/Nano Banana mechanics, 15+ vocabularies, reference-integration protocol.
 - `production-bible.md` — ch. 22 project-state convention: living bible template, session rules, platform mapping (Higgsfield Elements · Runway re-uploads · local/fal file tree), reroll budget.
 - `story-structures.md` — ch. 23 dramaturgical containers: story intake gate, classic/alternative/format-specific structures, choosing and mixing rules.
+- `renderability.md` — green/red lists, rescue paths, format matrix, lighting-consistency rule, model quick profiles.
+- `film-craft.md` — composition, camera, editing, light, color, timing, dramaturgy; the combination logic.
+- `director-recipes.md` — 31 director recipes + 11 DoP signatures + harmony map as optional starting points.
+- `genre-baselines.md` — 13 genre entry points with subgenres, craft defaults, recipe shortlists, and per-genre skill filters.
+- `pixar-look.md` — sourced Pixar look bible incl. figure-anchor rule and figure-less style forcing.
+- `worked-example.md` — compact end-to-end mini production.
 
 ## Feeding production experience back
 
 This skill is maintained publicly (github.com/iret77/ai-film-production). When production experience contradicts or extends a rule — a workaround that worked, a rule that failed, a platform behavior nobody documented — offer ONCE to draft a GitHub issue with the technical finding (no project content, no personal data). If the user declines, drop it and do not raise it again.
-- `renderability.md` — green/red lists, rescue paths, format matrix, lighting-consistency rule, model quick profiles.
-- `film-craft.md` — composition, camera, editing, light, color, timing, dramaturgy; the combination logic.
-- `director-recipes.md` — 31 director recipes + 11 DoP signatures + harmony map as optional starting points.
-- `genre-baselines.md` — 12 genre entry points with subgenres, craft defaults, recipe shortlists, and per-genre skill filters.
-- `pixar-look.md` — sourced Pixar look bible incl. figure-anchor rule and figure-less style forcing.
-- `worked-example.md` — compact end-to-end mini production.
