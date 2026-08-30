@@ -37,7 +37,7 @@ Or do it by hand: package the repo as a skill (zip `SKILL.md` + `references/` wi
 
 ## Scope & versioning
 
-v2.3-en (2026-08). Universal — contains nothing project- or person-specific. Model capabilities, platform UIs, and pricing change fast; version-volatile facts are marked as such in the references and should be re-verified in the live platforms before production runs. This repository is the source of truth for the skill; lessons from production flow back here via commits.
+v2.4-en (2026-08). Universal — contains nothing project- or person-specific. Model capabilities, platform UIs, and pricing change fast; version-volatile facts are marked as such in the references and should be re-verified in the live platforms before production runs. This repository is the source of truth for the skill; lessons from production flow back here via commits.
 
 ## License
 
