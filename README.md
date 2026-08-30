@@ -24,6 +24,7 @@ Optimized for a **Seedance 2.x / Higgsfield Cinema Studio 4.0** stills-first pip
 | `references/pixar-look.md` | Sourced Pixar look bible incl. figure-anchor rule and style-forcing method |
 | `references/production-bible.md` | Ch. 22: living project-state document — template, session rules, platform mapping |
 | `references/story-structures.md` | Ch. 23: dramaturgical containers — intake gate, classic/alternative structures, series poles & online-native formats, interview dramaturgy, masters' rules |
+| `references/workflows.md` | Ch. 25: nine runbooks for the typical production jobs — project start to session close — chaining the chapters in proven order |
 | `references/worked-example.md` | Compact end-to-end mini production |
 
 ## Confidence system

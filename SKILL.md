@@ -29,6 +29,7 @@ Write, plan, and prompt AI-generated film so no shot looks AI-generated: design 
 | User wants a style starting point or names a director or DoP | `references/director-recipes.md` — selection index (brief signal → shortlist + constraint filter), 31 director recipes + 11 DoP signatures, each with a Verify line (the reroll gate for stills/takes) |
 | Pixar/3D-stylized projects | `references/pixar-look.md` (figure-anchor hard rule ch. 8, figure-less method ch. 9) |
 | Post, upscaling, music/voices, continuity ledger, legal/AI-disclosure | `references/post-audio-legal.md` |
+| Any recurring production job — new project, asset build-out, produce a shot/scene, repair a take, coverage, style lock, failing generation, session open/close | `references/workflows.md` — ch. 25: the runbook per job; pick by trigger |
 | First production task ever / "how does this all connect" | `references/worked-example.md` |
 
 Chapter numbers are global IDs — "ch. 12" always means the block structure, wherever cited.
@@ -85,6 +86,7 @@ Whenever a prompt for a new still or video generation (or edit/extension) is to 
 - `director-recipes.md` — 31 director recipes + 11 DoP signatures + harmony map as optional starting points.
 - `genre-baselines.md` — 13 genre entry points with subgenres, craft defaults, recipe shortlists, and per-genre skill filters.
 - `pixar-look.md` — sourced Pixar look bible incl. figure-anchor rule and figure-less style forcing.
+- `workflows.md` — ch. 25: nine runbooks chaining the chapters for the typical jobs (W1 new project · W2 asset/reference pool · W3 shot · W4 scene · W5 repair · W6 coverage · W7 style lock · W8 failing generation · W9 session open/close).
 - `worked-example.md` — compact end-to-end mini production.
 
 ## Feeding production experience back
