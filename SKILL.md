@@ -45,6 +45,7 @@ Chapter numbers are global IDs — "ch. 12" always means the block structure, wh
 9. **Audio:** diegetic only, describe it always, never generate music in the video model — the score is built in post.
 10. **Deliver complete prompts** (named 1A/1B/2A…), then a short risk register: kept yellow/red shots, why, and their rescues.
 11. **The production bible is canon:** multi-session projects keep ONE living bible (ch. 22) — read it first, update it last; statuses move only on user approval; if it isn't in the bible, it isn't canon.
+12. **Prompt first, model last:** when a generation fails repeatedly, the default suspect is YOUR prompt, not the model — in production ~8 of 10 presumed "model limits" were badly written prompts. Before blaming the model, switching methods, or proposing to cut the shot, lint your own prompt: internal contradictions (e.g. tiny size + rich visible detail), missing positive lock on exactly the failing aspect, several stacked instructions on one axis (they average out, not add up), meta-commentary addressed at the model. Then rewrite short from scratch — never patch the same prompt past 3 iterations. A model limit may be declared only after a clean, minimal, contradiction-free prompt has failed on the same axis twice.
 
 ## Workflow
 
