@@ -1,7 +1,7 @@
 # Post, Audio, Continuity, Legal (ch. 17–20)
 
 
-Source-tagged knowledge base. Confidence labels: 🟢 multi-source/official/production-proven · 🟡 plausible, single-source or untested · 🔴 marketing claim, verify yourself. Source tags: [A]=platform academy docs, [P1–P18]=practitioner video protocols (archive file), [PP]=first-party production-session evidence, [W]=web research (multi-source), [H-off]=Higgsfield official, [BD-off]=ByteDance official guide (via verified reproductions), [F]=fal.ai official, [R-off]=Runway official, [X-ext]=community skill (partially officially confirmed), [OAI-off]=OpenAI cookbook, [G2]/[NB]=image-model guide clusters.
+Source-tagged knowledge base. Confidence labels: 🟢 multi-source/official/production-proven · 🟡 plausible, single-source or untested · 🔴 marketing claim, verify yourself. Source tags: [A]=platform academy docs, [P1–P18]=practitioner video protocols, [PP]=first-party production-session evidence, [W]=web research (multi-source), [H-off]=Higgsfield official, [BD-off]=ByteDance official guide (via verified reproductions), [F]=fal.ai official, [R-off]=Runway official, [X-ext]=community skill (partially officially confirmed), [OAI-off]=OpenAI cookbook, [G2]/[NB]=image-model guide clusters.
 
 ## 17. Post-production & delivery
 🟢 **Upscale ladder:** (1) bring the source still to max quality BEFORE video generation (a 4K start frame gives the model detail budget). (2) Video upscaling as its own pass: Topaz Video AI is reference class; model by material: **Astra for AI-generated video**, Proteus generic, Iris faces, Starlight heavy degradation, Apollo/Aion interpolation/slow-motion. Alternatives integrated in Resolve/Premiere; open-source Video2X/Real-ESRGAN. Judge one exported frame before batch renders. [W]

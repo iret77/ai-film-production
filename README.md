@@ -22,7 +22,6 @@ Optimized for a **Seedance 2.x / Higgsfield Cinema Studio 4.0** stills-first pip
 | `references/director-recipes.md` | 21 director recipes + 9 DoP signatures + harmony map |
 | `references/pixar-look.md` | Sourced Pixar look bible incl. figure-anchor rule and style-forcing method |
 | `references/worked-example.md` | Compact end-to-end mini production |
-| `references/protocols-archive.md` | Raw source protocols (German appendix, P1–P18) |
 
 ## Confidence system
 

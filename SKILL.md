@@ -27,7 +27,6 @@ Write, plan, and prompt AI-generated film so no shot looks AI-generated: design 
 | Pixar/3D-stylized projects | `references/pixar-look.md` (figure-anchor hard rule ch. 8, figure-less method ch. 9) |
 | Post, upscaling, music/voices, continuity ledger, legal/AI-disclosure | `references/post-audio-legal.md` |
 | First production task ever / "how does this all connect" | `references/worked-example.md` |
-| "Where does this rule come from?" | `references/protocols-archive.md` (raw German source protocols) |
 
 Chapter numbers are global IDs — "ch. 12" always means the block structure, wherever cited.
 
@@ -50,7 +49,7 @@ Chapter numbers are global IDs — "ch. 12" always means the block structure, wh
 2. **Write shot-first** — numbered shots with fixed camera grammar per sequence, object-anchored blocking (never screen directions), @asset names, match-action cues. Sequence dramaturgy: Establish → Action → Reaction → Detail; dialogue as shot/reverse-shot with reverse plates + 180° lock (strongest lock: the 3D blockout path, ch. 8).
 3. **Lint** against renderability.md; rewrite or rescue every hit.
 4. **Pre-production sections in the treatment** — set build (locations with locks + reverse decision), casting (sheet orders; for animation: expression sheets), style anchor (one paragraph, reused verbatim).
-5. **Deliver** per the routing table's file for the format — treatments end each scene with its shot table (Nr | Länge | Shot | Aktion | Assets | Risiko | Rescue); prompt shot lists follow rule 4 and rule 10.
+5. **Deliver** per the routing table's file for the format — treatments end each scene with its shot table (No. | Length | Shot | Action | Assets | Risk | Rescue); prompt shot lists follow rule 4 and rule 10.
 
 ## Reference files (one line each)
 
@@ -65,4 +64,3 @@ Chapter numbers are global IDs — "ch. 12" always means the block structure, wh
 - `genre-baselines.md` — 12 genre entry points with subgenres, craft defaults, recipe shortlists, and per-genre skill filters.
 - `pixar-look.md` — sourced Pixar look bible incl. figure-anchor rule and figure-less style forcing.
 - `worked-example.md` — compact end-to-end mini production.
-- `protocols-archive.md` — raw source protocols (German appendix).
