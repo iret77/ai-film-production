@@ -35,6 +35,7 @@ Before stage one: the story intake gate and container choice (story-structures c
 ## 4. Locations & props
 🟢 Per location: one master wide plate + 2–3 detail plates at ONE shared exposure/palette. **Reverse decision up front:** does this location need counter-angles (dialogue, cross-room action)? → build the multi-plate set (platforms-models ch. 13). Pass-through/B-roll → one wide suffices. Missing reverse plates ordered late are the most expensive single mistake in the pipeline (ch. 16).
 🟢 Props with narrative state changes get a **state pair/series of stills** (before/after), treated like character state sheets.
+🟢 **Prop size in composites is set by relation or mask, never by canvas fractions** ("% of image width" is meaningless to an image model) — size mechanics: style-control §2.
 🟢 Screenshot workaround: frames from an approved video generation are legitimate (often superior) plate sources — they carry light and geography correctly.
 
 ## 5. Image model selection
