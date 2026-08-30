@@ -9,7 +9,7 @@ One living markdown document per project — the single source of truth for ever
 3. **Approval is the user's:** statuses move forward (draft → approved → locked) only on explicit user approval. The agent never self-approves; a regenerated asset resets to draft.
 4. **The bible mirrors platforms, it does not replace them.** Binary assets live in the platform (Higgsfield Elements/Soul ID, OpenArt characters, local files for fal pipelines); the bible holds names, IDs, statuses, and pointers. On conflict, the approved image/element is the visual truth, the bible is the record of WHICH one is approved.
 5. **Compact by force:** the whole bible stays pasteable into a fresh chat (target: 2–4 pages). Superseded decisions and finished shots move to an ARCHIVE section at the bottom or a second file; the active surface stays small.
-6. **One bible per project.** Series/episodic work: one project bible (world, cast, style contract) + one slim episode sheet per episode (shot board, episode decisions).
+6. **One bible per project.** Series/episodic work: one project bible (world, cast, style contract) + one slim episode sheet per episode (shot board, episode decisions). The pole decides the split (story-structures ch. 23d): **episodic** — universe facts live ONLY in the project bible and change only at season boundaries, episode sheets stay throwaway-slim; **serialized** ("the overlong film") — shot board and continuity ledger span the season in the project bible, episode sheets carry only the episode's micro-shape and status.
 
 ## 22b. Template (copy, fill, keep)
 
