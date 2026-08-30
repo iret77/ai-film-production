@@ -64,6 +64,7 @@ Before stage one: the story intake gate and container choice (story-structures c
 🟢 One line per shot beat; speaker tags per platform syntax (video-prompting ch. 12/21); never two characters speaking simultaneously.
 
 ## 7b. Interview scenes (documentary path)
+(Dramaturgy of interviews — voice functions, contradiction editing, hook/reveal placement, the held silence — lives in story-structures ch. 23d; this chapter is the production mechanics.)
 🟢 **Audio first, face second:** lock the answer as AUDIO before any video — script + voice profile (post-audio-legal ch. 18), then generate the talking head TO the finished track (lip-synced i2v/avatar path), never hoping the video model speaks it right. Write authenticity into the script: fillers, restarts, thinking pauses ("ähm", a breath, a false start) — a read-clean answer sounds scripted and kills the documentary contract.
 🟢 **The B-roll escape is the lip-sync budget:** real docs cover 60–80% of an answer with cutaways that PROVE the narration — for AI this is the cost weapon: only the opening, the key sentence, and the close stay on-camera; everything between runs under B-roll. Short lip-sync stretches, generated B-roll, huge quality gain per credit.
 🟢 **Coverage convention:** two framings per subject from the SAME side of the interviewer axis (wide ↔ tight — the doc version of ch. 7 framing recycling) so answers cut internally; eyeline just off-lens, consistent side per person across ALL their segments; opposing speakers get opposing look sides — the edit builds the debate.
