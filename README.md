@@ -1,6 +1,6 @@
 # ai-film-production
 
-[![Download the latest skill (.zip)](https://img.shields.io/badge/download-latest%20skill%20(.zip)-2563eb?style=flat-square)](https://github.com/iret77/ai-film-production/releases/latest/download/ai-film-production.zip)
+[![Download the latest skill (.skill)](https://img.shields.io/badge/download-latest%20skill%20(.skill)-2563eb?style=flat-square)](https://github.com/iret77/ai-film-production/releases/latest/download/ai-film-production.skill)
 
 A [Claude Agent Skill](https://docs.claude.com/en/docs/agents-and-tools/agent-skills) for planning and producing AI-generated video and film end to end: treatments, scripts, shot lists, asset orders (character sheets, locations, props), and generation-ready video prompts.
 
@@ -29,7 +29,7 @@ Every rule carries a label: 🟢 verified across sources / official / production
 
 ## Installation
 
-**Fastest (Claude apps):** [download the latest `ai-film-production.zip`](https://github.com/iret77/ai-film-production/releases/latest/download/ai-film-production.zip) — built automatically for every release — and upload it in Claude's skill settings. No unzipping needed.
+**Fastest (Claude apps):** [download the latest `ai-film-production.skill`](https://github.com/iret77/ai-film-production/releases/latest/download/ai-film-production.skill) — built automatically for every release — and upload it in Claude's skill settings. The upload dialog takes a `.skill` package directly, and macOS won't auto-extract it on download (a `.skill` is a zip with a custom suffix).
 
 Or do it by hand: package the repo as a skill (zip `SKILL.md` + `references/` with the folder name `ai-film-production`) and upload it in Claude's skill settings, or place the directory in your agent's skills path (e.g. `~/.claude/skills/` for Claude Code).
 

@@ -1,9 +1,11 @@
 name: Package skill release
 
 # Builds the upload-ready skill package and attaches it to the GitHub Release,
-# so `releases/latest/download/ai-film-production.zip` always resolves to the
-# newest version. Triggered by pushing a version tag (e.g. `git tag v2.0 && git
-# push origin v2.0`), or manually against an existing tag.
+# so `releases/latest/download/ai-film-production.skill` always resolves to the
+# newest version. The package uses a `.skill` extension (zip bytes with a custom
+# suffix): Claude accepts `.skill` on upload, and macOS/Safari won't auto-extract
+# it on download the way it does a `.zip`. Triggered by pushing a version tag
+# (e.g. `git tag v2.0 && git push origin v2.0`), or manually against an existing tag.
 
 on:
   push:
@@ -35,7 +37,7 @@ jobs:
             echo "tag=${GITHUB_REF_NAME}" >> "$GITHUB_OUTPUT"
           fi
 
-      - name: Build ai-film-production.zip
+      - name: Build ai-film-production.skill
         run: |
           set -euo pipefail
           name=ai-film-production
@@ -48,10 +50,13 @@ jobs:
             --exclude='.git' \
             --exclude='.github' \
             --exclude='*.zip' \
+            --exclude='*.skill' \
             ./ "$stage/$name/"
-          ( cd "$stage" && zip -r -X "$GITHUB_WORKSPACE/$name.zip" "$name" )
+          # `.skill` = zip bytes, custom extension: Claude accepts it on upload,
+          # and macOS/Safari won't auto-extract it on download.
+          ( cd "$stage" && zip -r -X "$GITHUB_WORKSPACE/$name.skill" "$name" )
           echo "--- package contents ---"
-          unzip -l "$name.zip"
+          unzip -l "$name.skill"
 
       - name: Publish release asset
         env:
@@ -60,9 +65,9 @@ jobs:
           set -euo pipefail
           tag="${{ steps.meta.outputs.tag }}"
           if gh release view "$tag" >/dev/null 2>&1; then
-            gh release upload "$tag" ai-film-production.zip --clobber
+            gh release upload "$tag" ai-film-production.skill --clobber
           else
-            gh release create "$tag" ai-film-production.zip \
+            gh release create "$tag" ai-film-production.skill \
               --title "$tag" \
-              --notes "Upload-ready skill package \`ai-film-production.zip\` attached below. See the README for install instructions."
+              --notes "Upload-ready skill package \`ai-film-production.skill\` attached below (a zip Claude accepts directly; macOS won't auto-extract it). See the README for install."
           fi
