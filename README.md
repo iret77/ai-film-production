@@ -11,7 +11,7 @@ Optimized for a **Seedance 2.x / Higgsfield Cinema Studio 4.0** stills-first pip
 | File | Role |
 |---|---|
 | `SKILL.md` | Entry point: task routing table, inline always-rules, 5-step workflow |
-| `references/genre-baselines.md` | 12 genre entry points: craft defaults, subgenres, recipe shortlists, per-genre skill filters |
+| `references/genre-baselines.md` | 13 genre entry points (incl. Commercial/Ad): craft defaults, subgenres, recipe shortlists, per-genre skill filters |
 | `references/production-pipeline.md` | Ch. 1–11 + 16: pipeline principles, assets, QA, model choice, coverage ladder |
 | `references/video-prompting.md` | Ch. 12 + 14: THE block-structure prompt template, cross-model adaptation, sequence prompting |
 | `references/platforms-models.md` | Ch. 13 + 21: Higgsfield Cinema Studio, H3/Kling/Veo/Grok syntax profiles |
@@ -19,7 +19,7 @@ Optimized for a **Seedance 2.x / Higgsfield Cinema Studio 4.0** stills-first pip
 | `references/style-control.md` | Style enforcement across image and video models, vocabularies, reference protocol |
 | `references/renderability.md` | Green/red lists, rescue paths, format matrix, model quick profiles |
 | `references/film-craft.md` | Model-independent film language: composition, camera, editing, light, color, timing, dramaturgy |
-| `references/director-recipes.md` | 21 director recipes + 9 DoP signatures + harmony map |
+| `references/director-recipes.md` | 31 director recipes + 11 DoP signatures; selection index (mood → shortlist, constraint filter, alias table), per-recipe Verify gates, harmony map |
 | `references/pixar-look.md` | Sourced Pixar look bible incl. figure-anchor rule and style-forcing method |
 | `references/worked-example.md` | Compact end-to-end mini production |
 
@@ -35,7 +35,7 @@ Or do it by hand: package the repo as a skill (zip `SKILL.md` + `references/` wi
 
 ## Scope & versioning
 
-v2.0-en (2026-08). Universal — contains nothing project- or person-specific. Model capabilities, platform UIs, and pricing change fast; version-volatile facts are marked as such in the references and should be re-verified in the live platforms before production runs. This repository is the source of truth for the skill; lessons from production flow back here via commits.
+v2.1-en (2026-08). Universal — contains nothing project- or person-specific. Model capabilities, platform UIs, and pricing change fast; version-volatile facts are marked as such in the references and should be re-verified in the live platforms before production runs. This repository is the source of truth for the skill; lessons from production flow back here via commits.
 
 ## License
 

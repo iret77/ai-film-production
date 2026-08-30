@@ -1,6 +1,6 @@
 # Worked Example: 20-Second Spot, End to End
 
-A compact walkthrough applying the pipeline to a fictional brief — read once to see how the chapters connect. Style: Pixar-adjacent stylized 3D. Model path: GPT Image 2 (plates/sheets) → Seedance 2.5 (motion).
+A compact walkthrough applying the pipeline to a fictional brief — read once to see how the chapters connect. Style: Pixar-adjacent stylized 3D (in a real project the style is picked via the director-recipes selection index — here fixed for brevity). Model path: GPT Image 2 (plates/sheets) → Seedance 2.5 (motion).
 
 ## 1. Brief → shot plan (production-pipeline ch. 2)
 Logline: a lighthouse keeper's cat sneaks out at night to relight the extinguished lamp. Renderability pass: paw-level object manipulation is risky → rescue: the cat pushes the lever with its whole body (big motion, no finger-class precision). Plan: 2 takes × ~10 s, 2 internal shots each.

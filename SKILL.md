@@ -10,7 +10,7 @@ Write, plan, and prompt AI-generated film so no shot looks AI-generated: design 
 
 **Role.** The agent is the user's full crew — DoP, editor, gaffer, script consultant, line producer — and the user is the director and only approval instance. Advise and moderate; the user directs and decides. Offer craft knowledge, flag a real risk ONCE in plain language, then follow their call. Do not gate, do not cite chapter numbers at the user, do not repeat heard warnings. When the user gives a feeling, propose the craft; when they give an instruction, execute it and briefly note its effect; when they name a style, start from the recipes.
 
-**Scope & version:** v2.0-en (2026-08). Universal — nothing project- or person-specific. Prompt syntax is Seedance-2.x/Higgsfield-first with full cross-model profiles. Every rule carries a confidence label (🟢 verified/production-proven · 🟡 single-source · 🔴 marketing claim) and source tags; source conflicts are marked ⚠️, and [PP] marks first-party production evidence.
+**Scope & version:** v2.1-en (2026-08). Universal — nothing project- or person-specific. Prompt syntax is Seedance-2.x/Higgsfield-first with full cross-model profiles. Every rule carries a confidence label (🟢 verified/production-proven · 🟡 single-source · 🔴 marketing claim) and source tags; source conflicts are marked ⚠️, and [PP] marks first-party production evidence.
 
 ## Task routing — read exactly this, then act
 
@@ -23,7 +23,7 @@ Write, plan, and prompt AI-generated film so no shot looks AI-generated: design 
 | Any stylized look; any prompt that uses reference images; image-model mechanics | `references/style-control.md` |
 | Lint a script/shot for feasibility; assign models; rescue risky action; lighting-consistency check | `references/renderability.md` |
 | Cinematography/editing/light/color/dramaturgy advice; "how should this scene feel" | `references/film-craft.md` |
-| User wants a style starting point or names a director or DoP | `references/director-recipes.md` (21 director recipes + 9 DoP light/lens signatures) |
+| User wants a style starting point or names a director or DoP | `references/director-recipes.md` — selection index (brief signal → shortlist + constraint filter), 31 director recipes + 11 DoP signatures, each with a Verify line (the reroll gate for stills/takes) |
 | Pixar/3D-stylized projects | `references/pixar-look.md` (figure-anchor hard rule ch. 8, figure-less method ch. 9) |
 | Post, upscaling, music/voices, continuity ledger, legal/AI-disclosure | `references/post-audio-legal.md` |
 | First production task ever / "how does this all connect" | `references/worked-example.md` |
@@ -36,7 +36,7 @@ Chapter numbers are global IDs — "ch. 12" always means the block structure, wh
 2. **Plan in shots (4–12 s), generate in sequences** (15-s takes on Seedance 2.0 / 30-s on 2.5, 2–3 internal shots, explicit ENDING STATE; never a dramatic peak at a take's end).
 3. **Complexity budget per shot:** one main action + one camera move + max two characters; split across cuts.
 4. **Every video prompt uses the ch. 12 block structure** — standalone prompt in a code block, no style prefix, CAMERA in 3rd position, FOV in degrees, quantified values (km/h, %, Kelvin).
-5. **References: attach → address.** Every reference gets a job line + exclusions; end with an attachment checklist in upload order. Assets carry stable @names, verbatim everywhere.
+5. **References: attach → address.** Every reference gets a job line + exclusions; end with an attachment checklist in upload order. Assets carry stable @names, verbatim everywhere — approved shot anchors are registered as named elements too (`@anchor_1A`) and addressed by tag, never manually attached.
 6. **Write the visible:** micro-cues instead of emotion labels, cause before reaction, positive locks next to what they protect. Descriptions of appearance/emotion stay positive; prohibitions may be negative.
 7. **Red-list lint before delivery:** no readable in-frame text, no mirror beats, no hand close-up actions, no readable-face crowds, no hero physics — ellipsis over simulation; write a rescue cut for every kept risk.
 8. **Stylized 3D needs an anchor:** a figure in frame or the ch.-9 style-forcing blocks — a style word alone will be ignored.
@@ -60,7 +60,7 @@ Chapter numbers are global IDs — "ch. 12" always means the block structure, wh
 - `style-control.md` — style stack, GPT Image 2/Nano Banana mechanics, 15+ vocabularies, reference-integration protocol.
 - `renderability.md` — green/red lists, rescue paths, format matrix, lighting-consistency rule, model quick profiles.
 - `film-craft.md` — composition, camera, editing, light, color, timing, dramaturgy; the combination logic.
-- `director-recipes.md` — 21 director recipes + 9 DoP signatures + harmony map as optional starting points.
+- `director-recipes.md` — 31 director recipes + 11 DoP signatures + harmony map as optional starting points.
 - `genre-baselines.md` — 12 genre entry points with subgenres, craft defaults, recipe shortlists, and per-genre skill filters.
 - `pixar-look.md` — sourced Pixar look bible incl. figure-anchor rule and figure-less style forcing.
 - `worked-example.md` — compact end-to-end mini production.
