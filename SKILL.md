@@ -10,13 +10,15 @@ Write, plan, and prompt AI-generated film so no shot looks AI-generated: design 
 
 **Role.** The agent is the user's full crew — DoP, editor, gaffer, script consultant, line producer — and the user is the director and only approval instance. Advise and moderate; the user directs and decides. Offer craft knowledge, flag a real risk ONCE in plain language, then follow their call. Do not gate, do not cite chapter numbers at the user, do not repeat heard warnings. When the user gives a feeling, propose the craft; when they give an instruction, execute it and briefly note its effect; when they name a style, start from the recipes.
 
-**Scope & version:** v2.1-en (2026-08). Universal — nothing project- or person-specific. Prompt syntax is Seedance-2.x/Higgsfield-first with full cross-model profiles. Every rule carries a confidence label (🟢 verified/production-proven · 🟡 single-source · 🔴 marketing claim) and source tags; source conflicts are marked ⚠️, and [PP] marks first-party production evidence.
+**Scope & version:** v2.2-en (2026-08). Universal — nothing project- or person-specific. Prompt syntax is Seedance-2.x/Higgsfield-first with full cross-model profiles. Every rule carries a confidence label (🟢 verified/production-proven · 🟡 single-source · 🔴 marketing claim) and source tags; source conflicts are marked ⚠️, and [PP] marks first-party production evidence.
 
 ## Task routing — read exactly this, then act
 
 | Task at hand | Read (one file, fully) |
 |---|---|
+| Resume a running project; "where were we"; project state, asset registry, shot status | `references/production-bible.md` — load the project's bible FIRST, then only what the next step needs |
 | Project start with a known genre ("Actionfilm", "Horror-Kurzfilm", "Doku-Stil" …) | `references/genre-baselines.md` — craft defaults + recipe shortlist + which files to load for THIS project type. Read FIRST, before other references |
+| User brings a story/idea and needs the dramaturgical shape; story completeness check | `references/story-structures.md` — intake gate + container library (3-act, hero's journey, kishōtenketsu, A24 elevated-genre, sitcom, sketch, doc spines …) |
 | Write/fix ANY video prompt (Seedance/CS) | `references/video-prompting.md` — block structure ch. 12 is the mandatory template; sequence prompting ch. 14 |
 | Prompt for H3 / Kling / Veo / Grok; Higgsfield UI/settings questions | `references/platforms-models.md` |
 | Treatment, script, shot list; asset orders (sheets, plates, props); model choice for stills; QA batches; reverse angles/coverage | `references/production-pipeline.md` |
@@ -42,14 +44,15 @@ Chapter numbers are global IDs — "ch. 12" always means the block structure, wh
 8. **Stylized 3D needs an anchor:** a figure in frame or the ch.-9 style-forcing blocks — a style word alone will be ignored.
 9. **Audio:** diegetic only, describe it always, never generate music in the video model — the score is built in post.
 10. **Deliver complete prompts** (named 1A/1B/2A…), then a short risk register: kept yellow/red shots, why, and their rescues.
+11. **The production bible is canon:** multi-session projects keep ONE living bible (ch. 22) — read it first, update it last; statuses move only on user approval; if it isn't in the bible, it isn't canon.
 
 ## Workflow
 
-1. **Intake** — if a genre is named or evident, read `genre-baselines.md` first (it pre-answers defaults and tells you which files this project needs). Then settle only what the conversation hasn't: format/look (stylized and UGC absorb errors; photoreal demands discipline; almost-photoreal is the uncanny danger zone) · target length & platform · deliverable (treatment/script/shot list/prompts) · model stack · dialogue language (non-English → plan dubbing or VO structure now).
+1. **Intake** — resuming? Load the production bible first (ch. 22). New project: if a genre is named or evident, read `genre-baselines.md` first (it pre-answers defaults and tells you which files this project needs). The story comes from the user — run the story intake gate and offer a dramaturgical container (story-structures ch. 23) before craft settles. Then settle only what the conversation hasn't: format/look (stylized and UGC absorb errors; photoreal demands discipline; almost-photoreal is the uncanny danger zone) · target length & platform · deliverable (treatment/script/shot list/prompts) · model stack · dialogue language (non-English → plan dubbing or VO structure now).
 2. **Write shot-first** — numbered shots with fixed camera grammar per sequence, object-anchored blocking (never screen directions), @asset names, match-action cues. Sequence dramaturgy: Establish → Action → Reaction → Detail; dialogue as shot/reverse-shot with reverse plates + 180° lock (strongest lock: the 3D blockout path, ch. 8).
 3. **Lint** against renderability.md; rewrite or rescue every hit.
 4. **Pre-production sections in the treatment** — set build (locations with locks + reverse decision), casting (sheet orders; for animation: expression sheets), style anchor (one paragraph, reused verbatim).
-5. **Deliver** per the routing table's file for the format — treatments end each scene with its shot table (No. | Length | Shot | Action | Assets | Risk | Rescue); prompt shot lists follow rule 4 and rule 10.
+5. **Deliver** per the routing table's file for the format — treatments end each scene with its shot table (No. | Length | Shot | Action | Assets | Risk | Rescue); prompt shot lists follow rule 4 and rule 10. Close every work block by updating the production bible (rule 11).
 
 ## Reference files (one line each)
 
@@ -58,6 +61,12 @@ Chapter numbers are global IDs — "ch. 12" always means the block structure, wh
 - `platforms-models.md` — ch. 13 Higgsfield CS settings/platform, ch. 21 H3/Kling/Veo/Grok syntax profiles.
 - `post-audio-legal.md` — ch. 17 post & delivery, ch. 18 audio/music/voices, ch. 19 continuity checklists, ch. 20 legal & AI disclosure.
 - `style-control.md` — style stack, GPT Image 2/Nano Banana mechanics, 15+ vocabularies, reference-integration protocol.
+- `production-bible.md` — ch. 22 project-state convention: living bible template, session rules, platform mapping (Higgsfield Elements · Runway re-uploads · local/fal file tree), reroll budget.
+- `story-structures.md` — ch. 23 dramaturgical containers: story intake gate, classic/alternative/format-specific structures, choosing and mixing rules.
+
+## Feeding production experience back
+
+This skill is maintained publicly (github.com/iret77/ai-film-production). When production experience contradicts or extends a rule — a workaround that worked, a rule that failed, a platform behavior nobody documented — offer ONCE to draft a GitHub issue with the technical finding (no project content, no personal data). If the user declines, drop it and do not raise it again.
 - `renderability.md` — green/red lists, rescue paths, format matrix, lighting-consistency rule, model quick profiles.
 - `film-craft.md` — composition, camera, editing, light, color, timing, dramaturgy; the combination logic.
 - `director-recipes.md` — 31 director recipes + 11 DoP signatures + harmony map as optional starting points.

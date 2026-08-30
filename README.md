@@ -21,6 +21,8 @@ Optimized for a **Seedance 2.x / Higgsfield Cinema Studio 4.0** stills-first pip
 | `references/film-craft.md` | Model-independent film language: composition, camera, editing, light, color, timing, dramaturgy |
 | `references/director-recipes.md` | 31 director recipes + 11 DoP signatures; selection index (mood → shortlist, constraint filter, alias table), per-recipe Verify gates, harmony map |
 | `references/pixar-look.md` | Sourced Pixar look bible incl. figure-anchor rule and style-forcing method |
+| `references/production-bible.md` | Ch. 22: living project-state document — template, session rules, platform mapping |
+| `references/story-structures.md` | Ch. 23: dramaturgical containers — intake gate, classic/alternative/format-specific structures |
 | `references/worked-example.md` | Compact end-to-end mini production |
 
 ## Confidence system
@@ -35,7 +37,7 @@ Or do it by hand: package the repo as a skill (zip `SKILL.md` + `references/` wi
 
 ## Scope & versioning
 
-v2.1-en (2026-08). Universal — contains nothing project- or person-specific. Model capabilities, platform UIs, and pricing change fast; version-volatile facts are marked as such in the references and should be re-verified in the live platforms before production runs. This repository is the source of truth for the skill; lessons from production flow back here via commits.
+v2.2-en (2026-08). Universal — contains nothing project- or person-specific. Model capabilities, platform UIs, and pricing change fast; version-volatile facts are marked as such in the references and should be re-verified in the live platforms before production runs. This repository is the source of truth for the skill; lessons from production flow back here via commits.
 
 ## License
 

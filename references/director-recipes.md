@@ -15,7 +15,7 @@ Entry paths, in priority order:
 5. **Brief too vague to map** → micro-interview, max 3 questions, one at a time: one-word feeling? · fast or slow? · real or stylized? — then mood table + constraint filter, offer 2. Never dump the recipe list on the user.
 6. **No single recipe fits** ("something between X and Y") → synthesis: pick ONE base recipe, negotiate deviations dimension by dimension (the eight dimensions are the interview agenda), keep the base's Verify checks where undeviated. The two-package cap still applies.
 7. **Always before recommending:** run the constraint filter, then pick the DoP pairing from the harmony map (documented partnership first).
-8. **After the pick:** the chosen recipe (or synthesis) is written into the project's style-anchor paragraph (SKILL.md workflow step 4, reused verbatim in every prompt), and its Verify line joins the QA gate for stills and takes. The recipe is the bridge from story dialogue into preproduction — not a mood board.
+8. **After the pick:** the chosen recipe (or synthesis) is written into the project's style-anchor paragraph (SKILL.md workflow step 4, reused verbatim in every prompt), and its Verify line joins the QA gate for stills and takes. Record recipe + anchor in the production bible (ch. 22). The recipe is the bridge from story dialogue into preproduction — not a mood board.
 
 **Mood → shortlist:**
 | Brief signal (feel/tone words) | Candidates |

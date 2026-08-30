@@ -13,6 +13,7 @@ Source-tagged knowledge base. Confidence labels: 🟢 multi-source/official/prod
 🟢 **Approved anchor stills are assets too [PP]:** register every APPROVED shot anchor as a named element in the platform library (tag = shot ID: `@anchor_1A`), exactly like characters, locations, and props — video prompts then address it by tag instead of manual image attachment. Loose anchor images accumulate over a production and manual re-attachment becomes a growing error source (wrong version, wrong shot). Only the final approved anchor is registered; rejected variants never are.
 
 ## 2. Script & treatment for generability
+Before stage one: the story intake gate and container choice (story-structures ch. 23) — the story comes from the user; the container decision precedes the treatment.
 🟢 Write the script in stages: logline → ~10 candidate synopses (cheap ideation, pick one) → treatment → shot-level script. At each stage, run a renderability pass (renderability.md) and cut or rescue red elements — rescue cuts are a writing tool, not a defeat.
 🟢 **Complexity budget per take:** one primary event per shot; 2–3 shots per 15/30-s take with explicit labels ("Shot 1/2/3") and HARD CUT markers.
 🟢 Open on a hook (first 2 s earn the rest); write endings as their own beat with its own time range.
