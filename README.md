@@ -13,7 +13,7 @@ Optimized for a **Seedance 2.x / Higgsfield Cinema Studio 4.0** stills-first pip
 | `SKILL.md` | Entry point: task routing table, inline always-rules, 5-step workflow |
 | `references/genre-baselines.md` | 13 genre entry points (incl. Commercial/Ad): craft defaults, subgenres, recipe shortlists, per-genre skill filters |
 | `references/production-pipeline.md` | Ch. 1–11 + 16: pipeline principles, assets, QA, model choice, coverage ladder, interview production path (7b) |
-| `references/video-prompting.md` | Ch. 12 + 14: THE block-structure prompt template, cross-model adaptation, sequence prompting |
+| `references/video-prompting.md` | Ch. 12 + 14 + 14b: THE block-structure prompt template, cross-model adaptation, sequence prompting, Seedance 2.5 doctrine (reference-maximal control, edit suite, extension chains) |
 | `references/platforms-models.md` | Ch. 13 + 21: Higgsfield Cinema Studio, H3/Kling/Veo/Grok syntax profiles |
 | `references/post-audio-legal.md` | Ch. 17–20: post, audio/music/voices, continuity, legal & AI disclosure |
 | `references/style-control.md` | Style enforcement across image and video models, vocabularies, reference protocol |
@@ -38,7 +38,7 @@ Or do it by hand: package the repo as a skill (zip `SKILL.md` + `references/` wi
 
 ## Scope & versioning
 
-v2.2-en (2026-08). Universal — contains nothing project- or person-specific. Model capabilities, platform UIs, and pricing change fast; version-volatile facts are marked as such in the references and should be re-verified in the live platforms before production runs. This repository is the source of truth for the skill; lessons from production flow back here via commits.
+v2.3-en (2026-08). Universal — contains nothing project- or person-specific. Model capabilities, platform UIs, and pricing change fast; version-volatile facts are marked as such in the references and should be re-verified in the live platforms before production runs. This repository is the source of truth for the skill; lessons from production flow back here via commits.
 
 ## License
 
