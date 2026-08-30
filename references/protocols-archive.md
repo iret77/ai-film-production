@@ -6,7 +6,7 @@ Optional-read appendix: verbatim working protocols of the practitioner-video and
 
 # Quellen-Archiv: Rohprotokolle (Academy + P1–P16)
 
-Rohmaterial der Konsolidierung in pipeline.md. Nur bei Quellen-Rückfragen lesen.
+Rohmaterial der Konsolidierung in den Task-Dateien (production-pipeline / video-prompting / platforms-models / post-audio-legal). Nur bei Quellen-Rückfragen lesen.
 
 Quelle: higgsfield.ai/academy, Kurs „The AI Filmmaking Pipeline" (Volltext der Lektionen, Stand Aug 2026).
 
@@ -404,3 +404,33 @@ Quelle: YouTube DosWo7GplD4. Wertvoll als Entzauberung der „schönen" Sheets.
 - Charakter-Findung: MidJourney-Explore-Seite (Charaktere entdecken, Prompts sichtbar) → Edits dann in GPT Image/Banana (MJ editiert schlecht).
 - Crowd-Klone unabhängig bestätigt: Ein Bild mit vielen unterschiedlichen Gesichtern als Referenz würde die identischen Statisten fixen (deckt sich mit P6-Multi-Varianten-Sheet).
 - **Plattform-Ökonomie:** Runway, ArtList, Magnific, Higgsfield, LoomFlow etc. sind Aggregatoren derselben Modell-APIs — nach Preis wählen, nicht nach Features; Modellverhalten ist plattformunabhängig identisch.
+
+---
+
+## Praxis-Protokoll 17: Pixar-Animations-Kurzfilm mit Seedance 2.5 (Creator-Tutorial, Volltranskript) — nur Deltas
+
+Quelle: YouTube-Tutorial (Klassenzimmer-Kurzfilm "This is my family", Seedance 2.5 + Higgsfield). Bestätigt weitgehend P1–P16 + [PP]; hier nur Neues:
+
+- **Voice-Harvest-Workflow (Kernstück):** Die erste Generation setzt die Stimm-Baseline pro Charakter — Konsistenz danach ist die eigentliche Herausforderung. Fix: alle Sprechzeilen eines Charakters aus den Takes schneiden, pro Charakter zu EINER Referenz kompilieren (kombiniert <30 s), als **MP4 mit Schwarzbild exportieren (nicht MP3)** und als Video-Referenz neben dem Character-Sheet an jede Folge-Generation hängen → Stimmen halten über Generationen und Extends.
+- **Animations-Sheet-Variante:** Für Animation funktioniert das übliche Multi-View-Sheet schlechter — animierte Videos tragen viel mehr Mimik als Cinematic. Layout: Full-Body-Pose + 8 Expression-Panels.
+- **Seedream 5.0 Pro** auf Higgsfield verfügbar; lieferte für ein Character-Sheet das beste Ergebnis (Einzelfall). GPT Image 2: Grain-/Noise-Tell bei stilisierten Renders — Grund für Nano Banana Pro bei der Location.
+- **Mix and match pro Asset:** Kein Bildmodell gewinnt projektweit; pro Asset vergleichen. "Credits for images are quite cheap — spend more time getting the best image than trying to fix it with your video generations."
+- **Doppel-Generierung bei 30-s-Takes:** Zwei Batches desselben Prompts, beste Teile über Generationen schneiden (Beispiel: Tür-Durchbruch aus Take 2 ersetzt Wand-Glitch aus Take 1). Aber: erste Generation komplett Müll → Prompt überarbeiten, nicht erneut würfeln.
+- **Style-Reverse-Engineering:** Referenzen zuerst vom LLM analysieren lassen (Hauttexturen, Materialien) → wiederverwendbare Basis-Prompt-Struktur; pro Charakter mit weiteren Referenzen iterieren ("rinse and repeat").
+- Extend-UI: Richtungswahl **Sequel/Prequel**; Referenzen erneut anhängen, Dauer angeben (~29–30 s), nahtlose Fortsetzung bestätigt.
+- 12-Segment-Charakter-Prompt-Format (Face/Subject/Skin/Hands/Silhouette/Hair/Wardrobe/Pose/Camera/Background) als Portrait-Variante.
+- Finger-Zählen-Szene scheiterte teilweise (falsche Fingerzahl) — bestätigt die Hände-Regel der Roten Liste auch in 2.5.
+
+---
+
+## Praxis-Protokoll 18: Blender-Blockout-Workflow mit Higgsfield-Plugin (Adil, Volltranskript) — nur Deltas
+
+Quelle: YouTube OiULPvTJ-0E. Neuer Produktionspfad: 3D-Blocking in Blender steuert Seedance-Kamera exakt.
+
+- **Setup:** Higgsfield-Plugin (frei) + Bridge-URL als LLM-Connector + Plugin in Blender ziehen; Higgsfield-Panel im Viewport (Assets/Modelle/Szenen direkt einsetzbar). Empfehlung des Creators: Cowork-Modus, Reasoning hoch.
+- **Kern-Workflow:** Szene + Shotliste in Sprache → LLM baut editierbare Gray-Boxes, Kamera-Rails, Cuts → Iteration in Sprache ("mehr Handheld", "Textur", "Scene 3 recutten") → Viewport-Render 1080p/24/MP4 → Render anhängen + "write a 30-second prompt based on this video blocking, second by second matching the camera moves" → Generation mit Dauer = Blocking-Länge.
+- **Belegte Ergebnisse:** Orbit→Profil→Top-Down in einem Move · Floor-Rise · Robo-Arm-Whip — first try; 6-Personen-Dialog, 4 Cuts, 30 s, null Platztausch, jede Line auf dem richtigen Gesicht. Identischer Prompt OHNE Blockout: Platztausch pro Take, 180°-Bruch, ~5.000 Credits ohne brauchbaren Take.
+- **Gray-Box-Regeln:** Blockout = Kamera+Timing, Referenzen = Visuals (Trennung im Prompt benennen). Unblockbares (Flüssigkeit) schwarz/leer lassen — Modell füllt. Kamera folgt separatem Offset-Target neben dem Kopf (Realismus). Handheld als subtiler Nach-Pass. Pfad mit Kontrollpunkten ist drag-editierbar — Winkel in Blender ziehen statt reprompten.
+- **Zwei-Hälften-Prinzip:** Struktur-Hälfte (Blocking-Video: Cuts/Kamera/Timing, unveränderlich) + Stil-Hälfte (Welt). Client-Notes → Blocking recutten; Restyle → Stil-Hälfte tauschen: ein Edit als 2.5D / 2D ink / Toy-Box-3D, Kamera frame-identisch. Pitch: drei Welten auf einem approbierten Edit an einem Tag.
+- Previs-Framing: entspricht Studio-Previs (Kamerapositionen, Schulter-Frames, Eyelines vor dem ersten Licht) — als Ein-Satz-Auftrag.
+- Speed-Ramps über Blocking-Änderung statt Prompt ("slams in, pauses, accelerates into next cut") — Cut gleitet auf der Rampe.

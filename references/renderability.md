@@ -1,6 +1,6 @@
 # Renderability: Green/Red Lists, Formats, Model Profiles
 
-What current video models render reliably vs. what fails. Confidence labels as in pipeline.md.
+What current video models render reliably vs. what fails. Confidence labels as in production-pipeline.md.
 
 ## 1. Green list (reliable)
 Single-subject action with one camera move · dialogue in shot/reverse-shot coverage · weather, fog, dust, embers · fire/water/smoke as atmosphere (not as hero physics) · slow reveals · stylized 3D (most forgiving discipline) · high-action anime · UGC/handheld realism · reflections and light rhythm across cuts (Seedance 2.5) · macro/product turns · creatures from image references.
@@ -8,8 +8,8 @@ Single-subject action with one camera move · dialogue in shot/reverse-shot cove
 ## 2. Red/yellow list (avoid or mitigate)
 | Element | Failure | Mitigation |
 |---|---|---|
-| **In-frame text — unified rule** | Text, logos, subtitles, formulas render as scribble or drift between frames | Default: ALL exact on-screen text goes to post-compositing (officially confirmed by the model vendor's guide). Two documented exceptions: (a) **static short text locked via master plate** — content frozen in the reference image + prompt lock "exactly this one line, frozen and identical in every frame" (production-proven, pipeline ch. 13); (b) 🟡 MiniMax H3 renders UI/text comparatively stably (single-source claim — test before relying). Dynamic/changing text stays red everywhere. |
-| Crowds | Clone extras, melting faces in distance | Multi-variant sheet (ch. 3); crowds to mid/background; small faces stay unreliable even at high res |
+| **In-frame text — unified rule** | Text, logos, subtitles, formulas render as scribble or drift between frames | Default: ALL exact on-screen text goes to post-compositing (officially confirmed by the model vendor's guide). Two documented exceptions: (a) **static short text locked via master plate** — content frozen in the reference image + prompt lock "exactly this one line, frozen and identical in every frame" (production-proven, platforms-models ch. 13); (b) 🟡 MiniMax H3 renders UI/text comparatively stably (single-source claim — test before relying). Dynamic/changing text stays red everywhere. |
+| Crowds | Clone extras, melting faces in distance | Multi-variant sheet (production-pipeline ch. 3); crowds to mid/background; small faces stay unreliable even at high res |
 | Hands + fine object manipulation | Finger errors, object morphing | Close-ups short; handling invariants as CRITICAL block ("ALWAYS by the handle") |
 | Vehicles/wheels/mechanics | Wrong rotation, illogical mechanics | See rescue paths below |
 | Long continuous camera moves | Collapse after several moves (proven in 2.5 too) | One move per shot; cuts instead of tours |
@@ -17,7 +17,7 @@ Single-subject action with one camera move · dialogue in shot/reverse-shot cove
 | Physics as hero (glass shattering exactly, complex fluid pours) | Plausible-but-wrong | Describe end state; hide peak behind cut |
 
 ## 3. Rescue paths for red/yellow action elements
-- **Fights/multi-person action:** never one long choreography. Decompose into **attack–reaction beats as separate short clips** (attack = clip, reaction = clip), characters locked via references; the EDIT is the fight choreography. Write contacts + settling per beat (ch. 14).
+- **Fights/multi-person action:** never one long choreography. Decompose into **attack–reaction beats as separate short clips** (attack = clip, reaction = clip), characters locked via references; the EDIT is the fight choreography. Write contacts + settling per beat (video-prompting ch. 14).
 - **Vehicles/wheels:** hide wheel rotation — night/rain (motivated motion blur), framing above wheel height, parallel tracking (wheel detail unreadable), cockpit coverage; wheel close-ups only as short beats with water/mud eruption as distraction.
 - **Subject vs. camera motion:** never combine opposing directions (subject runs right + dolly-in = mush) — one motion direction dominates per shot.
 - **Animals:** short single beats, no long behavior chains; image reference instead of species name for fantasy/hybrid creatures.
@@ -55,4 +55,4 @@ Memory hook: a phase instruction only wins when no contradicting brightness word
 | **Sora 2** | Physics coherence benchmark | Being wound down; don't build pipelines on it |
 | **PixVerse** | Fast social iteration, transition mode | Not for long-form/high-end |
 
-No universal winner: run the motion ladder (ch. 19) per style/model before committing.
+No universal winner: run the motion ladder (post-audio-legal ch. 19) per style/model before committing.

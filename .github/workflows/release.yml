@@ -1,0 +1,68 @@
+name: Package skill release
+
+# Builds the upload-ready skill package and attaches it to the GitHub Release,
+# so `releases/latest/download/ai-film-production.zip` always resolves to the
+# newest version. Triggered by pushing a version tag (e.g. `git tag v2.0 && git
+# push origin v2.0`), or manually against an existing tag.
+
+on:
+  push:
+    tags:
+      - 'v*'
+  workflow_dispatch:
+    inputs:
+      tag:
+        description: 'Existing tag to (re)build and release, e.g. v2.0'
+        required: true
+        type: string
+
+permissions:
+  contents: write
+
+jobs:
+  package:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Resolve tag
+        id: meta
+        run: |
+          if [ "${{ github.event_name }}" = "workflow_dispatch" ]; then
+            echo "tag=${{ github.event.inputs.tag }}" >> "$GITHUB_OUTPUT"
+          else
+            echo "tag=${GITHUB_REF_NAME}" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Build ai-film-production.zip
+        run: |
+          set -euo pipefail
+          name=ai-film-production
+          stage="$(mktemp -d)"
+          mkdir -p "$stage/$name"
+          # Everything the skill ships with, wrapped in a top-level
+          # `ai-film-production/` folder (the layout Claude's upload expects).
+          # Repo-only machinery (git, CI, build artefacts) is excluded.
+          rsync -a \
+            --exclude='.git' \
+            --exclude='.github' \
+            --exclude='*.zip' \
+            ./ "$stage/$name/"
+          ( cd "$stage" && zip -r -X "$GITHUB_WORKSPACE/$name.zip" "$name" )
+          echo "--- package contents ---"
+          unzip -l "$name.zip"
+
+      - name: Publish release asset
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          set -euo pipefail
+          tag="${{ steps.meta.outputs.tag }}"
+          if gh release view "$tag" >/dev/null 2>&1; then
+            gh release upload "$tag" ai-film-production.zip --clobber
+          else
+            gh release create "$tag" ai-film-production.zip \
+              --title "$tag" \
+              --notes "Upload-ready skill package \`ai-film-production.zip\` attached below. See the README for install instructions."
+          fi
