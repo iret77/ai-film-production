@@ -10,7 +10,7 @@ Optimized for a **Seedance 2.x / Higgsfield Cinema Studio 4.0** stills-first pip
 
 | File | Role |
 |---|---|
-| `SKILL.md` | Entry point: task routing table, inline always-rules, 5-step workflow |
+| `SKILL.md` | Entry point: task routing table, 14 inline always-rules, the mandatory per-prompt checklist, 5-step project workflow |
 | `references/genre-baselines.md` | 13 genre entry points (incl. Commercial/Ad): craft defaults, subgenres, recipe shortlists, per-genre skill filters |
 | `references/production-pipeline.md` | Ch. 1–11 + 16: pipeline principles, assets, QA, model choice, coverage ladder, interview production path (7b) |
 | `references/video-prompting.md` | Ch. 12 + 14 + 14b: THE block-structure prompt template, cross-model adaptation, sequence prompting, Seedance 2.5 doctrine (reference-maximal control, edit suite, extension chains) |
