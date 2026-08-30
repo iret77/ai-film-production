@@ -10,7 +10,7 @@ Gaps → targeted questions, one at a time. Never develop story unasked; when th
 
 ## 23b. Classic containers
 
-**Hollywood three-act** — Shape: setup (world + want, inciting incident ~10–15%) → confrontation (rising obstacles, midpoint reversal, all-is-lost) → resolution (climax, new equilibrium). Beat-sheet refinements (Save-the-Cat-style percentages) are optional scaffolding on top. Fits: the default for narrative 5 min+; audiences parse it without effort. Signals: clear goal, clear opposition. AI note: act structure maps 1:1 onto sequence planning; the midpoint reversal is the natural place for a look/palette shift (film-craft color arc).
+**Hollywood three-act (Syd Field's paradigm)** — Shape: setup (world + want, inciting incident ~10–15%) → **Plot Point I** (the event that flings into act 2) → confrontation (rising obstacles, midpoint reversal, all-is-lost) → **Plot Point II** (triggers the ending — Wilder's second-act curtain) → resolution (climax, new equilibrium). Beat-sheet refinements (Save-the-Cat-style percentages) are optional scaffolding on top. Fits: the default for narrative 5 min+; audiences parse it without effort. Signals: clear goal, clear opposition. AI note: act structure maps 1:1 onto sequence planning; the midpoint reversal is the natural place for a look/palette shift (film-craft color arc).
 
 **Hero's journey (monomyth)** — Shape: departure (ordinary world, call, refusal, mentor, threshold) → initiation (trials, ordeal, reward) → return (transformed, elixir). Star Wars is the canonical execution. Fits: myth, adventure, fantasy, transformation arcs, family animation (want-vs-need maps onto it). Signals: a world to cross into; a protagonist who must change. AI note: the threshold crossings are your biggest set-piece/look changes — budget new location assets per world, not per scene.
 
@@ -42,7 +42,23 @@ Gaps → targeted questions, one at a time. Never develop story unasked; when th
 
 **Music video / commercial** — concept-repetition-escalation, beat-locked; full defaults live in the Music film and Commercial/Ad baselines (genre-baselines.md) — this file only reminds: these formats may skip narrative entirely; ONE committed visual concept outperforms a compressed plot.
 
-## 23e. Choosing (and mixing)
+## 23e. Masters' rules (sourced pearls — apply as lints, don't recite)
+
+🟢 **The causation test (Parker/Stone, NYU writing seminar 2014):** take the outline beats — if "and then" fits between two beats, "you're fucked; you've got something pretty boring." Between every pair of beats must fit **"therefore"** or **"but"** (consequence or reversal). Run it mechanically over every outline and treatment at ch.-2 stage; an "and then" seam is a cut candidate or a missing turn.
+
+🟢 **The three scene questions (Mamet, memo to The Unit writers):** every scene must answer — **who wants what? · what happens if they don't get it? · why now?** A scene that answers none is information, not drama — and "the audience tunes in for drama, not information": move exposition into conflict or cut it. Use as the scene-level lint after the causation test passes at beat level.
+
+🟢 **Wilder's rules (via Cameron Crowe, Conversations with Wilder) — the five with teeth here:** a clean line of action for the protagonist (one traceable want through the whole film) · **a third-act problem is really a first-act problem** (fix setup, not climax) · the Lubitsch 2+2: let the audience add it up — never show the four (elegance = hidden plot mechanics; ellipsis is also the AI rescue tool, so this pearl pays twice) · the second-act curtain triggers the ending (plant the trigger consciously) · act three builds, then STOPS — don't hang around after the last event. **Plus the VO law:** voice-over must ADD to the image, never describe what the audience already sees — the binding rule for every VO-driven container (mosaic, Scorsese momentum, doc spines).
+
+🟢 **Non-submersible units (Kubrick):** design the film as ~6–8 indestructible sequence blocks — each one so strong it survives on its own — and keep the connective tissue between them minimal. For AI production this is doctrine, not metaphor: it IS sequence-first planning (SKILL rule 2) — invest story and reroll budget in the units, bridge between them with ellipsis.
+
+🟢 **The value turn (McKee, Story):** a scene earns its place only if a value charge FLIPS across it (safe→threatened, hope→despair, together→alone); no flip, no scene. The cutting corollary to Mamet's three questions — run both, they catch different failures.
+
+🟢 **The premise (Egri, The Art of Dramatic Writing):** one sentence — "X leads to Y" — that the ENDING proves. Settle it at intake; every container above is only the delivery mechanism for a proven premise, and an unprovable premise is the earliest, cheapest rewrite you will ever get.
+
+(The cutting-room counterpart — Murch's Rule of Six, emotion above all — lives in film-craft §4.)
+
+## 23f. Choosing (and mixing)
 
 1. Intake gate first (23a) — an incomplete story fits no container.
 2. Format + genre narrow the field (a 30-s spot never gets a hero's journey; a series gets the sitcom/series shape).
