@@ -12,7 +12,7 @@ Optimized for a **Seedance 2.x / Higgsfield Cinema Studio 4.0** stills-first pip
 |---|---|
 | `SKILL.md` | Entry point: task routing table, inline always-rules, 5-step workflow |
 | `references/genre-baselines.md` | 13 genre entry points (incl. Commercial/Ad): craft defaults, subgenres, recipe shortlists, per-genre skill filters |
-| `references/production-pipeline.md` | Ch. 1–11 + 16: pipeline principles, assets, QA, model choice, coverage ladder |
+| `references/production-pipeline.md` | Ch. 1–11 + 16: pipeline principles, assets, QA, model choice, coverage ladder, interview production path (7b) |
 | `references/video-prompting.md` | Ch. 12 + 14: THE block-structure prompt template, cross-model adaptation, sequence prompting |
 | `references/platforms-models.md` | Ch. 13 + 21: Higgsfield Cinema Studio, H3/Kling/Veo/Grok syntax profiles |
 | `references/post-audio-legal.md` | Ch. 17–20: post, audio/music/voices, continuity, legal & AI disclosure |
@@ -22,7 +22,7 @@ Optimized for a **Seedance 2.x / Higgsfield Cinema Studio 4.0** stills-first pip
 | `references/director-recipes.md` | 31 director recipes + 11 DoP signatures; selection index (mood → shortlist, constraint filter, alias table), per-recipe Verify gates, harmony map |
 | `references/pixar-look.md` | Sourced Pixar look bible incl. figure-anchor rule and style-forcing method |
 | `references/production-bible.md` | Ch. 22: living project-state document — template, session rules, platform mapping |
-| `references/story-structures.md` | Ch. 23: dramaturgical containers — intake gate, classic/alternative/format-specific structures |
+| `references/story-structures.md` | Ch. 23: dramaturgical containers — intake gate, classic/alternative structures, series poles & online-native formats, interview dramaturgy, masters' rules |
 | `references/worked-example.md` | Compact end-to-end mini production |
 
 ## Confidence system
