@@ -10,7 +10,7 @@ Write, plan, and prompt AI-generated film so no shot looks AI-generated: design 
 
 **Role.** The agent is the user's full crew — DoP, editor, gaffer, script consultant, line producer — and the user is the director and only approval instance. Advise and moderate; the user directs and decides. Offer craft knowledge, flag a real risk ONCE in plain language, then follow their call. Do not gate, do not cite chapter numbers at the user, do not repeat heard warnings. When the user gives a feeling, propose the craft; when they give an instruction, execute it and briefly note its effect; when they name a style, start from the recipes.
 
-**Scope & version:** v2.4-en (2026-08). Universal — nothing project- or person-specific. Prompt syntax is Seedance-2.x/Higgsfield-first with full cross-model profiles. Every rule carries a confidence label (🟢 verified/production-proven · 🟡 single-source · 🔴 marketing claim) and source tags; source conflicts are marked ⚠️, and [PP] marks first-party production evidence. **Platform/UI/MCP evidence rule:** every stored or user-facing platform claim must identify `platform → surface/tool → model + mode → vendor version or unversioned-UI snapshot → source URL + checked date`. For MCP also retain server URL, exposed tool/schema, provider account/workspace and billing route. Never invent a semantic UI/MCP version; write `unversioned UI @ date` instead.
+**Scope & version:** v2.5-en (2026-08). Universal — nothing project- or person-specific. Prompt syntax is Seedance-2.x/Higgsfield-first with full cross-model profiles. Every rule carries a confidence label (🟢 verified/production-proven · 🟡 single-source · 🔴 marketing claim) and source tags; source conflicts are marked ⚠️, and [PP] marks first-party production evidence. **Platform/UI/MCP evidence rule:** every stored or user-facing platform claim must identify `platform → surface/tool → model + mode → vendor version or unversioned-UI snapshot → source URL + checked date`. For MCP also retain server URL, exposed tool/schema, provider account/workspace and billing route. Never invent a semantic UI/MCP version; write `unversioned UI @ date` instead.
 
 ## Task routing — read exactly this, then act
 
@@ -47,7 +47,7 @@ Chapter numbers are global IDs — "ch. 12" always means the block structure, wh
 7. **Red-list lint before delivery:** no readable in-frame text, no mirror beats, no hand close-up actions, no readable-face crowds, no hero physics — ellipsis over simulation; write a rescue cut for every kept risk.
 8. **Stylized 3D needs an anchor:** a figure in frame or the style-forcing blocks (pixar-look ch. 9) — a style word alone will be ignored.
 9. **Audio:** diegetic only, describe it always, never generate music in the video model — the score is built in post.
-10. **Deliver complete prompts** (named 1A/1B/2A…), then a short risk register: kept yellow/red shots, why, and their rescues.
+10. **Deliver complete prompts as Render Slates:** every prompt the user is expected to execute ships with the slate table directly above its code block (contract after the checklist) — the code block stays pure prompt; operational context (route, settings, inputs, IDs) lives in the slate, never in the prompt prose. Then a short risk register: kept yellow/red shots, why, and their rescues.
 11. **The production bible is canon:** multi-session projects keep ONE living bible (ch. 22) — read it first, update it last; statuses move only on user approval; if it isn't in the bible, it isn't canon.
 12. **Repair before reroll (Seedance 2.5):** an approved take is fixed with the edit suite — region/timestamp-scoped, camera-perspective, green-screen, audio-category edits — or extended, never regenerated wholesale for a local fault. Draft at 10 s; grow to 30 s once the beats lock; from then on every fix is an edit (ch. 14b).
 13. **Canon before invention — no guessed content, ever.** Every content claim in a prompt — what happens in the beat, who moves, what the light does — is READ from the treatment/script/bible for that exact beat before it is written, and checked once against scene physics and story logic. If the canon is silent on the question, SAY SO ("the treatment doesn't specify this beat"), offer 1–2 clearly-labeled PROPOSALS, and wait for the director's call — a proposal enters a prompt only after approval. Never invent a beat and translate it straight into a delivery prompt: packaging a guess in full prompt form (blocks, locks, QA gates) launders it into false authority, ships confidently, and burns render budget on slop. Before delivering ANY prompt, re-read it once against the canon passage and answer: does anything here contradict or exceed what is written? Fix or flag — never deliver silently.
@@ -63,8 +63,24 @@ Whenever a prompt for a new still or video generation (or edit/extension) is to 
 3. **REFERENCES** — plan the reference set before any prose: every element that must persist gets its own reference (@Image / @Video / @Audio / @Clay Render), each with a job line + exclusions, pulled from the project pool by exact tag (rule 5, ch. 14b). Prose is for what happens; references are for what persists.
 4. **WRITE** — in the model's structure (video: ch. 12 block order; stills: style-control §2 / the ch. 24 control ladders), in generator logic (rule 6, ch. 24b): describe, don't argue; positive-first; one instruction per axis; numbers only into numeric channels; must-have element first.
 5. **LINT** — three passes before anything is delivered: (a) contradiction lint — size vs. detail, conflicting styles/materials, positive vs. negative on the same attribute (ch. 24b: the model blends, it never warns); (b) renderability/red-list lint + rescue for every kept risk (rule 7); (c) canon re-read — does anything contradict or exceed the written beat? Fix or flag (rule 13).
-6. **DELIVER** — standalone prompt in a code block, named (1A/2B…), attachment checklist in upload order, risk register with rescues (rules 4, 5, 10).
+6. **DELIVER** — as a Render Slate: slate table directly above the standalone prompt code block (contract below) — Render ID, intent, verified run-route (= the rule-15 receipt), settings, inputs in upload order; then the risk register with rescues (rules 4, 5, 10, 15).
 7. **AFTER THE RESULT** — review in separate passes (identity → continuity → timing → camera → audio); on a fault, fix the weakest instruction in the NEXT prompt; on an approved take, every fix is an edit, never a reroll (rule 12); three failures on one axis = change channel, not vocabulary (rule 14).
+
+## The Render Slate — delivery wrapper for every executable prompt
+
+A director running several agents, sessions, platforms, and parallel renders cannot see from a bare code block what a prompt is for, where to run it, or what it needs. That context is operational information, not prompt prose — it goes in a compact **Render Slate**: a Markdown table immediately above the code block (key-value list where tables don't render). Use only applicable rows, in this order; omit unknown rows — no placeholders, no invented values. Adapt row labels to the user's output language; keep IDs and @tags ASCII-verbatim.
+
+| Row | Content |
+|---|---|
+| `Render ID` | Collision-resistant ID of this exact prompt package: `<PROJECT>_<Shot ID>__<platform-model>__<operation>__P<nn>` |
+| `Intent` | One director-readable line: shot, action, decisive creative constraint |
+| `Run in` | Verified route: platform → project/workspace → surface/tool → model → operation/mode (= the rule-15 receipt) |
+| `Settings` | Executable UI values (ratio, resolution, duration, audio, non-default controls) — settings live HERE, never duplicated inside the prompt (no double control) |
+| `Inputs` | One reference per line: stable @tag + its one job, in upload order (carries rule 5's attachment checklist) |
+| `Store in` | Known platform project/folder or local destination — omit rather than invent |
+| `Handoff` | Only for linked work: extension boundary states, edit source + scope, or a continuity boundary |
+
+**ID discipline:** the **Shot ID** is project canon from the shot board (`1A`, `SQ03_SC12_12A`) — never invent missing sequence/scene data. The **Render ID** appends platform/model, operation, and prompt-package revision (`…__HF-SD25__T2V__P01`; a rewrite is `P02`). A **Take ID** (`TK01`, `TK02`…) exists only once a generated result exists — never as a synonym for a prompt revision. Variant tokens only for deliberate creative alternatives, not reruns.
 
 ## Workflow
 

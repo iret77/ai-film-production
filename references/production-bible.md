@@ -53,6 +53,7 @@ becomes an @anchor_* entry (production-pipeline ch. 1).
 | 1A | 8s | final | @anchor_1A | HF-CS4@2026-08-31 | — | 3 |
 | 1B | 6s | stills | @anchor_1B | … | hands close-up → cut to reaction | 0 |
 Status ladder: planned → stills (approved still exists) → take (approved take) → final (in edit).
+ID discipline (SKILL.md Render Slate): Shot ID = canon here; Render IDs (`…__P01`) identify prompt-package revisions; Take IDs (`TK01`…) exist only for generated results — "Takes used" counts Take IDs, never prompt revisions.
 
 ## 5 · Reroll budget & spend priorities
 Planned takes per shot class: standard … · face/emotion peaks … · long takes/oners …
