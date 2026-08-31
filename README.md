@@ -110,7 +110,7 @@ No rule ships without a label: 🟢 verified across sources / official / product
 
 ## Versioning
 
-v2.5-en (2026-08). Universal — contains nothing project- or person-specific. This repository is the source of truth for the skill; lessons from production flow back here via commits, and every release ships an upload-ready `.skill` package.
+v2.6-en (2026-08). Universal — contains nothing project- or person-specific. This repository is the source of truth for the skill; lessons from production flow back here via commits, and every release ships an upload-ready `.skill` package.
 
 ## License
 
