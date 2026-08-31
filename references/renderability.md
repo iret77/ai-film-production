@@ -52,7 +52,6 @@ Memory hook: a phase instruction only wins when no contradicting brightness word
 | **MiniMax H3 (Hailuo 3)** | 2D/anime line quality, stable on-screen text/UI 🟡, LoRA style lock, physics (passes glass test), cheap, up to 2K | Plastic under realism demands, audio loops, one beat per shot, weak IP moderation (legally risky) |
 | **Grok Imagine 1.5** | Native stylization bias (anime/cartoon/art-directed), fast, cheap, native audio | Drifts cartoonish on photoreal intent; negatives unreliable; 720p cap (1080p in modes) |
 | **Wan 2.6** | Open-weight, LoRA, multi-shot, reference-to-video, 1080p, budget | Less polished than top class |
-| **Sora 2** | Physics coherence benchmark | Being wound down; don't build pipelines on it |
 | **PixVerse** | Fast social iteration, transition mode | Not for long-form/high-end |
 
 No universal winner: run the motion ladder (post-audio-legal ch. 19) per style/model before committing.

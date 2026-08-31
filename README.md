@@ -55,7 +55,7 @@ The skill triggers on its own whenever the production path is clearly generative
 
 ## What's inside
 
-**25 chapters · 14 always-on rules · a 7-step per-prompt checklist · 9 workflow runbooks · 13 genre baselines · 31 director recipes + 11 DoP signatures · 15+ style vocabularies · 6 video models profiled.**
+**25 chapters · 15 always-on rules · a 7-step per-prompt checklist · 9 workflow runbooks · 13 genre baselines · 31 director recipes + 11 DoP signatures · 15+ style vocabularies · 6 video models profiled.**
 
 - **Direction & craft** — model-independent film language (composition, editing, light, color, dramaturgy), director and DoP recipes with per-recipe verify gates, genre entry points, story structures from three-act to kishōtenketsu.
 - **Prompting method** — the block-structure prompt template with camera-third ordering and FOV-in-degrees discipline; how image models actually read prompts (position, scale, count, negation — with the research receipts); style enforcement that survives more than one shot.
@@ -92,6 +92,7 @@ No rule ships without a label: 🟢 verified across sources / official / product
 | `references/production-pipeline.md` | Ch. 1–11 + 16: pipeline principles, assets, QA, model choice, coverage ladder, interview production path (7b) |
 | `references/video-prompting.md` | Ch. 12 + 14 + 14b: THE block-structure prompt template, cross-model adaptation, sequence prompting, Seedance 2.5 doctrine (reference-maximal control, edit suite, extension chains) |
 | `references/platforms-models.md` | Ch. 13 + 21: Higgsfield Cinema Studio, H3/Kling/Veo/Grok syntax profiles |
+| `references/platform-ui-workflows.md` | Current, source-linked UI/workflow reference and version ledger: which web/MCP/ChatGPT surface owns each selectable setting in Higgsfield, fal.ai, Runway, OpenArt, Arcads, and GPT Image 2; plus re-verification rules |
 | `references/post-audio-legal.md` | Ch. 17–20: post, audio/music/voices, continuity, legal & AI disclosure |
 | `references/style-control.md` | Style enforcement across image and video models, vocabularies, reference protocol |
 | `references/image-model-logic.md` | Ch. 24: how generators read prompts — writing contract, position/scale/count/negation recipes, mask strictness per platform |

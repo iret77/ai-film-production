@@ -1,6 +1,6 @@
 # Workflows: The Typical Jobs, as Runbooks (ch. 25)
 
-Named, ordered procedures for the recurring jobs of an AI-film production. They add NO new rules — they chain the existing chapters into the order that has proven to work, so a session never improvises the sequence. Every step that writes a prompt runs the per-prompt checklist (SKILL.md); every workflow ends by updating the production bible where the project keeps one (rule 11). Pick the workflow by trigger; if two apply, run the earlier-numbered one first.
+Named, ordered procedures for the recurring jobs of an AI-film production. They add NO new rules — they chain the existing chapters into the order that has proven to work, so a session never improvises the sequence. Every step that writes a prompt runs the per-prompt checklist (SKILL.md); every workflow ends by updating the production bible where the project keeps one (rule 11). Every external generation/edit first receives a platform receipt (`platform → route → surface/tool → model + mode → version/snapshot → source/check date → workspace`) in that bible. Pick the workflow by trigger; if two apply, run the earlier-numbered one first.
 
 ## W1 — New project (trigger: a new film/short/ad/social video begins)
 1. Genre named or evident? Read `genre-baselines.md` FIRST — it pre-answers craft defaults and names the files THIS project type needs.
@@ -19,11 +19,12 @@ Exit: bible exists, container chosen, look decided, model stack named.
 Exit: every element the script needs exists as an approved, tagged reference; bible asset registry updated.
 
 ## W3 — Produce one shot (trigger: a numbered shot needs its first take)
-1. CANON: read the beat in treatment/script/bible (rule 13).
-2. Lint the shot against `renderability.md` (red list) — rewrite or attach a rescue BEFORE spending a render.
-3. Stills-first: generate the shot's still (per-prompt checklist; style mechanics per style-control) → user approves → register as `@anchor_<shot>`.
-4. Motion test at draft resolution (480/720p, 10 s) from the anchor; judge with the recipe's Verify line + shot criteria (review loop, ch. 1).
-5. Production take only after the motion test sits: target resolution, full duration. A defect accepted at the still stage propagates — surface that trade-off, the user decides.
+1. ROUTE RECEIPT: record the exact platform, access route, active surface/tool, model + mode/endpoint, vendor version or dated UI snapshot, source/check date and account/workspace. Do not choose controls until this exists.
+2. CANON: read the beat in treatment/script/bible (rule 13).
+3. Lint the shot against `renderability.md` (red list) — rewrite or attach a rescue BEFORE spending a render.
+4. Stills-first: generate the shot's still (per-prompt checklist; style mechanics per style-control) → user approves → register as `@anchor_<shot>`.
+5. Motion test at draft resolution (480/720p, 10 s) from the anchor; judge with the recipe's Verify line + shot criteria (review loop, ch. 1).
+6. Production take only after the motion test sits: target resolution, full duration. A defect accepted at the still stage propagates — surface that trade-off, the user decides.
 Exit: approved take; anchor + statuses in the bible.
 
 ## W4 — Build a scene/sequence (trigger: several shots of one scene; anything longer than one take)
@@ -46,7 +47,7 @@ Never reroll wholesale (rule 12). Route by fault:
 | Too short / scene continues | `video_extension` with boundary-frame contract (ch. 14b) |
 | Fault is global (style, light, physics everywhere) | back to the prompt: fix the weakest instruction, regenerate (ch. 1 review loop) |
 Constraints: source ≤20 s recommended, ≤3 edit iterations then branch from best intermediate; edits bill full source duration.
-Exit: fixed take approved; version noted in the bible.
+Exit: fixed take approved; its exact platform receipt noted in the bible.
 
 ## W6 — Get a new angle / coverage (trigger: a reverse, insert, or B-camera view is needed)
 Climb the ladder, exhaust each rung (ch. 16):
@@ -72,5 +73,5 @@ Exit: style anchor in the bible + a passing verify still.
 Exit: working result, or a documented model limit with a rescue.
 
 ## W9 — Session open & close (trigger: every working session in an existing project)
-Open: load the production bible FIRST (rule 11); read only what the next step needs; verify version-volatile platform facts (resolution tiers, UI names) in the live platform before relying on them.
-Close: update the bible LAST — statuses only on user approval, decisions as canon, open risks in the register; nothing outside the bible is canon. Offer ONCE to feed genuinely new production findings back to the public skill (generalized, no project content — SKILL.md closing section).
+Open: load the production bible FIRST (rule 11); read only what the next step needs; revalidate the platform receipt for every active generation route (surface/tool, model + mode, UI/MCP version or dated snapshot, source/check date, account/workspace) before relying on a control.
+Close: update the bible LAST — add each actual generation/edit's Receipt ID to the shot board or delivery note; statuses only on user approval, decisions as canon, open risks in the register; nothing outside the bible is canon. Offer ONCE to feed genuinely new production findings back to the public skill (generalized, no project content — SKILL.md closing section).

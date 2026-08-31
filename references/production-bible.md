@@ -10,6 +10,7 @@ One living markdown document per project — the single source of truth for ever
 4. **The bible mirrors platforms, it does not replace them.** Binary assets live in the platform (Higgsfield Elements/Soul ID, OpenArt characters, local files for fal pipelines); the bible holds names, IDs, statuses, and pointers. On conflict, the approved image/element is the visual truth, the bible is the record of WHICH one is approved.
 5. **Compact by force:** the whole bible stays pasteable into a fresh chat (target: 2–4 pages). Superseded decisions and finished shots move to an ARCHIVE section at the bottom or a second file; the active surface stays small.
 6. **One bible per project.** Series/episodic work: one project bible (world, cast, style contract) + one slim episode sheet per episode (shot board, episode decisions). The pole decides the split (story-structures ch. 23d): **episodic** — universe facts live ONLY in the project bible and change only at season boundaries, episode sheets stay throwaway-slim; **serialized** ("the overlong film") — shot board and continuity ledger span the season in the project bible, episode sheets carry only the episode's micro-shape and status.
+7. **Platform receipt is mandatory.** Before a generation, edit, or model-choice decision becomes canon, record: `platform → access route (web UI / MCP / ChatGPT / API) → surface/tool → model + mode/endpoint → vendor version or unversioned UI snapshot → source URL + checked date → account/workspace/project`. Never transfer a setting merely because two surfaces share a provider or model name.
 
 ## 22b. Template (copy, fill, keep)
 
@@ -20,6 +21,13 @@ One living markdown document per project — the single source of truth for ever
 Format/length: … · Platform target(s) + aspect ratio(s): …
 Model stack: stills … · motion … · edit/post …
 Dialogue language: … · AI-disclosure duty: … (post-audio-legal ch. 20)
+
+## 1b · Platform / UI / MCP version receipts
+| Receipt ID | Platform + access route | Surface / tool | Model + mode / endpoint | Vendor version or UI snapshot | Evidence URL + checked date | Account / workspace / project | Result / asset IDs |
+|---|---|---|---|---|---|---|---|
+| HF-CS4@2026-08-31 | Higgsfield · web UI | Cinema Studio | … | Cinema Studio 4.0 | … · checked 2026-08-31 | … | … |
+
+For an unversioned web form write `unversioned UI @ YYYY-MM-DD`; for MCP also retain its server URL and the exposed tool/schema. Every actual generation/edit cites its Receipt ID in the shot board or delivery note. The live selected form and connected workspace always outrank an old receipt.
 
 ## 2 · Style contract (decided — quote, don't re-litigate)
 Premise (one sentence the ending proves): …
@@ -40,10 +48,10 @@ Types: character · location · prop · anchor · style-ref. Every approved shot
 becomes an @anchor_* entry (production-pipeline ch. 1).
 
 ## 4 · Shot board
-| Shot | Len | Status | Anchor | Risk → rescue | Takes used |
-|---|---|---|---|---|---|
-| 1A | 8s | final | @anchor_1A | — | 3 |
-| 1B | 6s | stills | @anchor_1B | hands close-up → cut to reaction | 0 |
+| Shot | Len | Status | Anchor | Platform receipt | Risk → rescue | Takes used |
+|---|---|---|---|---|---|---|
+| 1A | 8s | final | @anchor_1A | HF-CS4@2026-08-31 | — | 3 |
+| 1B | 6s | stills | @anchor_1B | … | hands close-up → cut to reaction | 0 |
 Status ladder: planned → stills (approved still exists) → take (approved take) → final (in edit).
 
 ## 5 · Reroll budget & spend priorities
@@ -67,10 +75,12 @@ Last state: … · Next: 1) … 2) … · Open questions for the user: …
 
 ## 22c. Platform mapping (what the registry means per platform)
 
+**Version boundary:** these are storage/continuity patterns, not promises about the current selector set of a platform. For live UI or MCP choices, first record a version receipt above and consult `platform-ui-workflows.md` for the matching dated reference key.
+
 - 🟢 **Higgsfield / Cinema Studio:** Elements (characters, locations, props — and registered anchors, platforms-models ch. 13) and Soul ID persist platform-side; the registry's "Platform IDs" column records the element names verbatim so prompts and bible use identical tags. The platform's own shared Project Brief may exist for teams — the bible remains the agent-facing source of truth and must not contradict it.
 - 🟡 **Runway:** references do not reliably persist across sessions (Director Mode re-anchors per session — competitor-sourced claim, verify on current version ⚠️). Consequence: the registry's "Source of truth" column must point to re-uploadable files for every character/style ref, and the session-boot step includes re-attaching them.
 - 🟡 **OpenArt:** character objects persist but community reports drift; keep the sheet-based anchor discipline (production-pipeline ch. 3) as the real lock, the platform character as convenience.
-- 🟢 **fal via MCP (Claude-orchestrated), local pipelines:** there is no platform library — the local file tree IS the store. The registry's path column is canonical; keep one folder per asset type (`assets/characters/`, `assets/locations/`, `assets/anchors/`, `takes/`), filenames = @names + version (`anchor_1A_v2.png`). The bible lives at the project root next to them.
+- 🟢 **fal via MCP/API, local pipelines:** treat the local file tree as the durable asset store unless the selected, version-recorded fal endpoint/workspace says otherwise. The registry's path column is canonical; keep one folder per asset type (`assets/characters/`, `assets/locations/`, `assets/anchors/`, `takes/`), filenames = @names + version (`anchor_1A_v2.png`). The bible lives at the project root next to them.
 - **Mixed stacks** (e.g. stills local via fal, motion on Higgsfield): one registry row can carry both a path and an element ID; the status column is shared — an asset is approved once, everywhere.
 
 ## 22d. Why this exists
