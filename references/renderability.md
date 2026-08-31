@@ -55,3 +55,4 @@ Memory hook: a phase instruction only wins when no contradicting brightness word
 | **PixVerse** | Fast social iteration, transition mode | Not for long-form/high-end |
 
 No universal winner: run the motion ladder (post-audio-legal ch. 19) per style/model before committing.
+⚠️ **Retired/wound down — do not plan pipelines on:** Sora 2 (wind-down 2026) · Runway Gen-3 family (retired Jul 2026) · OpenArt Workflows (sunset Jan 2026). Current surfaces + retirement tracking: platform-ui-workflows.md.

@@ -19,8 +19,8 @@ Exit: bible exists, container chosen, look decided, model stack named.
 Exit: every element the script needs exists as an approved, tagged reference; bible asset registry updated.
 
 ## W3 — Produce one shot (trigger: a numbered shot needs its first take)
-1. ROUTE RECEIPT: record the exact platform, access route, active surface/tool, model + mode/endpoint, vendor version or dated UI snapshot, source/check date and account/workspace. Do not choose controls until this exists.
-2. CANON: read the beat in treatment/script/bible (rule 13).
+1. CANON: read the beat in treatment/script/bible (rule 13) — content before platform, same order as the per-prompt checklist.
+2. ROUTE RECEIPT: record the exact platform, access route, active surface/tool, model + mode/endpoint, vendor version or dated UI snapshot, source/check date and account/workspace. Do not choose controls until this exists.
 3. Lint the shot against `renderability.md` (red list) — rewrite or attach a rescue BEFORE spending a render.
 4. Stills-first: generate the shot's still (per-prompt checklist; style mechanics per style-control) → user approves → register as `@anchor_<shot>`.
 5. Motion test at draft resolution (480/720p, 10 s) from the anchor; judge with the recipe's Verify line + shot criteria (review loop, ch. 1).

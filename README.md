@@ -83,11 +83,11 @@ No rule ships without a label: 🟢 verified across sources / official / product
 ## Structure
 
 <details>
-<summary>All 17 files at a glance</summary>
+<summary>All 18 files at a glance</summary>
 
 | File | Role |
 |---|---|
-| `SKILL.md` | Entry point: task routing table, 14 inline always-rules, the mandatory per-prompt checklist, 5-step project workflow |
+| `SKILL.md` | Entry point: task routing table, 15 inline always-rules, the mandatory per-prompt checklist, 5-step project workflow |
 | `references/genre-baselines.md` | 13 genre entry points (incl. Commercial/Ad): craft defaults, subgenres, recipe shortlists, per-genre skill filters |
 | `references/production-pipeline.md` | Ch. 1–11 + 16: pipeline principles, assets, QA, model choice, coverage ladder, interview production path (7b) |
 | `references/video-prompting.md` | Ch. 12 + 14 + 14b: THE block-structure prompt template, cross-model adaptation, sequence prompting, Seedance 2.5 doctrine (reference-maximal control, edit suite, extension chains) |
