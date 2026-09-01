@@ -59,7 +59,7 @@ Gaps → targeted questions, one at a time. Never develop story unasked; when th
 
 ## 23e. Masters' rules (sourced pearls — apply as lints, don't recite)
 
-🟢 **The causation test (Parker/Stone, NYU writing seminar 2014):** take the outline beats — if "and then" fits between two beats, "you're fucked; you've got something pretty boring." Between every pair of beats must fit **"therefore"** or **"but"** (consequence or reversal). Run it mechanically over every outline and treatment at the script stage (production-pipeline ch. 2); an "and then" seam is a cut candidate or a missing turn.
+🟢 **The causation test (Parker/Stone, NYU writing seminar 2014):** take the outline beats — if "and then" fits between two beats, "you're fucked; you've got something pretty boring." Between every pair of beats must fit **"therefore"** or **"but"** (consequence or reversal). Run it mechanically over every outline and treatment at the script stage (production-pipeline ch. 2); an "and then" seam is a cut candidate or a missing turn. Full causal doctrine + the MANDATORY change lint: ch. 23g.
 
 🟢 **The three scene questions (Mamet, memo to The Unit writers):** every scene must answer — **who wants what? · what happens if they don't get it? · why now?** A scene that answers none is information, not drama — and "the audience tunes in for drama, not information": move exposition into conflict or cut it. Use as the scene-level lint after the causation test passes at beat level.
 
@@ -80,3 +80,27 @@ Gaps → targeted questions, one at a time. Never develop story unasked; when th
 3. Offer max 2 containers with one-line rationale; the user picks — exactly like recipe choice, and usually BEFORE it (structure shapes the shot list more than the look does).
 4. Containers mix like recipes: one dominant + one device (three-act + bookend; kishōtenketsu twist inside a sitcom B-plot). More than two = mush.
 5. Record the choice in the production bible (style contract section) — structure is canon once approved.
+
+## 23g. The causal chain — doctrine and the mandatory change lint
+
+Why this section is binding: episodic, causally disconnected plotting is the DOCUMENTED native failure mode of LLM writing (EMNLP 2025 survey; arXiv 2311.09648, 2506.02347, 2503.23512 — scaffolding systems exist precisely because raw LLM output adds events instead of causing them). Addition is cheaper than consequence for the model — so the lint below is not optional craft polish, it is the guard against the writer itself. An event without cause is story slop exactly as a guessed beat is prompt slop (SKILL rule 13).
+
+### The doctrine (sourced)
+🟢 **Plot IS causality** (Forster, Aspects of the Novel): "The king died and then the queen died" is a story; "the king died, and then the queen died of grief" is a plot — the difference is the whole craft.
+🟢 **Propter hoc, not post hoc** (Aristotle, Poetics ch. 9/10): events must be "the consequence, necessary or probable, of the antecedents"; plots "in which the episodes succeed one another without probable or necessary sequence" are "the worst."
+🟢 **The chain reaction** (McKee, Story): "motivated actions cause effects that in turn become the causes of yet other effects" — the inciting incident is "the primary cause for all that follows," rippling causally to the climax.
+🟢 **Coincidence has a direction** (Coats/Pixar #19; McKee): "Coincidences to get characters into trouble are great; coincidences to get them out of it are cheating." McKee: bring coincidence in early so meaning can build from it, and "never use it to turn an ending. This is deus ex machina, the writer's greatest sin."
+🟢 **Deus ex machina** (Aristotle ch. 15): the unraveling "must arise out of the plot itself." A rescue from outside the causal chain erases meaning and emotion. Narrow exception: deliberate, signaled comedy/parody (Life of Brian's spaceship) — the audience must be meant to SEE the device.
+🟢 **Plant and payoff, both directions** (Chekhov, letter 1889): "One must never place a loaded rifle on the stage if it isn't going to go off. It's wrong to make promises you don't mean to keep." Every payoff was planted; every prominent plant pays off (payoff economics: film-craft §7).
+🟢 **Consequence carries** (Swain, scene/sequel): a scene's outcome becomes a later scene's motivation (goal→conflict→disaster → reaction→dilemma→decision). An outcome nothing reacts to is a dead end.
+
+### The change lint — run on EVERY proposed script/treatment/beat change, before the proposal is offered
+A session that proposes a story change answers these eight in its own head first; a change that fails any of them is not offered, it is fixed or dropped. When offering the change, NAME its upstream cause and downstream consequence explicitly — a proposal that cannot state both is not ready.
+1. **Therefore/but:** does the new/changed beat connect to its neighbors with "therefore" or "but" — or only "and then"?
+2. **Propter hoc:** which prior ON-SCREEN event causes this one? None in the script = episodic addition.
+3. **Coincidence direction:** does any coincidence create trouble (allowed, first half) or resolve it (forbidden)?
+4. **Ending turn:** is the climax produced by the protagonist's prior choices and ESTABLISHED capabilities — no new character, object, ability, or luck after the midpoint?
+5. **Plant/payoff ledger:** everything the change uses was planted; everything it plants will pay off. Flag orphans both ways.
+6. **Deletion ripple:** if this beat were deleted, would a later beat stop making sense? No = causally disconnected — justify or cut.
+7. **Scene turn + Mamet:** does the scene flip a value AND both advance the plot and stand alone (who wants what · what if they don't · why now)?
+8. **Removal rewiring:** when the change REMOVES or alters a beat, every beat that was caused by it is re-wired or flagged — never left orphaned.
