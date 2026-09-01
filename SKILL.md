@@ -17,7 +17,7 @@ Write, plan, and prompt AI-generated film so no shot looks AI-generated: design 
 | Task at hand | Read (one file, fully) |
 |---|---|
 | Resume a running project; "where were we"; project state, asset registry, shot status | `references/production-bible.md` — load the project's bible FIRST, then only what the next step needs |
-| Project start with a known genre ("Actionfilm", "Horror-Kurzfilm", "Doku-Stil" …) | `references/genre-baselines.md` — craft defaults + recipe shortlist + which files to load for THIS project type. Read FIRST, before other references |
+| Project start with a known genre ("action film", "horror short", "doc-style", "Actionfilm", "Horror-Kurzfilm" …) | `references/genre-baselines.md` — craft defaults + recipe shortlist + which files to load for THIS project type. Read FIRST, before other references |
 | User brings a story/idea and needs the dramaturgical shape; story completeness check | `references/story-structures.md` — intake gate + container library (3-act, hero's journey, kishōtenketsu, A24 elevated-genre, sitcom, sketch, doc spines …) |
 | Write/fix ANY video prompt (Seedance/CS) | `references/video-prompting.md` — block structure ch. 12 is the mandatory template; sequence prompting ch. 14 |
 | Prompt syntax/profile for H3 / Kling / Veo / Grok (not current UI controls) | `references/platforms-models.md` — preserve its named model-version scope and verify live syntax before a paid run |
