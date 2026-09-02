@@ -4,7 +4,7 @@
 
 [![Download the latest skill (.skill)](https://img.shields.io/badge/download-latest%20skill%20(.skill)-2563eb?style=flat-square)](https://github.com/iret77/ai-film-production/releases/latest/download/ai-film-production.skill)
 
-A complete film-production methodology for Claude — 25 chapters of sourced, confidence-labeled craft that turn the model into your crew: DoP, editor, gaffer, script consultant, line producer. You stay the director. Built for a **Seedance 2.5 / Higgsfield Cinema Studio** stills-first pipeline, with full syntax profiles for MiniMax H3, Kling 3.0, Veo 3.1, and Grok Imagine.
+A complete film-production methodology for Claude — 25 chapters of sourced, confidence-labeled craft that turn the model into your crew: DoP, editor, gaffer, script consultant, line producer. You stay the director. Built for a **Seedance 2.5 / Higgsfield Cinema Studio** stills-first pipeline, with a MiniMax H3 profile rebuilt on MiniMax's official prompt-writing guides and compact syntax profiles for Kling 3.0, Veo 3.1, and Grok Imagine.
 
 ## The problem
 
@@ -60,17 +60,17 @@ The skill triggers on its own whenever the production path is clearly generative
 - **Direction & craft** — model-independent film language (composition, editing, light, color, dramaturgy), director and DoP recipes with per-recipe verify gates, genre entry points, story structures from three-act to kishōtenketsu.
 - **Prompting method** — the block-structure prompt template with camera-third ordering and FOV-in-degrees discipline; how image models actually read prompts (position, scale, count, negation — with the research receipts); style enforcement that survives more than one shot.
 - **Production operations** — stills-first pipeline, asset and reference-pool build-out, renderability linting with green/red lists and rescue paths, coverage ladder, continuity ledger, a living production-bible convention for multi-session projects.
-- **Platform knowledge** — Seedance 2.5 doctrine (50-reference control incl. clay-render staging — Blender-built or Seedance-generated — the edit suite, extension chains), Higgsfield Cinema Studio settings, cross-model syntax profiles for H3, Kling, Veo, and Grok, and a real-face moderation plan for licensed likenesses.
+- **Platform knowledge** — Seedance 2.5 doctrine (50-reference control incl. clay-render staging — Blender-built or Seedance-generated — the edit suite, extension chains), Higgsfield Cinema Studio settings, the MiniMax H3 official schema (cut-point timestamps, six-section reference form, retention markers), compact profiles for Kling, Veo, and Grok, production rules distilled from Higgsfield's open-sourced feature films (headless sheets, one asset per state, speech-count lock, crowd scale in three layers, the negation third class), dated platform caveats, and a real-face moderation plan for licensed likenesses.
 
 ## Why you'd use it — and why you wouldn't
 
 **Use it if** you want AI footage that doesn't look AI-generated: the whole method designs every shot around the failure classes of current video models — identity drift, physics errors, broken in-frame text, interaction errors — instead of fighting them in post. And if you burn money on rerolls: the checklist, the lint passes, and the repair-before-reroll rule exist because every skipped step has already cost real render budget.
 
-**Skip it if** you want a one-click text-to-video toy — this is a methodology that expects a director's decisions, and it will ask for them. Skip it if your pipeline is built on a stack it doesn't cover deeply (it's Seedance/Higgsfield-first; H3, Kling, Veo, and Grok get compact profiles, everything else gets principles only). And know that model facts age in weeks: version-volatile claims are marked as such and should be re-verified against the live platforms before a production run.
+**Skip it if** you want a one-click text-to-video toy — this is a methodology that expects a director's decisions, and it will ask for them. Skip it if your pipeline is built on a stack it doesn't cover deeply (it's Seedance/Higgsfield-first; MiniMax H3 gets a full official-schema profile, Kling, Veo, and Grok compact profiles, everything else principles only). And know that model facts age in weeks: version-volatile claims are marked as such and should be re-verified against the live platforms before a production run.
 
 ## Where the rules come from
 
-No rule ships without a label: 🟢 verified across sources / official / production-proven · 🟡 plausible but single-source or untested · 🔴 marketing claim — test yourself. Source tags ([H-off], [BD-off], [MM-off], [F], [P1–P49] — itemized in `references/sources.md` —, [PP], [W], …) trace every rule to its origin — official platform docs, practitioner protocols, deep-research passes over papers and benchmarks, and first-party production sessions whose lessons flow back here as generalized rules. Where sources conflict, the conflict is documented with ⚠️ instead of silently resolved.
+No rule ships without a label: 🟢 verified across sources / official / production-proven · 🟡 plausible but single-source or untested · 🔴 marketing claim — test yourself. Source tags ([H-off], [BD-off], [MM-off], [F], [P1–P49] — itemized in `references/sources.md` —, [PP], [W], …) trace every rule to its origin — official platform docs and prompt-writing guides, the vendor's own open-sourced feature-film breakdowns, practitioner protocols, deep-research passes over papers and benchmarks, and first-party production sessions whose lessons flow back here as generalized rules. Where sources conflict, the conflict is documented with ⚠️ instead of silently resolved.
 
 ## Philosophy
 
@@ -90,8 +90,8 @@ No rule ships without a label: 🟢 verified across sources / official / product
 | `SKILL.md` | Entry point: task routing table, 16 inline always-rules, the mandatory per-prompt checklist, 5-step project workflow |
 | `references/genre-baselines.md` | 13 genre entry points (incl. Commercial/Ad): craft defaults, subgenres, recipe shortlists, per-genre skill filters |
 | `references/production-pipeline.md` | Ch. 1–11 + 16: pipeline principles, assets, QA, model choice, coverage ladder, interview production path (7b) |
-| `references/video-prompting.md` | Ch. 12 + 14 + 14b: THE block-structure prompt template, cross-model adaptation, sequence prompting, Seedance 2.5 doctrine (reference-maximal control, edit suite, extension chains) |
-| `references/platforms-models.md` | Ch. 13 + 21: Higgsfield Cinema Studio, H3/Kling/Veo/Grok syntax profiles |
+| `references/video-prompting.md` | Ch. 12 + 14 + 14b: THE block-structure prompt template, cross-model adaptation, sequence prompting, negation classes, Seedance 2.5 doctrine (reference-maximal control, edit suite, extension chains, large casts, montage ceiling, Dreamina-only surfaces) |
+| `references/platforms-models.md` | Ch. 13 + 21: archival Higgsfield Cinema Studio notes; MiniMax H3 profile on the official guides (three-field base form, six-section Ref2VA, camera vocabulary, dialogue tags); Kling/Veo/Grok compact profiles |
 | `references/platform-ui-workflows.md` | Current, source-linked UI/workflow reference and version ledger: which web/MCP/ChatGPT surface owns each selectable setting in Higgsfield, fal.ai, Runway, OpenArt, Arcads, and GPT Image 2; plus re-verification rules |
 | `references/post-audio-legal.md` | Ch. 17–20: post, audio/music/voices, continuity, legal & AI disclosure |
 | `references/style-control.md` | Style enforcement across image and video models, vocabularies, reference protocol |
@@ -104,7 +104,7 @@ No rule ships without a label: 🟢 verified across sources / official / product
 | `references/story-structures.md` | Ch. 23: dramaturgical containers — intake gate, classic/alternative structures, series poles & online-native formats |
 | `references/workflows.md` | Ch. 25: nine runbooks for the typical production jobs — project start to session close |
 | `references/worked-example.md` | Compact end-to-end mini production |
-| `references/sources.md` | Registry of practitioner protocols P17–P22 (date, URL, sponsorship flag) behind the [P] source tags |
+| `references/sources.md` | Registry of practitioner and vendor-thread protocols P17–P49 plus the official MiniMax guides [MM-off] (date, URL, sponsorship flag) behind the source tags |
 | `LICENSE` | MIT |
 
 </details>
