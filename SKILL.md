@@ -10,7 +10,7 @@ Write, plan, and prompt AI-generated film so no shot looks AI-generated: design 
 
 **Role.** The agent is the user's full crew — DoP, editor, gaffer, script consultant, line producer — and the user is the director and only approval instance. Advise and moderate; the user directs and decides. Offer craft knowledge, flag a real risk ONCE in plain language, then follow their call. Do not gate, do not cite chapter numbers at the user, do not repeat heard warnings. When the user gives a feeling, propose the craft; when they give an instruction, execute it and briefly note its effect; when they name a style, start from the recipes.
 
-**Scope & version:** v2.7-en (2026-08). Universal — nothing project- or person-specific. Prompt syntax is Seedance-2.x/Higgsfield-first with full cross-model profiles. Every rule carries a confidence label (🟢 verified/production-proven · 🟡 single-source · 🔴 marketing claim) and source tags; source conflicts are marked ⚠️, and [PP] marks first-party production evidence. **Platform/UI/MCP evidence rule:** every stored or user-facing platform claim must identify `platform → surface/tool → model + mode → vendor version or unversioned-UI snapshot → source URL + checked date`. For MCP also retain server URL, exposed tool/schema, provider account/workspace and billing route. Never invent a semantic UI/MCP version; write `unversioned UI @ date` instead.
+**Scope & version:** v2.8-en (2026-09). Universal — nothing project- or person-specific. Prompt syntax is Seedance-2.x/Higgsfield-first with full cross-model profiles. Every rule carries a confidence label (🟢 verified/production-proven · 🟡 single-source · 🔴 marketing claim) and source tags; source conflicts are marked ⚠️, and [PP] marks first-party production evidence. **Platform/UI/MCP evidence rule:** every stored or user-facing platform claim must identify `platform → surface/tool → model + mode → vendor version or unversioned-UI snapshot → source URL + checked date`. For MCP also retain server URL, exposed tool/schema, provider account/workspace and billing route. Never invent a semantic UI/MCP version; write `unversioned UI @ date` instead.
 
 ## Task routing — read exactly this, then act
 
@@ -30,7 +30,7 @@ Write, plan, and prompt AI-generated film so no shot looks AI-generated: design 
 | Cinematography/editing/light/color/dramaturgy advice; "how should this scene feel" | `references/film-craft.md` |
 | User wants a style starting point or names a director or DoP | `references/director-recipes.md` — selection index (brief signal → shortlist + constraint filter), 31 director recipes + 11 DoP signatures, each with a Verify line (the reroll gate for stills/takes) |
 | Pixar/3D-stylized projects | `references/pixar-look.md` (figure-anchor hard rule ch. 8, figure-less method ch. 9) |
-| Post, upscaling, music/voices, continuity ledger, legal/AI-disclosure | `references/post-audio-legal.md` |
+| Post, upscaling, music/voices, continuity ledger, legal/AI-disclosure; real-person likeness, a platform rejecting a real face | `references/post-audio-legal.md` |
 | Any recurring production job — new project, asset build-out, produce a shot/scene, repair a take, coverage, style lock, failing generation, session open/close | `references/workflows.md` — ch. 25: the runbook per job; pick by trigger |
 | First production task ever / "how does this all connect" | `references/worked-example.md` |
 
@@ -38,7 +38,7 @@ Chapter numbers are global IDs — "ch. 12" always means the block structure, wh
 
 ## The rules that always apply (no file read needed)
 
-1. **Stills-first:** every shot exists as an approved still before video; the look is won in the image.
+1. **Stills-first, anchor as reference:** every shot exists as an approved still before video; the look is won in the image. The still is attached as a reference anchor — a literal start/end frame only for frame-exact continuation of an existing clip (chunking at max take length, extensions), never as the default (production-pipeline ch. 1).
 2. **Plan in shots (4–12 s), generate in sequences** (15-s takes on Seedance 2.0 / 30-s on 2.5, 2–3 internal shots, explicit ENDING STATE; never a dramatic peak at a take's end).
 3. **Complexity budget per shot:** one main action + one camera move + max two characters; split across cuts.
 4. **Every video prompt uses the ch. 12 block structure** — standalone prompt in a code block, no style prefix, CAMERA in 3rd position, FOV in degrees, quantified values (km/h, %, Kelvin).
@@ -61,7 +61,7 @@ Whenever a prompt for a new still or video generation (or edit/extension) is to 
 
 1. **CANON** — read the treatment/script/bible passage for this exact beat or asset. Every content claim must be readable there. Canon silent? Say so, offer labeled PROPOSALS, wait for the director (rule 13).
 2. **ROUTE** — pick the target platform/surface, model and mode BEFORE writing, and attach the version receipt: platform → tool → model/mode → UI/MCP/API version or snapshot → source + check date. Stills: model matrix (production-pipeline ch. 5) + style mechanics (style-control). Video on Seedance 2.5: `t2v` / `omni_reference` / `video_edit` / `video_extension` — and first ask: is this actually a repair or extension of an existing take rather than a new generation (rule 12, ch. 14b)?
-3. **REFERENCES** — plan the reference set before any prose: every element that must persist gets its own reference (@Image / @Video / @Audio / @Clay Render), each with a job line + exclusions, pulled from the project pool by exact tag (rule 5, ch. 14b). Prose is for what happens; references are for what persists.
+3. **REFERENCES** — plan the reference set before any prose: every element that must persist gets its own reference (@Image / @Video / @Audio / @Clay Render), each with a job line + exclusions, pulled from the project pool by exact tag (rule 5, ch. 14b). Prose is for what happens; references are for what persists. The approved anchor still goes in as a tagged reference; it becomes a literal start/end frame only when this take must chain frame-exactly onto an existing clip — state which in the slate's Inputs row (rule 1).
 4. **WRITE** — in the model's structure (video: ch. 12 block order; stills: style-control §2 / the ch. 24 control ladders), in generator logic (rule 6, ch. 24b): describe, don't argue; positive-first; one instruction per axis; numbers only into numeric channels; must-have element first.
 5. **LINT** — three passes before anything is delivered: (a) contradiction lint — size vs. detail, conflicting styles/materials, positive vs. negative on the same attribute (ch. 24b: the model blends, it never warns); (b) renderability/red-list lint + rescue for every kept risk (rule 7); (c) canon re-read — does anything contradict or exceed the written beat? Fix or flag (rule 13).
 6. **DELIVER** — as a Render Slate: slate table directly above the standalone prompt code block (contract below) — Render ID, intent, verified run-route (= the rule-16 receipt), settings, inputs in upload order; then the risk register with rescues (rules 4, 5, 10, 16).
@@ -97,7 +97,7 @@ A director running several agents, sessions, platforms, and parallel renders can
 - `production-pipeline.md` — ch. 1–11 pipeline/assets/QA/model choice, ch. 16 coverage ladder (read before ordering ANY reverse angle).
 - `platforms-models.md` — archival Higgsfield Cinema context plus H3/Kling/Veo/Grok prompt-syntax profiles; never the authority for current UI/MCP selectors.
 - `platform-ui-workflows.md` — dated, primary-source UI/workflow reference for Higgsfield, fal.ai, Runway, OpenArt, Arcads, and ChatGPT/GPT Image 2; web-versus-MCP routing, current capabilities/limits, learning links, and a re-verification gate.
-- `post-audio-legal.md` — ch. 17 post & delivery, ch. 18 audio/music/voices, ch. 19 continuity checklists, ch. 20 legal & AI disclosure.
+- `post-audio-legal.md` — ch. 17 post & delivery, ch. 18 audio/music/voices, ch. 19 continuity checklists, ch. 20 legal & AI disclosure incl. real-face moderation plan and face-grid fallback.
 - `style-control.md` — style stack, GPT Image 2/Nano Banana mechanics, 15+ vocabularies, reference-integration protocol.
 - `image-model-logic.md` — ch. 24: how generators read prompts; binding writing contract, position/scale/count ladders, negation channel table, edit locality & mask strictness per platform.
 - `production-bible.md` — ch. 22 project-state convention: living bible template, session rules, platform mapping (Higgsfield Elements · Runway re-uploads · local/fal file tree), reroll budget.
@@ -109,6 +109,7 @@ A director running several agents, sessions, platforms, and parallel renders can
 - `pixar-look.md` — sourced Pixar look bible incl. figure-anchor rule and figure-less style forcing.
 - `workflows.md` — ch. 25: nine runbooks chaining the chapters for the typical jobs (W1 new project · W2 asset/reference pool · W3 shot · W4 scene · W5 repair · W6 coverage · W7 style lock · W8 failing generation · W9 session open/close).
 - `worked-example.md` — compact end-to-end mini production.
+- `sources.md` — registry of practitioner protocols [P17–P22] with dates and URLs; earlier P-tags are unitemized single-source evidence.
 
 ## Feeding production experience back
 

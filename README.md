@@ -70,7 +70,7 @@ The skill triggers on its own whenever the production path is clearly generative
 
 ## Where the rules come from
 
-No rule ships without a label: 🟢 verified across sources / official / production-proven · 🟡 plausible but single-source or untested · 🔴 marketing claim — test yourself. Source tags ([H-off], [BD-off], [F], [P1–P18], [PP], [W], …) trace every rule to its origin — official platform docs, practitioner protocols, deep-research passes over papers and benchmarks, and first-party production sessions whose lessons flow back here as generalized rules. Where sources conflict, the conflict is documented with ⚠️ instead of silently resolved.
+No rule ships without a label: 🟢 verified across sources / official / production-proven · 🟡 plausible but single-source or untested · 🔴 marketing claim — test yourself. Source tags ([H-off], [BD-off], [F], [P1–P22], [PP], [W], …) trace every rule to its origin — official platform docs, practitioner protocols, deep-research passes over papers and benchmarks, and first-party production sessions whose lessons flow back here as generalized rules. Where sources conflict, the conflict is documented with ⚠️ instead of silently resolved.
 
 ## Philosophy
 
@@ -110,7 +110,7 @@ No rule ships without a label: 🟢 verified across sources / official / product
 
 ## Versioning
 
-v2.7-en (2026-08). Universal — contains nothing project- or person-specific. This repository is the source of truth for the skill; lessons from production flow back here via commits, and every release ships an upload-ready `.skill` package.
+v2.8-en (2026-09). Universal — contains nothing project- or person-specific. This repository is the source of truth for the skill; lessons from production flow back here via commits, and every release ships an upload-ready `.skill` package.
 
 ## License
 

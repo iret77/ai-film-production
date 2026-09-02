@@ -42,7 +42,7 @@ state) · 3. @image3 = lever detail (state: down).
 ```
 
 ## 4. Take 2 (state chaining, video-prompting ch. 14 + production-pipeline ch. 16)
-Harvest the final frame of the approved take 1 as the new start frame (rung 2); prompt opens from the ENDING STATE ("continue forward, do not replay: the seated cat…"), uses the reverse plate as @image2 for the counter-angle, repeats the STYLE block and anchors verbatim.
+Harvest the final frame of the approved take 1 as the new start frame (rung 2 — chain case, the one place a start frame is doctrine); prompt opens from the ENDING STATE ("continue forward, do not replay: the seated cat…"), uses the reverse plate as @image2 for the counter-angle, repeats the STYLE block and anchors verbatim.
 
 ## 5. QA (production-pipeline ch. 10 · post-audio-legal ch. 19)
 Batch of 4, watched fully, five passes (identity → continuity → timing → camera → audio). Failure example: shot 2 renders the lever already up at 5.0 s → continuity fix belongs in the NEXT prompt ("lever starts down; it tips up only at the push"), not in post. Grading, trim (±0.5 s), score, and loudness (−14 LUFS) in post (post-audio-legal ch. 17/18).

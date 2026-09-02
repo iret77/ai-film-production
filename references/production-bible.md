@@ -43,7 +43,7 @@ Genre baseline: <genre> — deviations: …
 |---|---|---|---|---|---|
 | @hero | character | locked | sheet v3 (link/element) | HF element …, Soul ID … / file … | face+outfit lock; never: … |
 | @loc_bar | location | approved | master plate v2 | … | light side left; reverse: @loc_bar_rev |
-| @anchor_1A | anchor | approved | still 1A final | HF element … / file … | start frame take 1A |
+| @anchor_1A | anchor | approved | still 1A final | HF element … / file … | reference anchor take 1A |
 Types: character · location · prop · anchor · style-ref. Every approved shot still
 becomes an @anchor_* entry (production-pipeline ch. 1).
 

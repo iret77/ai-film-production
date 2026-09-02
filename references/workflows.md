@@ -23,13 +23,13 @@ Exit: every element the script needs exists as an approved, tagged reference; bi
 2. ROUTE RECEIPT: record the exact platform, access route, active surface/tool, model + mode/endpoint, vendor version or dated UI snapshot, source/check date and account/workspace. Do not choose controls until this exists.
 3. Lint the shot against `renderability.md` (red list) — rewrite or attach a rescue BEFORE spending a render.
 4. Stills-first: generate the shot's still (per-prompt checklist; style mechanics per style-control) → user approves → register as `@anchor_<shot>`.
-5. Motion test at draft resolution (480/720p, 10 s) from the anchor; judge with the recipe's Verify line + shot criteria (review loop, ch. 1).
+5. Motion test at draft resolution (480/720p, 10 s) with the anchor attached as a tagged reference, take opening in motion (start-frame slot only when this take chains onto an existing clip — production-pipeline ch. 1; say which path in the slate); judge with the recipe's Verify line + shot criteria (review loop, ch. 1).
 6. Production take only after the motion test sits: target resolution, full duration. A defect accepted at the still stage propagates — surface that trade-off, the user decides.
 Exit: approved take; anchor + statuses in the bible.
 
 ## W4 — Build a scene/sequence (trigger: several shots of one scene; anything longer than one take)
 1. Plan in shots (4–12 s), generate in sequences: 2–3 internal shots per take, explicit ENDING STATE, never a dramatic peak at a take's end (rules 2, ch. 14).
-2. Write take prompts with state chaining: each begins from the previous ENDING STATE ("continue forward, do not replay"); harvest final frames as next start frames.
+2. Write take prompts with state chaining: each begins from the previous ENDING STATE ("continue forward, do not replay"); harvest final frames as next start frames (chain case only — outside chained continuation the anchor is a reference, not a start frame; production-pipeline ch. 1).
 3. On Seedance 2.5, build length by EXTENSION, not by cold stitching: 30 s base + one extension round (chain ≈60 s), boundary-frame contract every round; then re-anchor a fresh generation from the original references (ch. 14b).
 4. Dialogue scenes: shot/reverse-shot with the multi-plate set + 180° lock (ch. 7/13); strongest lock = 3D blockout path (ch. 8).
 5. Assemble; the score is built in post — never in the video model (rule 9).
