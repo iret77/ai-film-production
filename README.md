@@ -37,7 +37,7 @@ Same model. The difference is method: every aspect has one home, everything is m
 
 ## How it works
 
-It starts the moment you say "plan my short film." The skill doesn't jump into prompts. It reads your genre's craft baseline, asks for the story before the style, and offers a dramaturgical container. Then it builds the way productions build: locations and cast as approved reference assets first, every shot as an approved still before any video, every prompt through a fixed seven-step checklist — canon, routing, references, writing, lint, delivery, review. When a take comes back 90% right, it doesn't reroll; it repairs the 10% with the platform's edit modes. And everything that survives your approval becomes canon in a living production bible, so the next session picks up exactly where this one stopped.
+It starts the moment you say "plan my short film." The skill doesn't jump into prompts. It reads your genre's craft baseline, asks for the story before the style, and offers a dramaturgical container. Then it builds the way productions build: locations and cast as approved reference assets first, every shot as an approved still before any video — attached as a reference anchor, not as a start frame, unless a take must chain frame-exactly onto an existing clip — every prompt through a fixed seven-step checklist — canon, routing, references, writing, lint, delivery, review. When a take comes back 90% right, it doesn't reroll; it repairs the 10% with the platform's edit modes. And everything that survives your approval becomes canon in a living production bible, so the next session picks up exactly where this one stopped.
 
 Claude just runs a film production.
 
@@ -60,7 +60,7 @@ The skill triggers on its own whenever the production path is clearly generative
 - **Direction & craft** — model-independent film language (composition, editing, light, color, dramaturgy), director and DoP recipes with per-recipe verify gates, genre entry points, story structures from three-act to kishōtenketsu.
 - **Prompting method** — the block-structure prompt template with camera-third ordering and FOV-in-degrees discipline; how image models actually read prompts (position, scale, count, negation — with the research receipts); style enforcement that survives more than one shot.
 - **Production operations** — stills-first pipeline, asset and reference-pool build-out, renderability linting with green/red lists and rescue paths, coverage ladder, continuity ledger, a living production-bible convention for multi-session projects.
-- **Platform knowledge** — Seedance 2.5 doctrine (50-reference control incl. clay-render staging, the edit suite, extension chains), Higgsfield Cinema Studio settings, cross-model syntax profiles for H3, Kling, Veo, and Grok.
+- **Platform knowledge** — Seedance 2.5 doctrine (50-reference control incl. clay-render staging — Blender-built or Seedance-generated — the edit suite, extension chains), Higgsfield Cinema Studio settings, cross-model syntax profiles for H3, Kling, Veo, and Grok, and a real-face moderation plan for licensed likenesses.
 
 ## Why you'd use it — and why you wouldn't
 
@@ -83,7 +83,7 @@ No rule ships without a label: 🟢 verified across sources / official / product
 ## Structure
 
 <details>
-<summary>All 18 files at a glance</summary>
+<summary>All 19 files at a glance</summary>
 
 | File | Role |
 |---|---|
@@ -104,6 +104,7 @@ No rule ships without a label: 🟢 verified across sources / official / product
 | `references/story-structures.md` | Ch. 23: dramaturgical containers — intake gate, classic/alternative structures, series poles & online-native formats |
 | `references/workflows.md` | Ch. 25: nine runbooks for the typical production jobs — project start to session close |
 | `references/worked-example.md` | Compact end-to-end mini production |
+| `references/sources.md` | Registry of practitioner protocols P17–P22 (date, URL, sponsorship flag) behind the [P] source tags |
 | `LICENSE` | MIT |
 
 </details>
