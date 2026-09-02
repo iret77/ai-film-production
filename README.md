@@ -70,7 +70,7 @@ The skill triggers on its own whenever the production path is clearly generative
 
 ## Where the rules come from
 
-No rule ships without a label: 🟢 verified across sources / official / production-proven · 🟡 plausible but single-source or untested · 🔴 marketing claim — test yourself. Source tags ([H-off], [BD-off], [F], [P1–P22], [PP], [W], …) trace every rule to its origin — official platform docs, practitioner protocols, deep-research passes over papers and benchmarks, and first-party production sessions whose lessons flow back here as generalized rules. Where sources conflict, the conflict is documented with ⚠️ instead of silently resolved.
+No rule ships without a label: 🟢 verified across sources / official / production-proven · 🟡 plausible but single-source or untested · 🔴 marketing claim — test yourself. Source tags ([H-off], [BD-off], [MM-off], [F], [P1–P49] — itemized in `references/sources.md` —, [PP], [W], …) trace every rule to its origin — official platform docs, practitioner protocols, deep-research passes over papers and benchmarks, and first-party production sessions whose lessons flow back here as generalized rules. Where sources conflict, the conflict is documented with ⚠️ instead of silently resolved.
 
 ## Philosophy
 
@@ -99,7 +99,7 @@ No rule ships without a label: 🟢 verified across sources / official / product
 | `references/renderability.md` | Green/red lists, rescue paths, format matrix, model quick profiles |
 | `references/film-craft.md` | Model-independent film language: composition, camera, editing, light, color, timing, dramaturgy |
 | `references/director-recipes.md` | 31 director recipes + 11 DoP signatures; selection index, per-recipe Verify gates, harmony map |
-| `references/pixar-look.md` | Sourced Pixar look bible incl. figure-anchor rule and style-forcing method |
+| `references/pixar-look.md` | Sourced Pixar look bible incl. figure-anchor rule, style-forcing method, and the hybrid previs-to-AI case study (wide-shot rescue, hidden faces, style donor) |
 | `references/production-bible.md` | Ch. 22: living project-state document — template, session rules, platform mapping |
 | `references/story-structures.md` | Ch. 23: dramaturgical containers — intake gate, classic/alternative structures, series poles & online-native formats |
 | `references/workflows.md` | Ch. 25: nine runbooks for the typical production jobs — project start to session close |
@@ -111,7 +111,7 @@ No rule ships without a label: 🟢 verified across sources / official / product
 
 ## Versioning
 
-v2.8-en (2026-09). Universal — contains nothing project- or person-specific. This repository is the source of truth for the skill; lessons from production flow back here via commits, and every release ships an upload-ready `.skill` package.
+v2.9-en (2026-09). Universal — contains nothing project- or person-specific. This repository is the source of truth for the skill; lessons from production flow back here via commits, and every release ships an upload-ready `.skill` package.
 
 ## License
 

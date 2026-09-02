@@ -12,7 +12,9 @@ Logline: a lighthouse keeper's cat sneaks out at night to relight the extinguish
 
 ## 3. Take 1 prompt (video-prompting ch. 12/14, style-control §5/7)
 ```
-REFERENCES: @image1 controls only the lamp-room set — layout, materials, light.
+REFERENCES: @anchor_1A controls the approved still of this shot — look, geometry,
+blocking; the take opens already in motion, it is not frame 1.
+@image1 controls only the lamp-room set — layout, materials, light.
 Do not copy its emptiness. @image2 controls only the cat — appearance, face,
 markings (wet-fur state). Do not copy its neutral pose or background.
 @image3 controls only the brass lever — shape and position, state: down.
@@ -37,7 +39,7 @@ frame holds this exact rendering style.
 CONSTRAINTS: no cuts inside shots, no slow motion, no duplicated cat, no
 subtitles, no logos.
 
-ATTACH: 1. @image1 = lamp-room master plate · 2. @image2 = cat sheet (wet
+ATTACH: 0. @anchor_1A = approved shot still (reference, not start frame) · 1. @image1 = lamp-room master plate · 2. @image2 = cat sheet (wet
 state) · 3. @image3 = lever detail (state: down).
 ```
 

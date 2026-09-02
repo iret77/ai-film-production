@@ -178,6 +178,8 @@ The source guide lists all above values and their intended visual effect, includ
 
 ### Cinema Studio 4.0: reliable user workflow
 
+> 🟡 **Do the controls bite? Verify per project [P26, P27 — both Higgsfield-sponsored testers, 2026-08-24 and 2026-09-01].** Two independent walkthroughs report that Film setup (Genre/Era/Tempo), Camera (lens/format) and Lighting presets produced no visible change on Seedance 2.5 video, while the same instruction written in the prompt ("silhouette backlighting") did; only the first of three inline camera movements in one 15-s prompt executed; the AI Director/Personal Assistant refused dragged assets and produced nothing on 2026-08-24. ⚠️ Conflicts with the official routing above ("direct controls are the correct channel"). Rule until a live receipt settles it: run one A/B at 480p per project — if a control does not bite, carry that aspect in the prompt block that governs it (video-prompting ch. 12), never in both. Same testers: CS 4.0 bills the same credits as plain Seedance 2.5 on the Video page; `Shift+#` inside the video prompt opens the camera-movement picker inline (Snorri cam, rack focus, POV, side tracking, handheld, Robo arm seen); a prompt pasted with element names already in `@tag` form auto-attaches those Elements — let the LLM write the tags.
+
 1. **Create/open a project.** Add the brief, make subfolders for sequences/versions if needed, and create or collect Elements first.
 2. **Split the script into shots.** The Personal Assistant can turn a script into individual shots and prefill camera parameters, but the agent/user must review the proposed prompt and settings before any generation. It is documented as a planning/settings aid, not a substitute for approval.
 3. **Choose the shot’s model in the current selector when available.** Cinema Studio supports multiple models; route by the current dropdown and model-specific UI, not by a generic promise that every model has every Cinema Studio control.
@@ -194,7 +196,7 @@ These are adjacent routes; do not force them through Cinema Studio when the user
 | User goal | Correct current surface | Verified handling |
 |---|---|---|
 | Test a named third-party/native video model without the film-project framing | **Video** | Use the model selector; model features and resolution are model/plan dependent. The current changelog, for example, directs Seedance 2.5 users to Video → model selector. |
-| Edit an existing Seedance take (region/timestamp-scoped fix) | **Video → model entry "Seedance 2.5 Edit"** | Its own entry in the video-model selector [PP@2026-08-31]: task dropdown "Edit video", source clip into the **VIDEO TO EDIT** slot, references via @-elements, up to 1080p; regions are described in words (no mask editor). Mode doctrine + prompt format: video-prompting ch. 14b. |
+| Edit an existing Seedance take (region/timestamp-scoped fix) | **Video → model entry "Seedance 2.5 Edit"** (🟡 a draw-over region tool with time handles was seen inside Cinema Studio's Edit → Advanced on 2026-09-01 [P27] — unverified; if real, "describe the region in words" holds for the Video page only) | Its own entry in the video-model selector [PP@2026-08-31]: task dropdown "Edit video", source clip into the **VIDEO TO EDIT** slot, references via @-elements, up to 1080p; regions are described in words (no mask editor). Mode doctrine + prompt format: video-prompting ch. 14b. |
 | Correct light or grade on an existing clip | **Relight** / **Color Palette** | Relight has six presets plus manual light parameters and up to two custom sources; Colour Palette has 50+ presets plus custom grading. |
 | Separate/rebuild a still image | **Layers** | Layer Decomposition, Edit Text, and Remove Background are currently listed actions. |
 | Upscale a video | **Upscale / FLUX 3 Video Upscaler** | Precise and Creative modes; outputs listed as 1080p, 2K, or 4K. Creative mode can use optional prompt guidance. |
@@ -238,6 +240,7 @@ fal gives access to 1,000+ image, video, audio, 3D, and other endpoints. It has 
 [Playground manual](https://fal.ai/docs/documentation/model-apis/playground) · [Sandbox manual](https://fal.ai/docs/documentation/model-apis/sandbox) · [Dashboard/resources map](https://fal.ai/docs/documentation/setting-up/resources) · [free tools scope](https://fal.ai/tools)
 
 ### What the Playground actually exposes
+🟡 Model-form fact (fal Omni for MiniMax H3, snapshot 2026-08-02 [P42]): prompt cap ≈2,000 characters on the fal form vs ≈7,000 for the raw model — condense the official six-section Ref2VA prompt before pasting; 15 s / 2K / 21:9 took ≈10 min inference.
 
 The model author’s schema drives the form. Required fields and `ui.important` fields appear in the main form; optional fields with defaults normally sit under **Additional Settings**. An agent must open the selected endpoint’s **API** tab and treat that schema as canonical.
 
