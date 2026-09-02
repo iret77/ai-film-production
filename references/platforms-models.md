@@ -1,7 +1,7 @@
 # Platforms & Cross-Model Profiles: Higgsfield CS, H3, Kling, Veo, Grok (ch. 13, 21)
 
 
-Source-tagged knowledge base. Confidence labels: 🟢 multi-source/official/production-proven · 🟡 plausible, single-source or untested · 🔴 marketing claim, verify yourself. Source tags: [A]=platform academy docs, [P1–P49]=practitioner and vendor-thread protocols (registry: sources.md), [PP]=first-party production-session evidence, [W]=web research (multi-source), [H-off]=Higgsfield official, [BD-off]=ByteDance official guide (via verified reproductions), [MM-off]=MiniMax official H3 prompt-writing guides, [F]=fal.ai official, [R-off]=Runway official, [X-ext]=community skill (partially officially confirmed), [OAI-off]=OpenAI cookbook, [G2]/[NB]=image-model guide clusters.
+Source-tagged knowledge base. Confidence labels: 🟢 multi-source/official/production-proven · 🟡 plausible, single-source or untested · 🔴 marketing claim, verify yourself. Source tags: [A]=platform academy docs, [P1–P50]=practitioner and vendor-thread protocols (registry: sources.md), [PP]=first-party production-session evidence, [W]=web research (multi-source), [H-off]=Higgsfield official, [BD-off]=ByteDance official guide (via verified reproductions), [MM-off]=MiniMax official H3 prompt-writing guides, [F]=fal.ai official, [R-off]=Runway official, [X-ext]=community skill (partially officially confirmed), [OAI-off]=OpenAI cookbook, [G2]/[NB]=image-model guide clusters.
 
 ## Version/evidence routing
 

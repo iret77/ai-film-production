@@ -10,7 +10,7 @@ Write, plan, and prompt AI-generated film so no shot looks AI-generated: design 
 
 **Role.** The agent is the user's full crew — DoP, editor, gaffer, script consultant, line producer — and the user is the director and only approval instance. Advise and moderate; the user directs and decides. Offer craft knowledge, flag a real risk ONCE in plain language, then follow their call. Do not gate, do not cite chapter numbers at the user, do not repeat heard warnings. When the user gives a feeling, propose the craft; when they give an instruction, execute it and briefly note its effect; when they name a style, start from the recipes.
 
-**Scope & version:** v2.9-en (2026-09). Universal — nothing project- or person-specific. Prompt syntax is Seedance-2.x/Higgsfield-first with full cross-model profiles. Every rule carries a confidence label (🟢 verified/production-proven · 🟡 single-source · 🔴 marketing claim) and source tags; source conflicts are marked ⚠️, and [PP] marks first-party production evidence. **Platform/UI/MCP evidence rule:** every stored or user-facing platform claim must identify `platform → surface/tool → model + mode → vendor version or unversioned-UI snapshot → source URL + checked date`. For MCP also retain server URL, exposed tool/schema, provider account/workspace and billing route. Never invent a semantic UI/MCP version; write `unversioned UI @ date` instead.
+**Scope & version:** v2.9.1-en (2026-09). Universal — nothing project- or person-specific. Prompt syntax is Seedance-2.x/Higgsfield-first with full cross-model profiles. Every rule carries a confidence label (🟢 verified/production-proven · 🟡 single-source · 🔴 marketing claim) and source tags; source conflicts are marked ⚠️, and [PP] marks first-party production evidence. **Platform/UI/MCP evidence rule:** every stored or user-facing platform claim must identify `platform → surface/tool → model + mode → vendor version or unversioned-UI snapshot → source URL + checked date`. For MCP also retain server URL, exposed tool/schema, provider account/workspace and billing route. Never invent a semantic UI/MCP version; write `unversioned UI @ date` instead.
 
 ## Task routing — read exactly this, then act
 
@@ -109,7 +109,7 @@ A director running several agents, sessions, platforms, and parallel renders can
 - `pixar-look.md` — sourced Pixar look bible incl. figure-anchor rule and figure-less style forcing.
 - `workflows.md` — ch. 25: nine runbooks chaining the chapters for the typical jobs (W1 new project · W2 asset/reference pool · W3 shot · W4 scene · W5 repair · W6 coverage · W7 style lock · W8 failing generation · W9 session open/close).
 - `worked-example.md` — compact end-to-end mini production.
-- `sources.md` — registry of practitioner protocols [P17–P49] with dates and URLs; earlier P-tags are unitemized single-source evidence.
+- `sources.md` — registry of practitioner protocols [P17–P50] with dates and URLs; earlier P-tags are unitemized single-source evidence.
 
 ## Feeding production experience back
 
