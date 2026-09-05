@@ -1,77 +1,80 @@
 # Workflows: The Typical Jobs, as Runbooks (ch. 25)
 
-Named, ordered procedures for the recurring jobs of an AI-film production. They add NO new rules — they chain the existing chapters into the order that has proven to work, so a session never improvises the sequence. Every step that writes a prompt runs the per-prompt checklist (SKILL.md); every workflow ends by updating the production bible where the project keeps one (rule 11). Every external generation/edit first receives a platform receipt (`platform → route → surface/tool → model + mode → version/snapshot → source/check date → workspace`) in that bible. Pick the workflow by trigger; if two apply, run the earlier-numbered one first.
+Named, ordered procedures for the recurring jobs of an AI-film production. They add NO new rules — they chain the existing chapters into the order that has proven to work, so a session never improvises the sequence. Every step that writes a prompt runs the per-prompt checklist (SKILL.md); every workflow ends by updating the production bible (SKILL rule 11). Every external generation/edit first receives a RECEIPT line (SKILL.md Scope & version; state `live-checked <date>` or `from reference <KEY>`, SKILL rule 16) in that bible. Pick the workflow by trigger; if two apply, run the earlier-numbered one first. Citations: `production-pipeline ch. N` for chapters 1–11, `<file> §N` for section-numbered files (SKILL.md citation convention).
 
 ## W1 — New project (trigger: a new film/short/ad/social video begins)
 1. Genre named or evident? Read `genre-baselines.md` FIRST — it pre-answers craft defaults and names the files THIS project type needs.
-2. Story intake gate (story-structures ch. 23): the story comes from the user; offer a dramaturgical container before any craft settles.
-3. Settle only what the conversation hasn't: format/look (stylized and UGC absorb errors; photoreal demands discipline; ~70% realism is the uncanny danger zone) · target length & platform · deliverable · model stack (renderability quick profiles) · dialogue language (non-English → plan dubbing/VO now).
+2. Story intake gate (story-structures ch. 23a): the story comes from the user; offer a dramaturgical container before any craft settles.
+3. Settle only what the conversation hasn't: format/look (stylized and UGC absorb errors; photoreal demands discipline; ~70% realism is the uncanny danger zone) · target length & platform · deliverable · model stack (renderability §6 quick profiles, production-pipeline ch. 5) · dialogue language + route (native test take / audio dub / video dub — SKILL Workflow 1). Interaction contract (SKILL.md Workflow 1): one grouped question message, then ASSUMED defaults, logged in the bible decision log.
 4. Style direction: user names a director/DoP or a mood → W7.
-5. Create the production bible (ch. 22) BEFORE the first asset order; register the decisions above as canon.
-Exit: bible exists, container chosen, look decided, model stack named.
+5. Create the production bible (ch. 22, template 22b) BEFORE the first asset order — every project, even one that looks like a single session (SKILL rule 11); register the decisions above as canon. The bible's Verify-line row is never left empty: with a recipe, copy its Verify line; without one, write a DEFAULT VERIFY LINE of three binary checks derived from the style anchor and the genre baseline defaults, e.g. "palette = anchor palette? · key light from the stated side and motivated? · sequence camera grammar as planned?" — label it DEFAULT so W7 can replace it if a recipe is chosen later.
+Exit: bible exists, container chosen, look decided, model stack named (Render-ID tokens fixed in bible section B1), Verify line present.
 
 ## W2 — Asset & reference-pool build-out (trigger: project has a bible, no approved assets yet; or a new character/location/prop enters)
-1. Order of build: location plates → characters → props → composite stills (production-pipeline ch. 1). Pixar/stylized projects INVERT: character sheets first, location anchor plates WITH a figure, then derive empty plates (hard rule, ch. 1).
-2. Per character: minimal sheet (or animation variant: 1 pose + 8 expressions), defensive anatomy locks, one-face rule (ch. 3). Persistent state changes = NEW state sheets, never prompt adjectives.
-3. Per location: master wide + 2–3 detail plates at ONE exposure; decide reverses UP FRONT (ch. 4/16 — late reverse plates are the most expensive single mistake).
-4. Build the reference POOL as a deliverable (ch. 14b): wardrobe details, prop stills, style stills, motion clips, voice/audio refs, clay blockouts — one reference for every element that must stay consistent anywhere.
-5. Register everything as named elements with EXACT tag names (@hero, @loc_x, @anchor_1A); a name mismatch silently unbinds (production-pipeline ch. 7).
-Exit: every element the script needs exists as an approved, tagged reference; bible asset registry updated.
+1. Order of build: location plates → characters → props → composite stills (production-pipeline ch. 1). Pixar/stylized projects INVERT: character sheets first, location anchor plates WITH a figure, then derive empty plates (hard rule, production-pipeline ch. 1 — canonical text pixar-look §8).
+2. Per character: minimal sheet (or animation variant: 1 pose + 8 expressions), defensive anatomy locks, one-face rule (production-pipeline ch. 3). Persistent state changes = NEW state sheets, never prompt adjectives. Each order ships as a Render Slate + still prompt (asset order shape, production-pipeline ch. 3).
+3. Per location: master wide + 2–3 detail plates at ONE exposure; decide reverses UP FRONT (production-pipeline ch. 4 / ch. 16 — late reverse plates are the most expensive single mistake). Location needs counter-angles (dialogue, cross-room action)? Produce the plates NOW at rung-3 tools — a purpose-built angle tool IF the live Higgsfield shell has one (production-pipeline ch. 16 tool section: undated, verify in the tool picker and mint a fresh receipt first) or GPT Image 2 WITH the layout map or master plate as input, never free-text "same scene from behind" — and reverse-test against the master (anchors, openings, light side, palette; production-pipeline ch. 16 rung 3, platforms-models ch. 13b). The coverage ladder of W6 is for angles needed on an EXISTING take; it does not delay planned plates.
+4. Build the reference POOL as a deliverable (ch. 14b) = the bible's asset registry (section B3): wardrobe details, prop stills, style stills, motion clips, voice/audio refs, clay blockouts — one reference for every element that must stay consistent anywhere, each row carrying its reference class (@Image / @Video / @Audio / @Clay Render).
+5. Register everything as named elements with EXACT tag names (@hero, @loc_x, @anchor_1A); a name mismatch silently unbinds (production-pipeline ch. 5b; token form per surface: video-prompting ch. 12b).
+6. Lock gate per LEAD asset (recurring characters, hero locations, hero props): ten-of-ten stress test (production-pipeline ch. 3 — ten generations with the sheet attached, varied pose and light, recognisable in ten of ten; run as image-model stills at draft tier — the cheap form — a fail means the description/sheet is wrong, not the model: fix and re-run). Only after it passes may the bible status move approved → locked (user approval still required, bible rule 3); cameos, extras and one-scene props stop at approved. The motion ladder is the STYLE/model gate and runs once per model in W7 step 4, not per asset.
+Exit: every element the script needs exists as an approved, tagged reference; leads have passed the lock gate; bible asset registry updated.
 
 ## W3 — Produce one shot (trigger: a numbered shot needs its first take)
-1. CANON: read the beat in treatment/script/bible (rule 13) — content before platform, same order as the per-prompt checklist.
-2. ROUTE RECEIPT: record the exact platform, access route, active surface/tool, model + mode/endpoint, vendor version or dated UI snapshot, source/check date and account/workspace. Do not choose controls until this exists.
-3. Lint the shot against `renderability.md` (red list) — rewrite or attach a rescue BEFORE spending a render.
-4. Stills-first: generate the shot's still (per-prompt checklist; style mechanics per style-control) → user approves → register as `@anchor_<shot>`.
-5. Motion test at draft resolution (480/720p, 10 s) with the anchor attached as a tagged reference, take opening in motion (start-frame slot only when this take chains onto an existing clip — production-pipeline ch. 1; say which path in the slate); judge with the recipe's Verify line + shot criteria (review loop, ch. 1).
-6. Production take only after the motion test sits: target resolution, full duration. A defect accepted at the still stage propagates — surface that trade-off, the user decides.
-Exit: approved take; anchor + statuses in the bible.
+1. CANON: read the beat in treatment/script/bible (rule 13; canon-bound vs craft-fillable content per rule 13) — content before platform, same order as the per-prompt checklist.
+2. ROUTE RECEIPT: mint or reuse the project KEY and write its RECEIPT line (SKILL.md Scope & version) in one of its two states — `live-checked <date>` when you or the user read the live form in THIS session, else `from reference <KEY>` with the stored key's own date. A from-reference receipt (rule 16) is enough to draft; live confirmation is the Generate-time gate, done by whoever has the form open. Do not choose controls until the receipt exists.
+3. Lint the shot against `renderability.md` (red list §2, rescues §3) — rewrite or attach a rescue BEFORE spending a render.
+4. Stills-first: generate the shot's still (per-prompt checklist; style mechanics per style-control §2–4 for the routed model) → user approves → register as `@anchor_<shot>`.
+5. Motion test as a BATCH OF 4 at draft resolution (480/720p, 10 s; production-pipeline ch. 10 batch protocol — watch all four fully: one odd take is a roll, four are the prompt) with the anchor attached as a tagged reference, take opening in motion (start-frame slot only for rule 1's two cases — say which path in the slate); judge with the project's Verify line (recipe's, or the default line from W1 step 5) + shot criteria (review loop, production-pipeline ch. 1; verdict order post-audio-legal ch. 19). When the agent cannot view the result, the director answers the six passes (SKILL checklist step 7).
+6. Production take only after the motion test sits: target resolution, full duration — a new generation of the locked prompt (same Render ID, new settings row), not an extension of the draft take. A defect accepted at the still stage propagates — surface that trade-off, the user decides.
+Exit: approved take; anchor + statuses + render/take log rows in the bible.
 
 ## W4 — Build a scene/sequence (trigger: several shots of one scene; anything longer than one take)
-1. Plan in shots (4–12 s), generate in sequences: 2–3 internal shots per take, explicit ENDING STATE, never a dramatic peak at a take's end (rules 2, ch. 14).
-2. Write take prompts with state chaining: each begins from the previous ENDING STATE ("continue forward, do not replay"); harvest final frames as next start frames (chain case only — outside chained continuation the anchor is a reference, not a start frame; production-pipeline ch. 1).
-3. On Seedance 2.5, build length by EXTENSION, not by cold stitching: 30 s base + one extension round (chain ≈60 s), boundary-frame contract every round; then re-anchor a fresh generation from the original references (ch. 14b).
-4. Dialogue scenes: shot/reverse-shot with the multi-plate set + 180° lock (ch. 7/13); strongest lock = 3D blockout path (ch. 8).
-5. Assemble; the score is built in post — never in the video model (rule 9).
-Exit: scene cut together from approved takes; continuity ledger updated (ch. 19).
+1. Plan in shots (4–12 s), generate in takes: 1–3 internal shots per take (single shot for calm single-event beats, 2–3 only where a cut is needed for pace or coverage — production-pipeline ch. 2), every internal shot's anchor attached and time-scoped (production-pipeline ch. 1), explicit ENDING STATE, never a dramatic peak at a take's end (SKILL rule 2, ch. 14).
+2. Chain takes with state chaining: each take's prompt begins from the previous ENDING STATE ("continue forward, do not replay"). Pick ONE join mechanism per model, never both for the same join: Seedance 2.5 → `video_extension` (30 s base + ONE extension round ≈60 s, boundary-frame contract each round from the last CLEAN frame of the raw export, then re-anchor a NEW generation from the original references — ch. 14b; no cold stitching, no harvested start frame; harvest the source's last frame only to WRITE the boundary state); models without a native extension mode (Seedance 2.0; check renderability §6 for others) → harvest the final frame as the next take's start frame — the chain case, the one place a start frame is doctrine; outside chained continuation the anchor is a reference, not a start frame (production-pipeline ch. 1).
+3. Dialogue scenes: shot/reverse-shot with the multi-plate set + 180° lock (production-pipeline ch. 7; multi-plate set platforms-models ch. 13b); strongest lock = 3D blockout path (production-pipeline ch. 8). No recipe overrides the in-take axis lock (director-recipes header).
+4. Assemble; the score is built in post — never in the video model (rule 9).
+Exit: scene cut together from approved takes; continuity ledger (bible section B7) updated (ch. 19).
 
-## W5 — Repair a faulty take (trigger: an APPROVED or near-approved take has a local fault)
-Never reroll wholesale (rule 12). Route by fault:
+## W5 — Repair a faulty take (trigger: a take that passed the hard rejects and won its batch by emotion — post-audio-legal ch. 19 verdict order — has a local fault)
+Seedance 2.5: never reroll an approved take for a local fault (rule 12) — route by the table. Other models: use the last two rows.
 | Fault | Fix |
 |---|---|
 | Wrong object/face/detail in a region or time window | `video_edit`, region description + explicit time scope (ch. 14b/14) |
-| Right performance, wrong camera | camera-perspective edit — segmented camera plan, everything else locked (ch. 14b) |
+| Right performance, wrong camera | camera-perspective edit — segmented camera plan, everything else locked (ch. 14b); [PP]-unproven, one test, then rung 3 of W6 |
 | Right performance, wrong environment | green-screen relocation via `omni_reference` (ch. 14b) |
 | Wrong subject, right timeline | subject swap + Timeline Inheritance clause (ch. 14) |
 | Audio only (music/voice/language/SFX) | audio-category edit — never touch pixels (ch. 14b) |
 | Too short / scene continues | `video_extension` with boundary-frame contract (ch. 14b) |
-| Fault is global (style, light, physics everywhere) | back to the prompt: fix the weakest instruction, regenerate (ch. 1 review loop) |
-Constraints: source ≤20 s recommended, ≤3 edit iterations then branch from best intermediate; edits bill full source duration.
-Exit: fixed take approved; its exact platform receipt noted in the bible.
+| Wrong object, prop, wardrobe or location in an existing clip, any model's output, on Higgsfield | **Genjutsu — Object Swap** (Video → model selector → Genjutsu; one clip ≤30 s + up to 30 reference photos, output ≤1080p; `HF-WEB@2026-09-04`, changelog 2026-09-01) — untested here [🟡]; confirm the live form and treat the result as a new Take ID |
+| Model/surface has no scoped edit route for this fault (Seedance 2.0, Kling, Veo, Grok; check the model's quick profile, renderability §6, and the surface in platform-ui-workflows — Runway = Aleph 2.0 Edit Studio, H3 = V2V edit) | harvest clean 2–4 s as coverage (production-pipeline ch. 10), fix the weakest instruction, regenerate; `extend` only where the model offers it (Veo 3.1, Seedance) |
+| Fault is global (style, light, physics everywhere) | back to the prompt: fix the weakest instruction, regenerate (production-pipeline ch. 1 review loop) |
+Constraints (ch. 14b): source ≤20 s recommended, 1–5 refs; edits bill the source's full duration; ≤3 edit rounds per source, then branch from the best intermediate .mov export as the new @Video 1 (ch. 14b edit-round ceiling). Every edit result is a new Take ID (bible rule 3).
+Exit: fixed take approved; its RECEIPT KEY and render/take log row noted in the bible.
 
-## W6 — Get a new angle / coverage (trigger: a reverse, insert, or B-camera view is needed)
+## W6 — Get a new angle / coverage (trigger: a reverse, insert, or B-camera view is needed on an EXISTING take or approved still set; planned reverse plates for dialogue/cross-room sets are pre-production → W2 step 3)
 Climb the ladder, exhaust each rung (ch. 16):
 1. New angles as internal shots of the SAME take (cheapest, most reliable).
-2. Harvest frames from an existing successful generation as references; or camera-perspective edit on the approved take (B-camera pass).
-3. Still needed as a STILL: purpose-built tools (Angles/Shots apps) or GPT Image 2 WITH a layout map — never free-text "same scene from behind". Reverse test: anchors, openings, light side, palette against the master plate.
-4. Nothing pins → geometry inputs: 3D blockout/clay render (ch. 8, 14b).
+2. Harvest frames from an existing successful generation as references (last frame + "continue forward, do not replay"); or ONE camera-perspective edit on the approved take (B-camera pass — [PP]-unproven, budget one test only, bills the source's full duration; ch. 16 rung 2, ch. 14b). A failed single test → rung 3, not a second edit.
+3. Still needed as a STILL: a purpose-built angle tool IF the live Higgsfield shell has one (production-pipeline ch. 16 tool section: undated, verify in the tool picker and mint a fresh receipt first) or GPT Image 2 WITH a layout map — never free-text "same scene from behind". Reverse test: anchors, openings, light side, palette against the master plate.
+4. Nothing pins → geometry inputs: 3D blockout/clay render (production-pipeline ch. 8; video-prompting ch. 14b).
 Exit: coverage that passes the reverse test.
 
 ## W7 — Define & lock a style (trigger: user names a director/film/mood, or the look drifts)
-1. User names a direction → `director-recipes.md` selection index; mix max TWO recipes, one dominant.
-2. Build the project style block from look-defining references via LLM reverse-engineering (style-control §7), or from the vocabulary packages (§6) — compact anchor, 4–8 tokens, reused verbatim.
-3. Stylized 3D: figure anchor or style-forcing blocks (rule 8; pixar-look ch. 8/9).
-4. Validate on ONE still + one motion-ladder test per model before rolling out (style-control §5b); the recipe's Verify line becomes the standing reroll gate.
-5. Write the final style anchor into the bible; from then on it is canon, reused verbatim.
-Exit: style anchor in the bible + a passing verify still.
+1. User names a direction → `director-recipes.md` selection index; cap = ONE director recipe + at most ONE DoP signature (two packages, one dominant); two directors named → synthesis (selection index step 6), never two recipes side by side.
+2. Build the project style anchor (the style-contract paragraph) from look-defining references via LLM reverse-engineering (style-control §7), or from the vocabulary packages (style-control §6) — plus its 4–8 look tokens (SKILL.md Workflow step 4).
+3. Stylized 3D: figure anchor or style-forcing blocks (SKILL rule 8; pixar-look §8/§9).
+4. Validate on ONE still + one motion-ladder test per model before rolling out (style-control §5b); the recipe's Verify line becomes the standing reroll gate (replacing a DEFAULT line from W1 step 5).
+5. Write the final style anchor + look tokens into the bible (section B2); from then on it is canon, distributed into every prompt per SKILL.md Workflow step 4.
+Exit: style anchor + look tokens + Verify line in the bible + a passing verify still.
 
-## W8 — A generation keeps failing (trigger: 2+ failed runs on the same axis)
-1. Suspect the PROMPT first (~8/10 presumed model limits were prompt faults, rule 14): lint for internal contradictions, missing positive lock on the failing axis, stacked instructions on one axis, meta commentary (ch. 24b).
-2. Rewrite short from scratch — never patch past 3 iterations.
-3. Still failing → change CHANNEL, not vocabulary: reference/sketch/mask/clay render/seed reroll/other model (ch. 24b.7; stills ladders ch. 24c–g; video ch. 14b).
-4. Only after a clean minimal prompt fails twice on the same axis: declare a model limit, route the shot to another model (renderability matrix) or rescue/rewrite the beat (renderability rescue paths). Flag a kept risk in the register.
+## W8 — A generation keeps failing (trigger: one prompt has failed on the same axis on a full batch of 4, or two iterations in a row)
+1. Suspect the PROMPT first (in first-party production sessions [PP, 🟡 heuristic, not a measured statistic] roughly 8 of 10 presumed model limits were prompt faults, SKILL rule 14): lint for internal contradictions, missing positive lock on the failing axis, stacked instructions on one axis, meta commentary (ch. 24b).
+2. Count in ITERATIONS (one prompt revision judged on one batch of 4, production-pipeline ch. 10): one or two weird rolls are rolls — reroll; four bad rolls = a failed iteration. Iterations 1–3: surgical fixes, one line per iteration.
+3. After the 3rd failed iteration: rewrite short from scratch AND change CHANNEL, not vocabulary: reference/sketch/mask/clay render/seed reroll/other model (ch. 24b contract item 7; stills ladders ch. 24c–g; video ch. 14b).
+4. Only after that clean minimal prompt fails twice on the same axis (two clean iterations, at least two channels): declare a model limit, route the shot to another model (renderability §6) or rescue/rewrite the beat (renderability §3 rescue paths). Flag a kept risk in the delivery risk register (SKILL rule 10) and, at close, in the shot board's Risk → rescue cell.
+5. Budget per shot across all steps: 10–15 iterations → simplify the SHOT (split it, remove an action, change the angle), not the words (production-pipeline ch. 10).
 Exit: working result, or a documented model limit with a rescue.
 
 ## W9 — Session open & close (trigger: every working session in an existing project)
-Open: load the production bible FIRST (rule 11); read only what the next step needs; revalidate the platform receipt for every active generation route (surface/tool, model + mode, UI/MCP version or dated snapshot, source/check date, account/workspace) before relying on a control.
-Close: update the bible LAST — add each actual generation/edit's Receipt ID to the shot board or delivery note; statuses only on user approval, decisions as canon, open risks in the register; nothing outside the bible is canon. Offer ONCE to feed genuinely new production findings back to the public skill (generalized, no project content — SKILL.md closing section).
+Open: load the production bible FIRST (rule 11); read only the files the active runbook step names; revalidate the RECEIPT line (SKILL.md Scope & version) for every active generation route before relying on a control — state `live-checked <date>` only for a form actually read this session, otherwise keep `from reference <KEY>`.
+Close: update the bible LAST — add each actual generation/edit's KEY and render/take log row (section B4b) to the shot board and the delivery's Render Slates; statuses only on user approval, decisions as canon, open risks into the shot board's Risk → rescue cell (copied from the delivery risk registers); reviews the agent could not perform as `TKnn — review pending (director)` in Handoff; nothing outside the bible is canon. Offer ONCE per project (bible decision log: `feedback-to-skill offer: made / declined`) to feed genuinely new production findings back to the public skill (generalized, no project content — SKILL.md closing section).

@@ -1,6 +1,6 @@
 # Image-Model Logic: How Generators Read Prompts — Position, Scale, Count, Negation (ch. 24)
 
-Why this file exists: the agent writing prompts is a text-to-text LLM — trained on argumentative text, writing for readers who reason. The model receiving the prompt is a **caption-conditioned generator** — trained on image-description pairs, where every token is evidence for visible content. These are different machines, and prompts written in reader-logic (rhetoric, emphasis, redundancy, numeric precision, meta commentary) fail on a generator. This chapter is (a) the mechanism, (b) a binding writing contract, (c) exact recipes for the recurring control problems. Confidence labels as usual; deep sources cited inline (papers/vendor docs, researched 2026-08).
+Why this file exists: the agent writing prompts is a text-to-text LLM — trained on argumentative text, writing for readers who reason. The model receiving the prompt is a **caption-conditioned generator** — trained on image-description pairs, where every token is evidence for visible content. These are different machines, and prompts written in reader-logic (rhetoric, emphasis, redundancy, numeric precision, meta commentary) fail on a generator. This chapter is (a) the mechanism, (b) a binding writing contract, (c) exact recipes for the recurring control problems. Tags and confidence labels: legend in sources.md; deep sources cited inline (papers/vendor docs, researched 2026-08).
 
 ## 24a. What a prompt actually is to an image model
 
@@ -24,9 +24,9 @@ Before ANY image/video prompt leaves the agent, it conforms to all seven. This i
 2. **Zero contradictions — and nobody will warn you.** Generators do not detect conflicts; there is no error, only blending in embedding space or a silent win by the training-entrenched concept (CVPR 2026, arXiv 2506.01929). Lint every prompt for: size vs. detail demand, two styles/materials on one surface, positive claim vs. negation of the same attribute, mood vs. stated lighting. Resolve BEFORE generating — the agent is the only contradiction detector in the pipeline.
 3. **The positive statement carries everything.** Negation is a channel decision per model class (24f), never the load-bearing description.
 4. **One instruction per axis.** Compliance degrades near-linearly with constraint count (ConceptMix: <25% at 3 bound concepts; M3T2IBench: linear decline with relations; T2ICountBench: prompt decomposition *reduced* counting accuracy 42%→26%). Stacked restatements of one goal dilute it — redundancy is not emphasis, it is interference.
-5. **Numbers only into numeric channels.** FOV/km/h/Kelvin in video blocks (ch. 12), coordinates in Seedream's annotation mode, size via mask — never metric values in free prose.
+5. **Numbers only into numeric channels — with two prose exemptions.** BANNED in free prose: layout, size and geometry metrics — percent/fraction of frame, pixels, margins, cm/m of an object, coordinates, angles of placement ("15% of frame width", "2 cm tall", "30px from the edge"). These go into a channel instead: coordinates/boxes in Seedream's annotation mode, size via mask or relational anchor (24d), speed/FOV/Kelvin/percent in the video blocks (ch. 12 — video writes focal length as FOV in degrees). ALLOWED in prose because captions contain them and they map: (a) an exact small object count (24e: "three cups", never "several"); (b) caption-native camera and light values in STILL prompts — focal length in mm, f-stop, ISO, film gauge, Kelvin ("24mm wide-angle", "f/1.8", "3200K tungsten"). Stills use mm; video uses degrees — never mix the two units in one prompt.
 6. **Order by importance.** First-mention bias (24a): the must-have object opens the scene description.
-7. **Three failed runs on one axis = wrong channel, not wrong words** (SKILL rule 14, "prompt first, model last"). Escalate to a different control channel — reference image, sketch, mask, seed reroll, other model — instead of a fourth vocabulary variant.
+7. **Three failed ITERATIONS (batches of 4) on one axis = wrong channel, not wrong words** (SKILL rule 14, "prompt first, model last"; iteration = one prompt revision judged on one batch of 4, production-pipeline ch. 10). Escalate to a different control channel — reference image, sketch, mask, seed reroll, other model — instead of a fourth vocabulary variant.
 
 ## 24c. Position control — the ladder
 
@@ -35,8 +35,8 @@ Benchmark reality first: coarse position words (left/right/top/bottom) hit ~75% 
 1. **Model choice:** layout-critical stills go to the AR/reasoning class (GPT Image, Nano Banana Pro) — 2–3× the position compliance of prose-conditioned diffusion.
 2. **Zone language, layout first** (official across vendors): "logo top-right", "subject centered with negative space on left", "positioned in the bottom-right of the frame". Declare empty zones explicitly ("significant negative space left for text") — declared emptiness holds, implied emptiness doesn't. Canvas/grid/panels before subjects (style-control §2 layout-before-subject).
 3. **Named scene geometry, never coordinates:** place relative to what exists — "just under the painting, in the corner", "at the lip of the crevice". This is the placement twin of relational sizing: the model thinks in object relations, so address it in them.
-4. **Layout sketch as reference** (official OpenAI/Seedream pattern): a crude blocked sketch + "Preserve the exact layout, proportions, and perspective. Do not add new elements." Right tool whenever WHERE matters more than WHAT — the model keeps geometry and invents surface. (Complements the 3D-blockout path, ch. 8.)
-5. **Structure/annotation channels:** FLUX Depth/Canny freeze composition entirely (content/style changes, layout locked); Seedream 5.0 Pro accepts boxes, points, arrows, coordinates, and sketches as edit targets — the ONE place numbers are legitimate, because it is a trained channel.
+4. **Layout sketch as reference** (official OpenAI/Seedream pattern): a crude blocked sketch + "Preserve the exact layout, proportions, and perspective. Do not add new elements." Right tool whenever WHERE matters more than WHAT — the model keeps geometry and invents surface. (Complements the 3D-blockout path, production-pipeline ch. 8.)
+5. **Structure/annotation channels:** FLUX Depth/Canny freeze composition entirely (content/style changes, layout locked); Seedream 5.0 Pro accepts boxes, points, arrows, coordinates, and sketches as edit targets — the ONE place LAYOUT numbers (coordinates, boxes) are legitimate, because it is a trained channel (camera/light values and counts stay allowed in prose, 24b item 5).
 6. **Pixel-exact = composite in post:** generate background + element layers (Seedream: up to 20 transparent PNG layers) or cut out and place manually. No prompt reaches pixel precision; stop trying at this rung.
 
 Diffusion-only bonus lever: **reroll the seed** — layout is partly pre-decided by noise (24a); a new seed is a new layout lottery, cheaper than prompt surgery.
@@ -50,7 +50,7 @@ Diffusion-only bonus lever: **reroll the seed** — layout is partly pre-decided
 5. **Hard size constraint → change channel:** mask drawn AT the intended object size (the mask is the size control — but check mask strictness per platform, 24g), Seedream sketch-at-size / bounding box, or layered compositing. For a small object that also needs detail: crop-zoom-inpaint-paste-back (24g).
 6. **Compositing/insertion:** demand "matching lighting, perspective, scale, and shadows" verbatim (official OpenAI compositing recipe) + the ground-contact positive lock (style-control §2).
 
-Never numeric size in prose — no vendor guide uses it, no benchmark shows it working, and it displaces tokens that could carry a working lever.
+Never numeric SIZE in prose (mm/f-stop/Kelvin are camera values, not sizes — allowed, 24b item 5) — no vendor guide uses it, no benchmark shows it working, and it displaces tokens that could carry a working lever.
 
 ## 24e. Count & multi-object
 
@@ -77,7 +77,7 @@ Never numeric size in prose — no vendor guide uses it, no benchmark shows it w
 ## 24g. Edits & locality
 
 🟢 **Instruction edits regenerate the whole image** — unedited content is *reconstructed*, never copied, so drift is the native behavior, not a malfunction (BFL engineered Kontext specifically to minimize it). Measured (EdiVal, 16 models): GPT-Image is top-tier at FOLLOWING instructions but near-bottom at PRESERVING content — "GPT Image repaints everything" is benchmarked fact, not folklore; Nano Banana and FLUX Kontext preserve best; Seedream 4+ has the best balance.
-🟢 **Multi-turn collapse:** by turn 3, instruction-following roughly halves for every model tested; research puts hard degradation at ~5 chained edits (VAE re-encode noise) — our stricter max-3 rule (style-control §2) stands. Branch from the best intermediate or restart from the original with ONE combined instruction; never chain serially toward a deadline.
+🟢 **Multi-turn collapse:** by turn 3, instruction-following roughly halves for every model tested; research puts hard degradation at ~5 chained edits (VAE re-encode noise) — our stricter max-3 rule (style-control §2) stands. Branch from the best intermediate or restart from the original with ONE combined instruction; never chain serially toward a deadline. (Video edit chains: the same 3-round ceiling by analogy — video-prompting ch. 14b edit-round ceiling.)
 🟢 **The preserve list is official practice, not a guarantee:** "change only X, keep everything else exactly the same" + repeating the preserve list on EVERY iteration is what OpenAI/Google/BFL all prescribe — necessary, but unmeasured; model choice moves locality more than phrasing.
 🟢 **Mask strictness differs per platform — know which kind you hold:**
 
@@ -100,4 +100,4 @@ Never numeric size in prose — no vendor guide uses it, no benchmark shows it w
 | Exclude something | Positive replacement in the same slot | Negative field (diffusion) / short exclusion (AR) / accept-and-post fallback |
 | Local edit, keep the rest | "Change only X" + repeated preserve list, ≤3 iterations | Hard mask (FLUX Fill/Imagen) or restart from original with combined instruction |
 | Keep composition, change content | Reference + role line ("layout and light only") | FLUX Depth/Canny structure lock |
-| Layout fights you twice | Reroll seed (diffusion) or switch to AR-class model | Any of the above — but change CHANNEL, not vocabulary (24b.7) |
+| Layout fights you twice | Reroll seed (diffusion) or switch to AR-class model | Any of the above — but change CHANNEL, not vocabulary (24b item 7) |

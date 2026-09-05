@@ -55,7 +55,7 @@ The skill triggers on its own whenever the production path is clearly generative
 
 ## What's inside
 
-**25 chapters · 16 always-on rules · a 7-step per-prompt checklist · 9 workflow runbooks · 13 genre baselines · 31 director recipes + 11 DoP signatures · 15+ style vocabularies · 6 video models profiled.**
+**25 chapters · 16 always-on rules · a 7-step per-prompt checklist · 9 workflow runbooks · 13 genre baselines · 31 director recipes + 11 DoP signatures · 11 animation style vocabularies + footage/era/optics packages · 6 video models profiled.**
 
 - **Direction & craft** — model-independent film language (composition, editing, light, color, dramaturgy), director and DoP recipes with per-recipe verify gates, genre entry points, story structures from three-act to kishōtenketsu.
 - **Prompting method** — the block-structure prompt template with camera-third ordering and FOV-in-degrees discipline; how image models actually read prompts (position, scale, count, negation — with the research receipts); style enforcement that survives more than one shot.
@@ -83,11 +83,11 @@ No rule ships without a label: 🟢 verified across sources / official / product
 ## Structure
 
 <details>
-<summary>All 19 files at a glance</summary>
+<summary>All 20 files at a glance</summary>
 
 | File | Role |
 |---|---|
-| `SKILL.md` | Entry point: task routing table, 16 inline always-rules, the mandatory per-prompt checklist, 5-step project workflow |
+| `SKILL.md` | Entry point: citation convention, precedence, order of operations + task routing table, 16 inline always-rules, the mandatory per-prompt checklist, Render Slate contract with ID grammar, 5-step project workflow |
 | `references/genre-baselines.md` | 13 genre entry points (incl. Commercial/Ad): craft defaults, subgenres, recipe shortlists, per-genre skill filters |
 | `references/production-pipeline.md` | Ch. 1–11 + 16: pipeline principles, assets, QA, model choice, coverage ladder, interview production path (7b) |
 | `references/video-prompting.md` | Ch. 12 + 14 + 14b: THE block-structure prompt template, cross-model adaptation, sequence prompting, negation classes, Seedance 2.5 doctrine (reference-maximal control, edit suite, extension chains, large casts, montage ceiling, Dreamina-only surfaces) |
@@ -100,10 +100,11 @@ No rule ships without a label: 🟢 verified across sources / official / product
 | `references/film-craft.md` | Model-independent film language: composition, camera, editing, light, color, timing, dramaturgy |
 | `references/director-recipes.md` | 31 director recipes + 11 DoP signatures; selection index, per-recipe Verify gates, harmony map |
 | `references/pixar-look.md` | Sourced Pixar look bible incl. figure-anchor rule, style-forcing method, and the hybrid previs-to-AI case study (wide-shot rescue, hidden faces, style donor) |
-| `references/production-bible.md` | Ch. 22: living project-state document — template, session rules, platform mapping |
+| `references/production-bible.md` | Ch. 22: living project-state document — template, session rules, platform mapping, ID grammar (Render ID tokens, instance chain, bootstrap) |
 | `references/story-structures.md` | Ch. 23: dramaturgical containers — intake gate, classic/alternative structures, series poles & online-native formats |
 | `references/workflows.md` | Ch. 25: nine runbooks for the typical production jobs — project start to session close |
 | `references/worked-example.md` | Compact end-to-end mini production |
+| `references/glossary.md` | One meaning per term: shot/take/sequence, plates and sheets, the six kinds of anchor, locks, channel/axis, artefact names |
 | `references/sources.md` | Registry of practitioner and vendor-thread protocols P17–P49 plus the official MiniMax guides [MM-off] (date, URL, sponsorship flag) behind the source tags |
 | `LICENSE` | MIT |
 
@@ -111,7 +112,7 @@ No rule ships without a label: 🟢 verified across sources / official / product
 
 ## Versioning
 
-v2.9.1-en (2026-09). Universal — contains nothing project- or person-specific. This repository is the source of truth for the skill; lessons from production flow back here via commits, and every release ships an upload-ready `.skill` package.
+v3.0-en (2026-09). Universal — contains nothing project- or person-specific. This repository is the source of truth for the skill; lessons from production flow back here via commits, and every release ships an upload-ready `.skill` package.
 
 ## License
 
