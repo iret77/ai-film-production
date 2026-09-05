@@ -37,7 +37,7 @@ Same model. The difference is method: every aspect has one home, everything is m
 
 ## How it works
 
-It starts the moment you say "plan my short film." The skill doesn't jump into prompts. It reads your genre's craft baseline, asks for the story before the style, and offers a dramaturgical container. Then it builds the way productions build: locations and cast as approved reference assets first, every shot as an approved still before any video — attached as a reference anchor, not as a start frame, unless a take must chain frame-exactly onto an existing clip — every prompt through a fixed seven-step checklist — canon, routing, references, writing, lint, delivery, review. When a take comes back 90% right, it doesn't reroll; it repairs the 10% with the platform's edit modes. And everything that survives your approval becomes canon in a living production bible, so the next session picks up exactly where this one stopped.
+It starts the moment you say "plan my short film." The skill doesn't jump into prompts. It reads your genre's craft baseline, asks for the story before the style, and offers a dramaturgical container. Then it builds the way productions build: locations and cast as approved reference assets first, every shot as an approved still before any video — attached as a reference anchor, not as a start frame, unless a take must chain frame-exactly onto an existing clip — every prompt through a fixed seven-step checklist — canon, routing, references, writing, lint, delivery, review — and delivered under a Render Slate that names the platform, the surface, the model and mode, every input and where the result is stored. Platform facts are never invented: each slate carries a receipt that says whether the route was live-checked or taken from the skill's dated ledger. When a take comes back 90% right, it doesn't reroll; it repairs the 10% with the platform's edit modes. And everything that survives your approval becomes canon in a living production bible, so the next session picks up exactly where this one stopped.
 
 Claude just runs a film production.
 
@@ -55,11 +55,12 @@ The skill triggers on its own whenever the production path is clearly generative
 
 ## What's inside
 
-**25 chapters · 16 always-on rules · a 7-step per-prompt checklist · 9 workflow runbooks · 13 genre baselines · 31 director recipes + 11 DoP signatures · 11 animation style vocabularies + footage/era/optics packages · 6 video models profiled.**
+**25 chapters · 16 always-on rules · a 7-step per-prompt checklist · a Render Slate per prompt · 9 workflow runbooks · 13 genre baselines · 31 director recipes + 11 DoP signatures · 11 animation style vocabularies + footage/era/optics packages · 6 video models profiled · a platform ledger re-verified 2026-09-04.**
 
 - **Direction & craft** — model-independent film language (composition, editing, light, color, dramaturgy), director and DoP recipes with per-recipe verify gates, genre entry points, story structures from three-act to kishōtenketsu.
 - **Prompting method** — the block-structure prompt template with camera-third ordering and FOV-in-degrees discipline; how image models actually read prompts (position, scale, count, negation — with the research receipts); style enforcement that survives more than one shot.
 - **Production operations** — stills-first pipeline, asset and reference-pool build-out, renderability linting with green/red lists and rescue paths, coverage ladder, continuity ledger, a living production-bible convention for multi-session projects.
+- **Built to be executed, not just read** — v3.0 reworked the whole skill for weaker agents: one meaning per term (`references/glossary.md`), a precedence ladder for conflicting sources, a citation convention that makes every chapter reference unambiguous, fixed order of operations, slate rows with fixed labels, receipt states that forbid fabricated platform facts, a copy-ready worked example, and six review passes with a fixed take-verdict order.
 - **Platform knowledge** — Seedance 2.5 doctrine (50-reference control incl. clay-render staging — Blender-built or Seedance-generated — the edit suite, extension chains), Higgsfield Cinema Studio settings, the MiniMax H3 official schema (cut-point timestamps, six-section reference form, retention markers), compact profiles for Kling, Veo, and Grok, production rules distilled from Higgsfield's open-sourced feature films (headless sheets, one asset per state, speech-count lock, crowd scale in three layers, the negation third class), dated platform caveats, and a real-face moderation plan for licensed likenesses.
 
 ## Why you'd use it — and why you wouldn't
@@ -102,17 +103,17 @@ No rule ships without a label: 🟢 verified across sources / official / product
 | `references/pixar-look.md` | Sourced Pixar look bible incl. figure-anchor rule, style-forcing method, and the hybrid previs-to-AI case study (wide-shot rescue, hidden faces, style donor) |
 | `references/production-bible.md` | Ch. 22: living project-state document — template, session rules, platform mapping, ID grammar (Render ID tokens, instance chain, bootstrap) |
 | `references/story-structures.md` | Ch. 23: dramaturgical containers — intake gate, classic/alternative structures, series poles & online-native formats |
-| `references/workflows.md` | Ch. 25: nine runbooks for the typical production jobs — project start to session close |
-| `references/worked-example.md` | Compact end-to-end mini production |
+| `references/workflows.md` | Ch. 25: nine runbooks for the typical production jobs — project start to session close, with interaction contract, lock gate and receipt states |
+| `references/worked-example.md` | Compact end-to-end mini production: shot table, asset order, Render Slate + ch. 12 prompt, risk register, extension round, bible rows |
 | `references/glossary.md` | One meaning per term: shot/take/sequence, plates and sheets, the six kinds of anchor, locks, channel/axis, artefact names |
-| `references/sources.md` | Registry of practitioner and vendor-thread protocols P17–P49 plus the official MiniMax guides [MM-off] (date, URL, sponsorship flag) behind the source tags |
+| `references/sources.md` | Registry of practitioner and vendor-thread protocols P17–P50 plus the official MiniMax guides [MM-off] (date, URL, sponsorship flag) behind the source tags |
 | `LICENSE` | MIT |
 
 </details>
 
 ## Versioning
 
-v3.0-en (2026-09). Universal — contains nothing project- or person-specific. This repository is the source of truth for the skill; lessons from production flow back here via commits, and every release ships an upload-ready `.skill` package.
+v3.0-en (2026-09) — executability rework (89 review findings), platform ledger re-verified 2026-09-04, trigger eval 19/20. Universal — contains nothing project- or person-specific. This repository is the source of truth for the skill; lessons from production flow back here via commits, and every release ships an upload-ready `.skill` package.
 
 ## License
 
