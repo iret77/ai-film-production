@@ -45,6 +45,7 @@ Seedance 2.5: never reroll an approved take for a local fault (rule 12) — rout
 | Wrong subject, right timeline | subject swap + Timeline Inheritance clause (ch. 14) |
 | Audio only (music/voice/language/SFX) | audio-category edit — never touch pixels (ch. 14b) |
 | Too short / scene continues | `video_extension` with boundary-frame contract (ch. 14b) |
+| Wrong object, prop, wardrobe or location in an existing clip, any model's output, on Higgsfield | **Genjutsu — Object Swap** (Video → model selector → Genjutsu; one clip ≤30 s + up to 30 reference photos, output ≤1080p; `HF-WEB@2026-09-04`, changelog 2026-09-01) — untested here [🟡]; confirm the live form and treat the result as a new Take ID |
 | Model/surface has no scoped edit route for this fault (Seedance 2.0, Kling, Veo, Grok; check the model's quick profile, renderability §6, and the surface in platform-ui-workflows — Runway = Aleph 2.0 Edit Studio, H3 = V2V edit) | harvest clean 2–4 s as coverage (production-pipeline ch. 10), fix the weakest instruction, regenerate; `extend` only where the model offers it (Veo 3.1, Seedance) |
 | Fault is global (style, light, physics everywhere) | back to the prompt: fix the weakest instruction, regenerate (production-pipeline ch. 1 review loop) |
 Constraints (ch. 14b): source ≤20 s recommended, 1–5 refs; edits bill the source's full duration; ≤3 edit rounds per source, then branch from the best intermediate .mov export as the new @Video 1 (ch. 14b edit-round ceiling). Every edit result is a new Take ID (bible rule 3).

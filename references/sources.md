@@ -50,3 +50,5 @@ Rules in the source-tagged reference files carry a source tag and a confidence l
 | P50 | 2026-09-02 | Higgsfield AI (official), phone-as-virtual-camera launch post (x.com/higgsfield_ai/status/2095221421949825265) + Blender add-on page (higgsfield.ai/plugins/blender, checked 2026-09-02) | production-pipeline ch. 8 (plugin surface, Camera tab) · platform-ui-workflows §1 |
 
 Sponsored sources are marked; their platform claims stay 🟡 until a receipt in `platform-ui-workflows.md` confirms them.
+
+**Ledger re-verification 2026-09-04:** all `*@2026-09-04` keys in `platform-ui-workflows.md` were re-read against the primary vendor pages on that date (Higgsfield CS 4.0 guide, changelog, MCP help page, Blender add-on page, help-center Seedance/DoP/Popcorn/which-model articles; fal MCP docs; Runway Gen-4.5 and MCP help articles; OpenArt video-generator and MCP pages; Arcads MCP article; ChatGPT and OpenAI image-generation docs). Arcads web (`AR-WEB@2026-08-31`) and the Arcads MCP article (2026-06-26) were not re-read beyond the MCP page.

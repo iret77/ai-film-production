@@ -16,7 +16,7 @@ Shot table (SKILL.md Workflow step 5 schema; these Shot IDs ARE the bible shot b
 Sequence takes (SKILL rule 2): **S1** = 1A+1B (10-s `t2v` take, 2 internal shots) · **S2** = 1C+1D (10-s `video_extension` of S1, counter-angle as internal shot 2 after the HARD CUT). A multi-shot take carries the Render ID of its FIRST internal shot; every internal shot's board row points to it.
 
 ## 1b. Route receipt (SKILL rule 16, checklist step 2)
-`HF-WEB@2026-08-31 · Higgsfield → web UI → project LIGHTCAT → Video → Seedance 2.5 · t2v (UI label unverified — read the live task dropdown) / video_extension ("Extend") → unversioned UI @ 2026-08-31 → https://higgsfield.ai/generate/video · from reference HF-WEB@2026-08-31` — no live read this session, so the state is `from reference`; whoever has the form open confirms model/mode/workspace before Generate (the Generate-time gate). Stills: `HF-WEB@2026-08-31 · Higgsfield → web UI → Image → Nano Banana Pro` (surface label to be written exactly as shown on the live form, production-pipeline ch. 5 label-mismatch note). Both rows go into bible section B1b.
+`HF-WEB@2026-09-04 · Higgsfield → web UI → project LIGHTCAT → Video → Seedance 2.5 · t2v (UI label unverified — read the live task dropdown) / video_extension ("Extend") → unversioned UI @ 2026-08-31 → https://higgsfield.ai/generate/video · from reference HF-WEB@2026-09-04` — no live read this session, so the state is `from reference`; whoever has the form open confirms model/mode/workspace before Generate (the Generate-time gate). Stills: `HF-WEB@2026-09-04 · Higgsfield → web UI → Image → Nano Banana Pro` (surface label to be written exactly as shown on the live form, production-pipeline ch. 5 label-mismatch note). Both rows go into bible section B1b.
 
 ## 2. Assets (production-pipeline ch. 1, 3–5; pixar-look §8; style-control §2–3)
 Every order ships as a Render Slate + still prompt (asset order shape, production-pipeline ch. 3). One shown in full, the rest as one-line orders:
@@ -25,7 +25,7 @@ Every order ships as a Render Slate + still prompt (asset order shape, productio
 | Render ID | `LIGHTCAT_cat__HF-NBP__SHEET__P01` |
 | Intent | Cat character sheet, stylized 3D, one canonical face — CG turnaround (production-pipeline ch. 3 selector: stylized 3D) |
 | Crew choices | neutral grey background, even studio light, 3/4 face close-up as the identity carrier |
-| Run in | Higgsfield → web UI → project LIGHTCAT → Image → Nano Banana Pro (live label to confirm) — from reference HF-WEB@2026-08-31, not live-checked this session |
+| Run in | Higgsfield → web UI → project LIGHTCAT → Image → Nano Banana Pro (live label to confirm) — from reference HF-WEB@2026-09-04, not live-checked this session |
 | Settings | 16:9 · 2K · 1 image |
 | Inputs | none (from scratch) |
 | Format | CG turnaround: A-pose front + back full body + large 3/4 face close-up · state: dry (state sheet #2 "wet fur" is a separate order) |
@@ -46,7 +46,7 @@ Character reference sheet on a plain neutral grey background, landscape 16:9, th
 | Render ID | `LIGHTCAT_1A__HF-SD25__T2V__P01` (multi-shot take S1 = 1A+1B) |
 | Intent | The wet cat enters the dark lamp room and pushes the lever with its whole body; the lamp ignites — 2 internal shots, static wide → medium |
 | Crew choices | camera rear-left corner 40 cm high (1A) and 60 cm high at the lever (1B); WS 63° / MS 47°; window key 8500K, lamp key 3200K at 7.0 s; two-shake rain shed as the reaction cue |
-| Run in | Higgsfield → web UI → project LIGHTCAT → Video → Seedance 2.5 → t2v (UI label unverified — read the live task dropdown) — from reference HF-WEB@2026-08-31 (checked 2026-08-31), not live-checked this session; confirm model/mode/workspace on the live form before Generate |
+| Run in | Higgsfield → web UI → project LIGHTCAT → Video → Seedance 2.5 → t2v (UI label unverified — read the live task dropdown) — from reference HF-WEB@2026-09-04 (checked 2026-09-04), not live-checked this session; confirm model/mode/workspace on the live form before Generate |
 | Settings | 16:9 · 720p (draft tier) · 10 s · audio on · no Cinema Studio controls (Video page) |
 | Inputs | 1. `@anchor_1A` = approved still 1A — look, geometry, blocking of SHOT 1 (reference, not start frame) · 2. `@anchor_1B` = approved still 1B — framing and blocking of SHOT 2 from the HARD CUT (reference, not start frame) · 3. `@loc_lamproom` = lamp-room master plate — set only · 4. `@cat` = cat sheet, wet state — identity only · 5. `@prop_lever` = lever detail, state down — prop only (all five are Higgsfield Elements addressed by name; no upload) |
 | Store in | Higgsfield project LIGHTCAT / SC01 |
@@ -83,7 +83,7 @@ On Seedance 2.5 a continuation is `video_extension` of the approved take, never 
 | Render ID | `LIGHTCAT_1C__HF-SD25__EXT__P01` (multi-shot take S2 = 1C+1D) |
 | Intent | Cat holds at the lit lamp, then a low counter-angle as the beam starts to turn — 2 internal shots |
 | Crew choices | Shot 1 keeps the S1 end position; Shot 2 WS 63° from the lamp side, 0.4 m above the floor; beam rotation as the light event |
-| Run in | Higgsfield → web UI → project LIGHTCAT → Video → Seedance 2.5 → video_extension ("Extend", forward) — from reference HF-WEB@2026-08-31, not live-checked this session; confirm the Extend control on the live form before Generate |
+| Run in | Higgsfield → web UI → project LIGHTCAT → Video → Seedance 2.5 → video_extension ("Extend", forward) — from reference HF-WEB@2026-09-04, not live-checked this session; confirm the Extend control on the live form before Generate |
 | Settings | inherits 16:9 · 720p draft · +10 s · audio on |
 | Inputs | 1. `@Video 1` = approved take S1 `LIGHTCAT_1A__HF-SD25__T2V__P01__TK03` (source; upload label per the live form) · 2. `@cat` = identity only · 3. `@loc_lamproom_rev` = set from the counter-angle only, Shot 2 only · 4. `@prop_lever` = lever only, state up |
 | Handoff | Boundary = S1 ENDING STATE at the last clean frame (9.8 s of the raw export): cat seated facing the lit lamp, lever up, room warm amber, rain on glass |
@@ -109,5 +109,5 @@ Batch of 4 (`…__T2V__P01__TK01–TK04`), watched fully — by the director whe
 Bible rows written at close (section B4b render/take log):
 | Render ID | KEY | Changed vs previous | Take IDs | Verdict / approved take |
 |---|---|---|---|---|
-| LIGHTCAT_1A__HF-SD25__T2V__P01 | HF-WEB@2026-08-31 | first package | TK01–TK04 | TK02 lever pre-lit (reject); TK03 approved |
-| LIGHTCAT_1C__HF-SD25__EXT__P01 | HF-WEB@2026-08-31 | extension of TK03, counter-angle as shot 2 | TK01–TK04 | TK01 approved |
+| LIGHTCAT_1A__HF-SD25__T2V__P01 | HF-WEB@2026-09-04 | first package | TK01–TK04 | TK02 lever pre-lit (reject); TK03 approved |
+| LIGHTCAT_1C__HF-SD25__EXT__P01 | HF-WEB@2026-09-04 | extension of TK03, counter-angle as shot 2 | TK01–TK04 | TK01 approved |
