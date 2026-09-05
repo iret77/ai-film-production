@@ -1,12 +1,12 @@
 # Story Structures: Dramaturgical Containers (Ch. 23)
 
-The story comes from the USER — this file never replaces it. It exists for the moment after intake: the user has a story seed, and it needs a dramaturgical container before treatment work starts (production-pipeline ch. 2). Same seed, different container, different film: a Simpsons episode, a Python film, Star Wars, and a Tarantino picture could all start from "someone loses everything over a small lie" and land in four different worlds. Offer containers like recipes: max 2 candidates, one line each, the user picks.
+Tags and confidence labels: legend in sources.md. The story comes from the USER — this file never replaces it (candidate-synopsis ideation only when asked, production-pipeline ch. 2). It exists for the moment after intake: the user has a story seed, and it needs a dramaturgical container before treatment work starts (production-pipeline ch. 2). Same seed, different container, different film: a Simpsons episode, a Python film, Star Wars, and a Tarantino picture could all start from "someone loses everything over a small lie" and land in four different worlds. Offer containers like recipes: max 2 candidates, one line each, the user picks.
 
 ## 23a. Story intake gate (run BEFORE offering structures)
 
 Check the user's story for filmable completeness — a lint, not a writing seminar:
 protagonist + concrete want? · engine (conflict, question, or tension that pulls forward)? · a turn (something changes irreversibly)? · an ending (even a direction)? · whose POV? · fits the target length?
-Gaps → targeted questions, one at a time. Never develop story unasked; when the user asks for help on a gap, propose 2–3 options and let them choose. A complete-enough story proceeds to container choice; structure gaps found later cost rerolls, not rewrites.
+Gaps → targeted questions, all grouped into the single intake message (SKILL.md Workflow 1, interaction contract); afterwards one at a time. Never develop story unasked; when the user asks for help on a gap, propose 2–3 options and let them choose. A complete-enough story proceeds to container choice; structure gaps found later cost rerolls, not rewrites.
 
 ## 23b. Classic containers
 
@@ -87,7 +87,7 @@ Why this section is binding: episodic, causally disconnected plotting is the DOC
 
 ### The doctrine (sourced)
 🟢 **Plot IS causality** (Forster, Aspects of the Novel): "The king died and then the queen died" is a story; "the king died, and then the queen died of grief" is a plot — the difference is the whole craft.
-🟢 **Propter hoc, not post hoc** (Aristotle, Poetics ch. 9/10): events must be "the consequence, necessary or probable, of the antecedents"; plots "in which the episodes succeed one another without probable or necessary sequence" are "the worst."
+🟢 **Propter hoc, not post hoc** (Aristotle, *Poetics*, §§9–10 of the treatise — an external citation, not a skill chapter): events must be "the consequence, necessary or probable, of the antecedents"; plots "in which the episodes succeed one another without probable or necessary sequence" are "the worst."
 🟢 **The chain reaction** (McKee, Story): "motivated actions cause effects that in turn become the causes of yet other effects" — the inciting incident is "the primary cause for all that follows," rippling causally to the climax.
 🟢 **Coincidence has a direction** (Coats/Pixar #19; McKee): "Coincidences to get characters into trouble are great; coincidences to get them out of it are cheating." McKee: bring coincidence in early so meaning can build from it, and "never use it to turn an ending. This is deus ex machina, the writer's greatest sin."
 🟢 **Deus ex machina** (Aristotle ch. 15): the unraveling "must arise out of the plot itself." A rescue from outside the causal chain erases meaning and emotion. Narrow exception: deliberate, signaled comedy/parody (Life of Brian's spaceship) — the audience must be meant to SEE the device.
