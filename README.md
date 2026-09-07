@@ -113,10 +113,11 @@ No rule ships without a label: 🟢 verified across sources / official / product
 
 ## Versioning
 
-v3.1-en (2026-09). Universal — contains nothing project- or person-specific. This repository is the source of truth for the skill; lessons from production flow back here via commits, and every release ships an upload-ready `.skill` package.
+v3.1.1-en (2026-09). Universal — contains nothing project- or person-specific. This repository is the source of truth for the skill; lessons from production flow back here via commits, and every release ships an upload-ready `.skill` package.
 
 ### Changelog
 
+- **v3.1.1-en (2026-09-07)** — version line directly under the SKILL.md title; no rule changes.
 - **v3.1-en (2026-09-07)** — W10 storyboard-first production model (eight gated stages with deliverable, gate and reads; camera setup system, take/cut table, state ladder, layout map; blockout trigger rule; draft-tier test takes; production-take edit route as a documented exception); STORYBOARD deliverable shape + export schema (production-pipeline ch. 2); bible section B3b + shot-board columns Internal TC / Cut type / Continuity lock / State; glossary terms; FilmFlow Pro planning ledger key `FILMFLOW-WEB@2026-09-07`; the rules W10 relies on were unified into their canonical chapters (build-order rule with three cases in ch. 1, anchor standard ch. 3, light openings and scale relations ch. 4, position lock ch. 6, blockout trigger rule ch. 8, two storyboard roles ch. 9, production-take exception W3 step 6, four new renderability §2 rows) and W10 only cites them.
 - **v3.0-en (2026-09-05)** — executability rework for weaker models (89 review findings), platform ledger re-verified 2026-09-04, glossary and ID grammar as reference files, trigger eval 19/20.
 
