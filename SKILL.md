@@ -6,6 +6,8 @@ description: Plan, write and prompt AI-generated video/film end to end — treat
 
 # AI Film Production
 
+**v3.1-en · 2026-09** — full scope, labels and receipt grammar under "Scope & version" below.
+
 Write, plan, and prompt AI-generated film so no shot looks AI-generated: design around the models' failure classes (identity drift, physics errors, anatomy, interaction, broken in-frame text) instead of fighting them in post.
 
 **Language rule.** Conversation, treatments, scripts, shot tables, Render Slate labels, intent lines and the risk register follow the user's language (German user → German). **Every prompt code block is written in English** — block labels, prose, role lines and locks — because every vendor-verbatim control string in this skill (camera terms, anchor-line suffix, exclusion strings, bracket syntax) is English and is verified against English vendor docs; a translated lock is an untested lock. The only non-English text inside a prompt is a dialogue/VO line, written verbatim in the project's dialogue language (bible section B1 "Dialogue language") inside the AUDIO block — on H3 with its language tag, e.g. `<d>[German] …</d>`. If the user supplies their own prompt text, it stays verbatim in whatever language it is (ch. 12). Technical terms (shot, plate, reverse, anchor, take — defined in `references/glossary.md`) stay English in every language; IDs and @tags are ASCII-verbatim everywhere.
