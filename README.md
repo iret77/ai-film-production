@@ -55,11 +55,11 @@ The skill triggers on its own whenever the production path is clearly generative
 
 ## What's inside
 
-**25 chapters · 16 always-on rules · a 7-step per-prompt checklist · a Render Slate per prompt · 9 workflow runbooks · 13 genre baselines · 31 director recipes + 11 DoP signatures · 11 animation style vocabularies + footage/era/optics packages · 6 video models profiled · a platform ledger re-verified 2026-09-04.**
+**25 chapters · 16 always-on rules · a 7-step per-prompt checklist · a Render Slate per prompt · 10 workflow runbooks incl. the storyboard-first production model · 13 genre baselines · 31 director recipes + 11 DoP signatures · 11 animation style vocabularies + footage/era/optics packages · 6 video models profiled · a platform ledger re-verified 2026-09-04.**
 
 - **Direction & craft** — model-independent film language (composition, editing, light, color, dramaturgy), director and DoP recipes with per-recipe verify gates, genre entry points, story structures from three-act to kishōtenketsu.
 - **Prompting method** — the block-structure prompt template with camera-third ordering and FOV-in-degrees discipline; how image models actually read prompts (position, scale, count, negation — with the research receipts); style enforcement that survives more than one shot.
-- **Production operations** — stills-first pipeline, asset and reference-pool build-out, renderability linting with green/red lists and rescue paths, coverage ladder, continuity ledger, a living production-bible convention for multi-session projects.
+- **Production operations** — stills-first pipeline, the storyboard-first production model (eight gated stages: idea → bible + beat lint → storyboard with camera setup system and take/cut table → sheets → 3D blockout → location anchors → draft takes → production takes), asset and reference-pool build-out, renderability linting with green/red lists and rescue paths, coverage ladder, continuity ledger, a living production-bible convention for multi-session projects.
 - **Built to be executed, not just read** — v3.0 reworked the whole skill for weaker agents: one meaning per term (`references/glossary.md`), a precedence ladder for conflicting sources, a citation convention that makes every chapter reference unambiguous, fixed order of operations, slate rows with fixed labels, receipt states that forbid fabricated platform facts, a copy-ready worked example, and six review passes with a fixed take-verdict order.
 - **Platform knowledge** — Seedance 2.5 doctrine (50-reference control incl. clay-render staging — Blender-built or Seedance-generated — the edit suite, extension chains), Higgsfield Cinema Studio settings, the MiniMax H3 official schema (cut-point timestamps, six-section reference form, retention markers), compact profiles for Kling, Veo, and Grok, production rules distilled from Higgsfield's open-sourced feature films (headless sheets, one asset per state, speech-count lock, crowd scale in three layers, the negation third class), dated platform caveats, and a real-face moderation plan for licensed likenesses.
 
@@ -101,11 +101,11 @@ No rule ships without a label: 🟢 verified across sources / official / product
 | `references/film-craft.md` | Model-independent film language: composition, camera, editing, light, color, timing, dramaturgy |
 | `references/director-recipes.md` | 31 director recipes + 11 DoP signatures; selection index, per-recipe Verify gates, harmony map |
 | `references/pixar-look.md` | Sourced Pixar look bible incl. figure-anchor rule, style-forcing method, and the hybrid previs-to-AI case study (wide-shot rescue, hidden faces, style donor) |
-| `references/production-bible.md` | Ch. 22: living project-state document — template, session rules, platform mapping, ID grammar (Render ID tokens, instance chain, bootstrap) |
+| `references/production-bible.md` | Ch. 22: living project-state document — template (incl. storyboard canon section B3b and take/cut columns on the shot board), session rules, platform mapping, ID grammar (Render ID tokens, instance chain, bootstrap) |
 | `references/story-structures.md` | Ch. 23: dramaturgical containers — intake gate, classic/alternative structures, series poles & online-native formats |
-| `references/workflows.md` | Ch. 25: nine runbooks for the typical production jobs — project start to session close, with interaction contract, lock gate and receipt states |
+| `references/workflows.md` | Ch. 25: ten runbooks for the typical production jobs — project start to session close, with interaction contract, lock gate and receipt states; W10 = the storyboard-first production model in eight gated stages |
 | `references/worked-example.md` | Compact end-to-end mini production: shot table, asset order, Render Slate + ch. 12 prompt, risk register, extension round, bible rows |
-| `references/glossary.md` | One meaning per term: shot/take/sequence, plates and sheets, the six kinds of anchor, locks, channel/axis, artefact names |
+| `references/glossary.md` | One meaning per term: shot/take/sequence, plates and sheets, the seven kinds of anchor, locks, channel/axis, camera setup / panel / take-cut table / state ladder, artefact names |
 | `references/sources.md` | Registry of practitioner and vendor-thread protocols P17–P50 plus the official MiniMax guides [MM-off] (date, URL, sponsorship flag) behind the source tags |
 | `LICENSE` | MIT |
 
@@ -113,7 +113,12 @@ No rule ships without a label: 🟢 verified across sources / official / product
 
 ## Versioning
 
-v3.0-en (2026-09) — executability rework (89 review findings), platform ledger re-verified 2026-09-04, trigger eval 19/20. Universal — contains nothing project- or person-specific. This repository is the source of truth for the skill; lessons from production flow back here via commits, and every release ships an upload-ready `.skill` package.
+v3.1-en (2026-09). Universal — contains nothing project- or person-specific. This repository is the source of truth for the skill; lessons from production flow back here via commits, and every release ships an upload-ready `.skill` package.
+
+### Changelog
+
+- **v3.1-en (2026-09-07)** — W10 storyboard-first production model (eight gated stages with deliverable, gate and reads; camera setup system, take/cut table, state ladder, layout map; blockout trigger rule; draft-tier test takes; production-take edit route as a documented exception); STORYBOARD deliverable shape + export schema (production-pipeline ch. 2); bible section B3b + shot-board columns Internal TC / Cut type / Continuity lock / State; glossary terms; FilmFlow Pro planning ledger key `FILMFLOW-WEB@2026-09-07`; the rules W10 relies on were unified into their canonical chapters (build-order rule with three cases in ch. 1, anchor standard ch. 3, light openings and scale relations ch. 4, position lock ch. 6, blockout trigger rule ch. 8, two storyboard roles ch. 9, production-take exception W3 step 6, four new renderability §2 rows) and W10 only cites them.
+- **v3.0-en (2026-09-05)** — executability rework for weaker models (89 review findings), platform ledger re-verified 2026-09-04, glossary and ID grammar as reference files, trigger eval 19/20.
 
 ## License
 

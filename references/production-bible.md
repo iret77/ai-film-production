@@ -49,12 +49,21 @@ Genre baseline: <genre> — deviations: …
 | @voice_hero | voice/audio (@Audio) | approved | voice ref v1 (<30 s) | HF element … / file assets/audio/voice_hero_v1.mp4 | "@Audio 1 defines @hero's voice"; never: motion, identity |
 Types (column 2 = asset type + the ch. 14b reference class it is attached as): character (@Image) · location (@Image) · prop (@Image) · wardrobe (@Image) · style-ref (@Image) · anchor (@Image) · layout-schematic (@Image, production-pipeline ch. 8) · motion-clip (@Video — motion/pacing only unless the job line says otherwise) · voice/audio (@Audio; on surfaces without an audio slot attached as @Video black-screen MP4, post-audio-legal ch. 18) · clay-render (@Clay Render — staging/camera only, never lighting). Every approved shot still becomes an @anchor_* entry (production-pipeline ch. 1). Every element of the W2 reference pool gets a row — a reference without a row is not canon.
 
+## B3b · Storyboard & camera setup system (storyboard-first projects, workflows W10 — canon only when linked HERE)
+Storyboard: <link/file or FilmFlow project + export file> · version: <n> · signed off by the director: <date> · export schema: production-pipeline ch. 2
+Camera setups per location (copy the setup line verbatim into CAMERA and FIRST FRAME/BLOCKING):
+| Location | Setup | Position (floor plan) | Axis side | Height | Focal | Move | Shots on it |
+|---|---|---|---|---|---|---|---|
+| @loc_lamproom | K1 | door corner, 3 m from the lamp | left of axis | 1.6 m | 24 mm | static | 1A, 2C (recurring wide = anchor composition) |
+State ladders (one line per changing object): `@lamp: intact → cracked (1B, cause: @hero's lantern hits it) → dark (2A) — state sheets ordered: …`
+Rule: prompts are written from panel + setup line + take row, never from prose; where a panel deviates from the setup, the panel is marked ("sketch deviates — setup rules"), never redrawn. A storyboard not linked in this section does not exist for the next session.
+
 ## B4 · Shot board
-| Shot | Seq. take | Len | Status | Anchor | Current Render ID | Approved-take Render ID | Platform receipt (KEY) | Risk → rescue (from the delivery risk registers) | Takes used (= Take IDs in B4b) |
-|---|---|---|---|---|---|---|---|---|---|
-| 1A | S1 (1A+1B) | 8s | final | @anchor_1A | LIGHTHOUSE_1A__HF-SD25__T2V__P02 | …__T2V__P02 (TK03) | HF-CS4@2026-09-04 | — | 3 |
-| 1B | S1 (1A+1B) | 6s | stills | @anchor_1B | LIGHTHOUSE_1B__HF-SD25__T2V__P01 | — | … | hands close-up → cut to reaction · ACCEPTED by user <date> | 0 |
-Status ladder: planned → stills (approved still exists) → take (approved take) → final (in edit).
+| Shot | Seq. take | Internal TC | Cut type (model / manual) | Continuity lock | State | Len | Status | Anchor | Current Render ID | Approved-take Render ID | Platform receipt (KEY) | Risk → rescue (from the delivery risk registers) | Takes used (= Take IDs in B4b) |
+|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
+| 1A | S1 (1A+1B) | 0:00–0:08 | model (HARD CUT 0:08) | @hero at the lamp, facing the door; lantern in left hand | @lamp intact | 8s | final | @anchor_1A | LIGHTHOUSE_1A__HF-SD25__T2V__P02 | …__T2V__P02 (TK03) | HF-CS4@2026-09-04 | — | 3 |
+| 1B | S1 (1A+1B) | 0:08–0:14 | manual (ellipsis to 2A) | same positions, @hero's gaze to the lamp | @lamp cracked (cause in frame) | 6s | stills | @anchor_1B | LIGHTHOUSE_1B__HF-SD25__T2V__P01 | — | … | hands close-up → cut to reaction · ACCEPTED by user <date> | 0 |
+Status ladder: planned → stills (approved still exists) → take (approved take) → final (in edit). Columns `Internal TC` (timecode range inside the take), `Cut type` (model cut inside the take / manual cut in the edit — every ellipsis is manual), `Continuity lock` (position lock + gaze carried over all internal shots) and `State` (state-ladder step of any changing object) come from the W10 take/cut table (production-pipeline ch. 2); projects without a storyboard-first stage leave them `—`.
 ID discipline (SKILL.md Render Slate): Shot ID = canon here; Shot IDs enter this board verbatim from the delivered shot table (22e Bootstrap) — Shot/Len/Risk → rescue mirror the treatment shot table (SKILL.md Workflow 5). Seq. take = the generation unit (SKILL rule 2: 1–3 internal shots per take); label `S<n>` = sequence take, never `TK` (that is a Take ID of a generated result). Render IDs (`…__P01`) identify prompt-package revisions; Take IDs (`TK01`…) exist only for generated results — "Takes used" counts Take IDs, never prompt revisions. `Current Render ID` = the latest prompt package; `Approved-take Render ID` = the revision that produced the approved take (with its TK) — never overwrite this once status ≥ take. Risk → rescue holds one entry per kept red/yellow element of the shot, copied from the delivery risk register at session close (`<risk> → <rescue>`), plus heard warnings as `ACCEPTED by user <date>`; there is no separate register section in the bible.
 
 ## B4b · Render / take log (one row per prompt package; move a shot's rows to ARCHIVE when it is final)
