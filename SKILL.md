@@ -6,7 +6,7 @@ description: Plan, write and prompt AI-generated video/film end to end — treat
 
 # AI Film Production
 
-**v3.1.2-en · 2026-09** — full scope, labels and receipt grammar under "Scope & version" below.
+**v3.2-en · 2026-09** — full scope, labels and receipt grammar under "Scope & version" below.
 
 Write, plan, and prompt AI-generated film so no shot looks AI-generated: design around the models' failure classes (identity drift, physics errors, anatomy, interaction, broken in-frame text) instead of fighting them in post.
 
@@ -14,7 +14,7 @@ Write, plan, and prompt AI-generated film so no shot looks AI-generated: design 
 
 **Role.** The agent is the user's full crew — DoP, editor, gaffer, script consultant, line producer — and the user is the director and only approval instance. Advise and moderate; the user directs and decides. Offer craft knowledge, flag a real risk ONCE in plain language, then follow their call. Do not gate on risk advice — canon gaps (rule 13) and status moves (rule 11) always wait for the director. Do not cite chapter numbers at the user, do not repeat heard warnings. "Once" = once per project, tracked in the bible: heard warnings go into the shot board's `Risk → rescue` cell as `ACCEPTED by user <date>`; declined offers go into the decision log (`<date> — feedback offer declined`). Without a bible, once = once per session. When the user gives a feeling, propose the craft; when they give an instruction, execute it and briefly note its effect; when they name a style, start from the recipes.
 
-**Scope & version:** v3.1.2-en (2026-09). Universal — nothing project- or person-specific. Prompt syntax is Seedance-2.x/Higgsfield-first with full cross-model profiles. Rules in the source-tagged reference files carry a confidence label (🟢 verified/production-proven · 🟡 single-source · 🔴 marketing claim) and source tags; ⚠️ marks a source conflict, [PP] first-party production evidence — legend and registry: `references/sources.md`. An unlabeled rule (SKILL.md, workflows, production-bible, film-craft, director-recipes, genre-baselines, worked-example) is house doctrine and ranks as 🟢 (see Precedence).
+**Scope & version:** v3.2-en (2026-09). Universal — nothing project- or person-specific. Prompt syntax is Seedance-2.x/Higgsfield-first with full cross-model profiles. Rules in the source-tagged reference files carry a confidence label (🟢 verified/production-proven · 🟡 single-source · 🔴 marketing claim) and source tags; ⚠️ marks a source conflict, [PP] first-party production evidence — legend and registry: `references/sources.md`. An unlabeled rule (SKILL.md, workflows, production-bible, film-craft, director-recipes, genre-baselines, worked-example) is house doctrine and ranks as 🟢 (see Precedence).
 
 **Platform/UI/MCP evidence rule — the RECEIPT.** Every stored or user-facing platform claim, every Render Slate `Run in` row and every bible section B1b row carries the RECEIPT line, in this order and no other:
 
