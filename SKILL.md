@@ -6,7 +6,7 @@ description: Plan, write and prompt AI-generated video/film end to end — treat
 
 # AI Film Production
 
-**v3.2-en · 2026-09** — full scope, labels and receipt grammar under "Scope & version" below.
+**v3.3-en · 2026-09** — full scope, labels and receipt grammar under "Scope & version" below.
 
 Write, plan, and prompt AI-generated film so no shot looks AI-generated: design around the models' failure classes (identity drift, physics errors, anatomy, interaction, broken in-frame text) instead of fighting them in post.
 
@@ -14,7 +14,7 @@ Write, plan, and prompt AI-generated film so no shot looks AI-generated: design 
 
 **Role.** The agent is the user's full crew — DoP, editor, gaffer, script consultant, line producer — and the user is the director and only approval instance. Advise and moderate; the user directs and decides. Offer craft knowledge, flag a real risk ONCE in plain language, then follow their call. Do not gate on risk advice — canon gaps (rule 13) and status moves (rule 11) always wait for the director. Do not cite chapter numbers at the user, do not repeat heard warnings. "Once" = once per project, tracked in the bible: heard warnings go into the shot board's `Risk → rescue` cell as `ACCEPTED by user <date>`; declined offers go into the decision log (`<date> — feedback offer declined`). Without a bible, once = once per session. When the user gives a feeling, propose the craft; when they give an instruction, execute it and briefly note its effect; when they name a style, start from the recipes.
 
-**Scope & version:** v3.2-en (2026-09). Universal — nothing project- or person-specific. Prompt syntax is Seedance-2.x/Higgsfield-first with full cross-model profiles. Rules in the source-tagged reference files carry a confidence label (🟢 verified/production-proven · 🟡 single-source · 🔴 marketing claim) and source tags; ⚠️ marks a source conflict, [PP] first-party production evidence — legend and registry: `references/sources.md`. An unlabeled rule (SKILL.md, workflows, production-bible, film-craft, director-recipes, genre-baselines, worked-example) is house doctrine and ranks as 🟢 (see Precedence).
+**Scope & version:** v3.3-en (2026-09). Universal — nothing project- or person-specific. Prompt syntax is Seedance-2.x/Higgsfield-first with full cross-model profiles. Rules in the source-tagged reference files carry a confidence label (🟢 verified/production-proven · 🟡 single-source · 🔴 marketing claim) and source tags; ⚠️ marks a source conflict, [PP] first-party production evidence — legend and registry: `references/sources.md`. An unlabeled rule (SKILL.md, workflows, production-bible, film-craft, director-recipes, genre-baselines, worked-example) is house doctrine and ranks as 🟢 (see Precedence).
 
 **Platform/UI/MCP evidence rule — the RECEIPT.** Every stored or user-facing platform claim, every Render Slate `Run in` row and every bible section B1b row carries the RECEIPT line, in this order and no other:
 
@@ -62,7 +62,7 @@ If a conflict is still open after this ladder, name both rules to the director i
 | Pixar/3D-stylized projects | `references/pixar-look.md` (figure-anchor hard rule pixar-look §8, figure-less method pixar-look §9, hybrid previs-to-AI case study pixar-look §10: wide-shot rescue, hidden faces, style donor) |
 | Post, upscaling, music/voices, continuity ledger, legal/AI-disclosure; real-person likeness, a platform rejecting a real face; take verdict order | `references/post-audio-legal.md` — ch. 19 holds the binding take verdict order and the six review passes |
 | Any job with a runbook — new project, asset build-out, produce a shot/scene, repair a take, coverage, style lock, failing generation, session open/close | `references/workflows.md` W1–W10 — pick the runbook FIRST; it is the spine and names the other files |
-| New project on the storyboard-first model; "how do we go about this" / "wie gehen wir vor"; a storyboard, camera setup system, take/cut table or blockout stage is to be planned | `references/workflows.md` W10 — eight gated stages (idea → bible + beat lint → storyboard → sheets → blockout → location anchors → draft takes → production takes); it names the W1/W2/W3 steps it calls and the storyboard deliverable shape (production-pipeline ch. 2) |
+| New project on the storyboard-first model; "how do we go about this" / "wie gehen wir vor"; a storyboard, camera setup system, take/cut table, animatic/timing simulation or blockout stage is to be planned | `references/workflows.md` W10 — nine gated stages (idea → bible + beat lint → storyboard → animatic [optional] → sheets → blockout → location anchors → draft takes → production takes); it names the W1/W2/W3 steps it calls and the storyboard deliverable shape (production-pipeline ch. 2) |
 | First production task ever / "how does this all connect" | `references/worked-example.md` — one complete delivery (slate + ch. 12 prompt + risk register + extension) |
 | A term is ambiguous (anchor, plate, sheet, lock, sequence, state, channel, axis, camera setup, panel, state ladder) | `references/glossary.md` — one meaning per term; the qualified form to write |
 
@@ -169,7 +169,7 @@ A director running several agents, sessions, platforms, and parallel renders can
 - `director-recipes.md` — 31 director recipes (+ a Pixar pointer) + 11 DoP signatures + harmony map as optional starting points; recipe Editing lines describe the NLE assembly, never what one take may do.
 - `genre-baselines.md` — 13 genre entry points with subgenres, craft defaults, recipe shortlists, and per-genre skill filters.
 - `pixar-look.md` — sourced Pixar look bible incl. figure-anchor rule (§8) and figure-less style forcing (§9).
-- `workflows.md` — ch. 25: ten runbooks chaining the chapters for the typical jobs (W1 new project · W2 asset/reference pool · W3 shot · W4 scene · W5 repair · W6 coverage · W7 style lock · W8 failing generation · W9 session open/close · W10 storyboard-first production model, eight gated stages).
+- `workflows.md` — ch. 25: ten runbooks chaining the chapters for the typical jobs (W1 new project · W2 asset/reference pool · W3 shot · W4 scene · W5 repair · W6 coverage · W7 style lock · W8 failing generation · W9 session open/close · W10 storyboard-first production model, nine gated stages incl. the optional animatic/timing stage).
 - `worked-example.md` — compact end-to-end mini production: slate + ch. 12 prompt + risk register + extension round.
 - `glossary.md` — one meaning per term (shot/take/sequence, plates and sheets, the seven anchors, locks, channel/axis, camera setup / panel / take-cut table / state ladder / position lock, artefact names).
 - `sources.md` — tag legend + registry of practitioner protocols [P17–P50] with dates and URLs; earlier P-tags are unitemized single-source evidence.
