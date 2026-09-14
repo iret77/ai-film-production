@@ -35,6 +35,9 @@ Every craft choice answers the same question: **what should the audience feel, a
 | Handheld | Presence, nervousness, documentary truth | Subjectivity, chaos — dose it, don't default |
 | Orbit | Inspection, disorientation, iconization | Hero moments, revelations; expensive — earn it |
 | Zoom (vs dolly) | Artificial attention, period flavor | 70s look, crash-zoom comedy/doc |
+| Crash zoom in / out | Shock, sudden realisation, comic emphasis (in); absurd context reveal, punchline (out) | A discovery or a gag beat — the 70s / Kill Bill register [P59] |
+| Snorricam / body mount | Panic, intoxication, dissociation — the head locked, the world lurching | Subjective crisis; the worn-product shot (video-prompting 12e) [P59] |
+| Earth zoom-out · infinite zoom · tilt-shift | From one human moment to the whole world · surreal reveal · model-world detachment | Openings, closings, dream and scale devices — cheap in AI, dose them [P59] |
 **Lens psychology:** wide = space dominates, distortion near the lens, energy · normal = human truth · tele = compression, surveillance, intimacy-from-distance, isolated subject on creamy BG. Depth of field: deep = the world matters; shallow = only the subject matters. (Degrees per video-prompting ch. 12d.)
 
 ## 4. Editing
