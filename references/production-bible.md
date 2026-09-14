@@ -4,13 +4,13 @@ One living markdown document per project — the single source of truth for ever
 
 ## 22a. Rules
 
-1. **Session boot:** on any resumed project, read the bible FIRST — before answering, before generating. No bible offered? Ask for it once (once = once per session when no bible exists), or offer to create one from the conversation. EVERY project gets a bible before its first asset order (SKILL rule 11, W1 step 5).
-2. **Session close:** update the bible at the end of every work block (statuses, decisions, handoff). The agent proposes the update; wording of decisions stays terse. Shot-list edits follow "update only what changed": rewrite ONLY the named shot (1A, 1B) and reproduce every other shot word for word — never let the rewrite drift into neighbouring prompts [H-off, P47]. A rewritten prompt is a NEW revision, never an overwrite: bump the Render ID (`…__P01` → `…__P02`, SKILL.md ID discipline), set the shot board's `Current Render ID` to it, and append one row to the render/take log (section B4b; full text in the iteration log, section B9) — the earlier revision text stays retrievable so the revision that produced an approved take can be re-run. When a prompt has grown by accretion and contradicts itself, sanitize it from scratch (SKILL rule 14) — that rewrite is also a new P-revision.
+1. **Session boot:** on any resumed project, read the bible FIRST — before answering, before generating. No bible offered? Ask for it once (once = once per session when no bible exists), or offer to create one from the conversation. EVERY project gets a bible before its first asset order (SKILL rule 12, W1 step 5).
+2. **Session close:** update the bible at the end of every work block (statuses, decisions, handoff). The agent proposes the update; wording of decisions stays terse. Shot-list edits follow "update only what changed": rewrite ONLY the named shot (1A, 1B) and reproduce every other shot word for word — never let the rewrite drift into neighbouring prompts [H-off, P47]. A rewritten prompt is a NEW revision, never an overwrite: bump the Render ID (`…__P01` → `…__P02`, SKILL.md ID discipline), set the shot board's `Current Render ID` to it, and append one row to the render/take log (section B4b; full text in the iteration log, section B9) — the earlier revision text stays retrievable so the revision that produced an approved take can be re-run. When a prompt has grown by accretion and contradicts itself, sanitize it from scratch (SKILL rule 15) — that rewrite is also a new P-revision.
 3. **Approval is the user's:** statuses move forward (draft → approved → locked) only on explicit user approval; "locked" additionally requires the ten-of-ten stress test of production-pipeline ch. 3 (W2 step 6) to have passed — approval alone yields "approved". The agent never self-approves; a regenerated asset resets to draft. Every generated result — including an edit or extension of an approved take — is a NEW Take ID (TK02 from TK01, the slate's Handoff row names the source) and starts in draft; the source take keeps its status.
 4. **The bible mirrors platforms, it does not replace them.** Binary assets live in the platform (Higgsfield Elements/Soul ID, OpenArt characters, Runway tagged References, local files for fal pipelines); the bible holds names, IDs, statuses, and pointers. On conflict, the approved image/element is the visual truth, the bible is the record of WHICH one is approved.
 5. **Compact by force:** the whole bible stays pasteable into a fresh chat (target: 2–4 pages). Superseded decisions and finished shots move to an ARCHIVE section at the bottom or a second file; the active surface stays small; the full iteration log lives outside the active surface (section B9).
 6. **One bible per project.** Series/episodic work: one project bible (world, cast, style contract) + one slim episode sheet per episode (shot board, episode decisions). The pole decides the split (story-structures ch. 23d): **episodic** — universe facts live ONLY in the project bible and change only at season boundaries, episode sheets stay throwaway-slim; **serialized** ("the overlong film") — shot board and continuity ledger span the season in the project bible, episode sheets carry only the episode's micro-shape and status.
-7. **Platform receipt is mandatory.** Before a generation, edit, or model-choice decision becomes canon, record the RECEIPT line as defined in SKILL.md Scope & version (KEY grammar there; receipt states `live-checked <date>` / `from reference <KEY>`, SKILL rule 16) in section B1b. Never transfer a setting merely because two surfaces share a provider or model name.
+7. **Platform receipt is mandatory.** Before a generation, edit, or model-choice decision becomes canon, record the RECEIPT line as defined in SKILL.md Scope & version (KEY grammar there; receipt states `live-checked <date>` / `from reference <KEY>`, SKILL rule 17) in section B1b. Never transfer a setting merely because two surfaces share a provider or model name.
 
 ## 22b. Template (copy, fill, keep)
 
@@ -21,6 +21,7 @@ One living markdown document per project — the single source of truth for ever
 Format/length: … · Platform target(s) + aspect ratio(s): …
 Model stack: stills … [token] · motion … [token] · edit/post … [token] — Render-ID tokens in brackets, fixed once here (SKILL.md ID discipline; e.g. `motion Seedance 2.5 on Higgsfield [HF-SD25]`)
 Dialogue language: … · Route: native in-model / audio dub / video dub (test-take result + date) · AI-disclosure duty: … (post-audio-legal ch. 20)
+Prompting technique (SKILL rule 4): A Caption Spine / B block structure / C Master Style Block + story · decided with the director on <date> (test-take result, if any) — every video prompt of this project uses it; a change is a dated decision-log entry
 
 ## B1b · Platform / UI / MCP receipts (one RECEIPT line per row, SKILL.md Scope & version order)
 | KEY | Platform → access route | Account / workspace / project | Surface / tool | Model + mode id ("UI label") | Vendor version or UI snapshot | Source URL · state (live-checked <date> / from reference <KEY>) | Result / asset IDs |
@@ -72,11 +73,11 @@ ID discipline (SKILL.md Render Slate): Shot ID = canon here; Shot IDs enter this
 | LIGHTHOUSE_1A__HF-SD25__T2V__P01 | HF-CS4@2026-09-04 | first package | TK01–TK02 | TK02 lever pre-lit; TK01 face drift |
 | LIGHTHOUSE_1A__HF-SD25__T2V__P02 | HF-CS4@2026-09-04 | rewrite: lever lock moved next to the action line | TK03 | TK03 approved |
 | LIGHTHOUSE_1A__HF-SD25__EDIT__P01 | HF-CS4@2026-09-04 | region edit 5–7 s, lever only (source TK03) | TK01 | final |
-Counting rule (SKILL rule 14): 3 failed iterations with the same operation on one shot = clean rewrite + channel change; 10–15 Take IDs on one shot = simplify the shot (production-pipeline ch. 10).
+Counting rule (SKILL rule 15): 3 failed iterations with the same operation on one shot = clean rewrite + channel change; 10–15 Take IDs on one shot = simplify the shot (production-pipeline ch. 10).
 
 ## B5 · Reroll budget & spend priorities
 Planned takes per shot class: standard … · face/emotion peaks … · long takes/oners …
-Spend the budget where the recipe says (its AI note); stop rule = the SKILL rule-14 ladder: 3 failed iterations → clean rewrite + channel change; 2 clean failures → model limit; 10–15 iterations per shot → simplify the shot.
+Spend the budget where the recipe says (its AI note); stop rule = the SKILL rule-15 ladder: 3 failed iterations → clean rewrite + channel change; 2 clean failures → model limit; 10–15 iterations per shot → simplify the shot.
 Spent so far: … (update per block)
 
 ## B6 · Decision log (append-only, one line each)

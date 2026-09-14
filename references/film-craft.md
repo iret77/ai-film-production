@@ -38,7 +38,7 @@ Every craft choice answers the same question: **what should the audience feel, a
 | Crash zoom in / out | Shock, sudden realisation, comic emphasis (in); absurd context reveal, punchline (out) | A discovery or a gag beat — the 70s / Kill Bill register [P59] |
 | Snorricam / body mount | Panic, intoxication, dissociation — the head locked, the world lurching | Subjective crisis; the worn-product shot (video-prompting 12e) [P59] |
 | Earth zoom-out · infinite zoom · tilt-shift | From one human moment to the whole world · surreal reveal · model-world detachment | Openings, closings, dream and scale devices — cheap in AI, dose them [P59] |
-**Lens psychology:** wide = space dominates, distortion near the lens, energy · normal = human truth · tele = compression, surveillance, intimacy-from-distance, isolated subject on creamy BG. Depth of field: deep = the world matters; shallow = only the subject matters. (Degrees per video-prompting ch. 12d.)
+**Lens psychology:** wide = space dominates, distortion near the lens, energy · normal = human truth · tele = compression, surveillance, intimacy-from-distance, isolated subject on creamy BG. Depth of field: deep = the world matters; shallow = only the subject matters. (Degrees per video-prompting ch. 12d — a deliberate look control, never a default; by default the lens is the model's and the psychology is written as words: SKILL rule 7.)
 
 ## 4. Editing
 **Cut types & when:**

@@ -83,7 +83,7 @@ Gaps → targeted questions, all grouped into the single intake message (SKILL.m
 
 ## 23g. The causal chain — doctrine and the mandatory change lint
 
-Why this section is binding: episodic, causally disconnected plotting is the DOCUMENTED native failure mode of LLM writing (EMNLP 2025 survey; arXiv 2311.09648, 2506.02347, 2503.23512 — scaffolding systems exist precisely because raw LLM output adds events instead of causing them). Addition is cheaper than consequence for the model — so the lint below is not optional craft polish, it is the guard against the writer itself. An event without cause is story slop exactly as a guessed beat is prompt slop (SKILL rule 13).
+Why this section is binding: episodic, causally disconnected plotting is the DOCUMENTED native failure mode of LLM writing (EMNLP 2025 survey; arXiv 2311.09648, 2506.02347, 2503.23512 — scaffolding systems exist precisely because raw LLM output adds events instead of causing them). Addition is cheaper than consequence for the model — so the lint below is not optional craft polish, it is the guard against the writer itself. An event without cause is story slop exactly as a guessed beat is prompt slop (SKILL rule 14).
 
 ### The doctrine (sourced)
 🟢 **Plot IS causality** (Forster, Aspects of the Novel): "The king died and then the queen died" is a story; "the king died, and then the queen died of grief" is a plot — the difference is the whole craft.
