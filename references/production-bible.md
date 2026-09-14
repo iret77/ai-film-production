@@ -21,7 +21,7 @@ One living markdown document per project — the single source of truth for ever
 Format/length: … · Platform target(s) + aspect ratio(s): …
 Model stack: stills … [token] · motion … [token] · edit/post … [token] — Render-ID tokens in brackets, fixed once here (SKILL.md ID discipline; e.g. `motion Seedance 2.5 on Higgsfield [HF-SD25]`)
 Dialogue language: … · Route: native in-model / audio dub / video dub (test-take result + date) · AI-disclosure duty: … (post-audio-legal ch. 20)
-Prompting technique (SKILL rule 4): A Caption Spine / B block structure / C Master Style Block + story · decided with the director on <date> (test-take result, if any) — every video prompt of this project uses it; a change is a dated decision-log entry
+Prompting technique (SKILL rule 4): A Caption Spine / B block structure / C Master Style Block + story · decided with the director on <date> (draft-batch result, if any) — every video prompt of this project uses it; a change is a dated decision-log entry
 
 ## B1b · Platform / UI / MCP receipts (one RECEIPT line per row, SKILL.md Scope & version order)
 | KEY | Platform → access route | Account / workspace / project | Surface / tool | Model + mode id ("UI label") | Vendor version or UI snapshot | Source URL · state (live-checked <date> / from reference <KEY>) | Result / asset IDs |
@@ -36,23 +36,23 @@ Container: <structure from ch. 23, one line> · Series pole (if series): episodi
 Recipe: <name or synthesis, one line why>
 Style anchor (project style contract — distributed per SKILL.md Workflow step 4, never pasted as a prefix):
 > …
-Look tokens (4–8, verbatim in every prompt's STYLE / image style section): …
+Look tokens (Caption Spine STYLE line 8–10 · block structure / image style section 4–8 · none in technique C — SKILL.md Workflow step 4): …
 Verify line (QA gate for every still/take; recipe's line, or DEFAULT line derived from style anchor + genre baseline — never empty; W1 step 5): …
 Genre baseline: <genre> — deviations: …
 
 ## B3 · Asset registry (= the reference pool)
-| @name | Type (reference class) | Status | Source of truth | Platform IDs / path | Job line + exclusions |
+| @name | Type (reference class) | Status | Source of truth | Platform IDs / path | Job line (exclusion only after a logged non-transfer, SKILL rule 5) |
 |---|---|---|---|---|---|
-| @hero | character (@Image) | locked | sheet v3 (link/element) | HF element …, Soul ID … / file … | face+outfit lock; never: … |
+| @hero | character (@Image) | locked | sheet v3 (link/element) | HF element …, Soul ID … / file … | face+outfit — identity only |
 | @loc_bar | location (@Image) | approved | master plate v2 | … | light side left; reverse: @loc_bar_rev |
 | @anchor_1A | anchor (@Image) | approved | still 1A final | HF element … / file … | reference anchor shot 1A |
-| @clay_sc3 | clay-render (@Clay Render) | approved | blockout v2 | HF element … / file assets/clay/clay_sc3_v2.mp4 | camera move + staging + subject trajectory only; never: lighting, texture |
-| @voice_hero | voice/audio (@Audio) | approved | voice ref v1 (<30 s) | HF element … / file assets/audio/voice_hero_v1.mp4 | "@Audio 1 defines @hero's voice"; never: motion, identity |
+| @clay_sc3 | clay-render (@Clay Render) | approved | blockout v2 | HF element … / file assets/clay/clay_sc3_v2.mp4 | camera move + staging + subject trajectory only |
+| @voice_hero | voice/audio (@Audio) | approved | voice ref v1 (<30 s) | HF element … / file assets/audio/voice_hero_v1.mp4 | "@Audio 1 defines @hero's voice — timbre and manner only" |
 Types (column 2 = asset type + the ch. 14b reference class it is attached as): character (@Image) · location (@Image) · prop (@Image) · wardrobe (@Image) · style-ref (@Image) · anchor (@Image) · layout-schematic (@Image, production-pipeline ch. 8) · motion-clip (@Video — motion/pacing only unless the job line says otherwise) · voice/audio (@Audio; on surfaces without an audio slot attached as @Video black-screen MP4, post-audio-legal ch. 18) · clay-render (@Clay Render — staging/camera only, never lighting). Every approved shot still becomes an @anchor_* entry (production-pipeline ch. 1). Every element of the W2 reference pool gets a row — a reference without a row is not canon.
 
 ## B3b · Storyboard & camera setup system (storyboard-first projects, workflows W10 — canon only when linked HERE)
 Storyboard: <link/file or FilmFlow project + export file> · version: <n> · signed off by the director: <date> · export schema: production-pipeline ch. 2
-Camera setups per location (copy the setup line verbatim into CAMERA and FIRST FRAME/BLOCKING):
+Camera setups per location (the setup line is the numeric source, SKILL rule 7; in the prompt it becomes shot-size words and relations — the one camera line in a Caption Spine, CAMERA + FIRST FRAME/BLOCKING in the block structure — never its metre/mm values):
 | Location | Setup | Position (floor plan) | Axis side | Height | Focal | Move | Shots on it |
 |---|---|---|---|---|---|---|---|
 | @loc_lamproom | K1 | door corner, 3 m from the lamp | left of axis | 1.6 m | 24 mm | static | 1A, 2C (recurring wide = anchor composition) |
@@ -62,10 +62,10 @@ Rule: prompts are written from panel + setup line + take row, never from prose; 
 ## B4 · Shot board
 | Shot | Seq. take | Internal TC | Cut type (model / manual) | Continuity lock | State | Len | Status | Anchor | Current Render ID | Approved-take Render ID | Platform receipt (KEY) | Risk → rescue (from the delivery risk registers) | Takes used (= Take IDs in B4b) |
 |---|---|---|---|---|---|---|---|---|---|---|---|---|---|
-| 1A | S1 (1A+1B) | 0:00–0:08 | model (HARD CUT 0:08) | @hero at the lamp, facing the door; lantern in left hand | @lamp intact | 8s | final | @anchor_1A | LIGHTHOUSE_1A__HF-SD25__T2V__P02 | …__T2V__P02 (TK03) | HF-CS4@2026-09-04 | — | 3 |
-| 1B | S1 (1A+1B) | 0:08–0:14 | manual (ellipsis to 2A) | same positions, @hero's gaze to the lamp | @lamp cracked (cause in frame) | 6s | stills | @anchor_1B | LIGHTHOUSE_1B__HF-SD25__T2V__P01 | — | … | hands close-up → cut to reaction · ACCEPTED by user <date> | 0 |
+| 1A | S1 (1A+1B) | 0:00–0:08 | model (HARD CUT 0:08) | @hero at the lamp, facing the door; lantern in left hand | @lamp intact | 8s | final | @anchor_1A | LIGHTHOUSE_1A__HF-SD25__T2V__P02 | …__T2V__P02 (TK03) | HF-CS4@2026-09-04 | — | 4 |
+| 1B | S1 (1A+1B) | 0:08–0:14 | manual (ellipsis to 2A) | same positions, @hero's gaze to the lamp | @lamp cracked (cause in frame) | 6s | final | @anchor_1B | LIGHTHOUSE_1A__HF-SD25__T2V__P02 (via S1) | …__T2V__P02 (TK03) | HF-CS4@2026-09-04 | hands close-up → cut to reaction · ACCEPTED by user <date> | 4 |
 Status ladder: planned → stills (approved still exists) → take (approved take) → final (in edit). Columns `Internal TC` (timecode range inside the take), `Cut type` (model cut inside the take / manual cut in the edit — every ellipsis is manual), `Continuity lock` (position lock + gaze carried over all internal shots) and `State` (state-ladder step of any changing object) come from the W10 take/cut table (production-pipeline ch. 2); projects without a storyboard-first stage leave them `—`.
-ID discipline (SKILL.md Render Slate): Shot ID = canon here; Shot IDs enter this board verbatim from the delivered shot table (22e Bootstrap) — Shot/Len/Risk → rescue mirror the treatment shot table (SKILL.md Workflow 5). Seq. take = the generation unit (SKILL rule 2: 1–3 internal shots per take); label `S<n>` = sequence take, never `TK` (that is a Take ID of a generated result). Render IDs (`…__P01`) identify prompt-package revisions; Take IDs (`TK01`…) exist only for generated results — "Takes used" counts Take IDs, never prompt revisions. `Current Render ID` = the latest prompt package; `Approved-take Render ID` = the revision that produced the approved take (with its TK) — never overwrite this once status ≥ take. Risk → rescue holds one entry per kept red/yellow element of the shot, copied from the delivery risk register at session close (`<risk> → <rescue>`), plus heard warnings as `ACCEPTED by user <date>`; there is no separate register section in the bible.
+ID discipline (SKILL.md Render Slate): Shot ID = canon here; Shot IDs enter this board verbatim from the delivered shot table (22e Bootstrap) — Shot/Len/Risk → rescue mirror the treatment shot table; Framing/Action/Assets stay in the approved treatment (canon per SKILL Precedence 2) and are not repeated here (SKILL.md Workflow step 5). Seq. take = the generation unit (SKILL rule 2: 1–3 internal shots per take); label `S<n>` = sequence take, never `TK` (that is a Take ID of a generated result). Render IDs (`…__P01`) identify prompt-package revisions; Take IDs (`TK01`…) exist only for generated results — "Takes used" counts Take IDs, never prompt revisions. `Current Render ID` = the latest prompt package; `Approved-take Render ID` = the revision that produced the approved take (with its TK) — never overwrite this once status ≥ take. Risk → rescue holds one entry per kept red/yellow element of the shot, copied from the delivery risk register at session close (`<risk> → <rescue>`), plus heard warnings as `ACCEPTED by user <date>`; there is no separate register section in the bible.
 
 ## B4b · Render / take log (one row per prompt package; move a shot's rows to ARCHIVE when it is final)
 | Render ID | KEY | Changed vs previous | Take IDs | Verdict / approved take |
@@ -73,7 +73,7 @@ ID discipline (SKILL.md Render Slate): Shot ID = canon here; Shot IDs enter this
 | LIGHTHOUSE_1A__HF-SD25__T2V__P01 | HF-CS4@2026-09-04 | first package | TK01–TK02 | TK02 lever pre-lit; TK01 face drift |
 | LIGHTHOUSE_1A__HF-SD25__T2V__P02 | HF-CS4@2026-09-04 | rewrite: lever lock moved next to the action line | TK03 | TK03 approved |
 | LIGHTHOUSE_1A__HF-SD25__EDIT__P01 | HF-CS4@2026-09-04 | region edit 5–7 s, lever only (source TK03) | TK01 | final |
-Counting rule (SKILL rule 15): 3 failed iterations with the same operation on one shot = clean rewrite + channel change; 10–15 Take IDs on one shot = simplify the shot (production-pipeline ch. 10).
+Counting rule (SKILL rule 15): 3 failed iterations with the same operation on one shot = clean rewrite + channel change; 10–15 iterations (batches of 4) on one shot = simplify the shot (production-pipeline ch. 10).
 
 ## B5 · Reroll budget & spend priorities
 Planned takes per shot class: standard … · face/emotion peaks … · long takes/oners …
@@ -95,7 +95,7 @@ One row per shot; check the new row against the previous one before every genera
 Last state: … · Next: 1) … 2) … · Open questions for the user: … · Reviews pending: `TKnn — review pending (director)`
 
 ## B9 · Iteration log (pointer)
-Lives OUTSIDE the active bible surface (rule 5): file `<PROJECT>-iteration-log.md` next to the bible, or the ARCHIVE section if the project is small. One line per run, append-only:
+Lives OUTSIDE the active bible surface (22a rule 5): file `<PROJECT>-iteration-log.md` next to the bible, or the ARCHIVE section if the project is small. One line per run, append-only:
 `<Render ID> · <TK or 'no result'> · what changed (one line) · verdict (reject/tell/coverage/approved)`
 The full prompt text of every P-revision that produced an approved take or coverage is kept verbatim in that file (production-pipeline ch. 10); B4b is its per-shot summary.
 
@@ -127,4 +127,4 @@ The Render Slate's `Render ID` (SKILL.md) is `<PROJECT>_<Shot ID>__<platform-mod
 
 **Bootstrap (no bible / no shot board yet).** The numbered shot table you deliver (Workflow steps 2/5) IS the shot board — copy it into bible section B4 unchanged when the bible is created (W1 step 5, before the first asset order). Shot-ID scheme when the script carries none: `<scene number><shot letter>` — `1A, 1B … 2A` — numbered in delivery order; add `SQ`/`SC` prefixes only when the user's script already numbers sequences/scenes (that is what "never invent sequence/scene data" means). `<PROJECT>` = the working title from the bible header as an ASCII slug (`LIGHTHOUSE`); no title yet → ask once (production-bible 22a rule 1) and hold the Render ID row until answered — do not substitute a placeholder. A one-off prompt outside any project omits the Render ID row (slate rule: omit unknown rows) and says so in one line. Prompt-package revisions start at `P01`.
 
-**Filled instance:** worked-example.md §3 shows one complete slate + prompt + risk register; copy its row labels and value shapes (translate labels when the deliverable language is not English; IDs and @tags stay ASCII).
+**Filled instance:** worked-example.md §3b (Caption Spine) and §3 (block structure) each show one complete slate + prompt + risk register; copy their row labels and value shapes (translate labels when the deliverable language is not English; IDs and @tags stay ASCII).
