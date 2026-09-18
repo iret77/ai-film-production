@@ -6,7 +6,7 @@ description: Plan, write and prompt AI-generated video/film end to end — treat
 
 # AI Film Production
 
-**v3.5-en · 2026-09** — universal: nothing project- or person-specific.
+**v3.4 · 2026-09** — universal: nothing project- or person-specific.
 
 Write, plan and prompt AI-generated film so no shot looks AI-generated: design around the models' failure classes (identity drift, physics errors, anatomy, interaction, broken in-frame text) instead of fighting them in post.
 

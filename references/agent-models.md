@@ -1,6 +1,6 @@
 # Agent Models: Which Model Runs This Skill Well
 
-Tags and confidence labels: legend in sources.md. Read this file when the director asks which model to run a session on, or before skill work is handed to a subagent or a batch run. Everything in the table is first-party measurement [PP 2026-09-18, registry entry in sources.md]: a fresh agent got only the task and the instruction to read SKILL.md first and then what the loading map names; it was judged on the delivery and on the files it actually opened. One to three runs per cell, the last of them on the condensed SKILL.md of 2026-09-18 — a result shows what a model CAN do with this skill, never a rate. Model versions age fast: a row is valid for the named version and for v3.5 of this skill.
+Tags and confidence labels: legend in sources.md. Read this file when the director asks which model to run a session on, or before skill work is handed to a subagent or a batch run. Everything in the table is first-party measurement [PP 2026-09-18, registry entry in sources.md]: a fresh agent got only the task and the instruction to read SKILL.md first and then what the loading map names; it was judged on the delivery and on the files it actually opened. One to three runs per cell, the last of them on the condensed SKILL.md of 2026-09-18 — a result shows what a model CAN do with this skill, never a rate. Model versions age fast: a row is valid for the named version and for v3.4 of this skill.
 
 ## Measured
 
