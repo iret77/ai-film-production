@@ -2,7 +2,7 @@
 
 The FIRST file to read when a project's genre is known. Per genre: the audience contract, craft defaults (vocabulary from film-craft.md), subgenre shifts, a recipe shortlist (director-recipes.md), AI-production notes, and a **skill filter** — which files belong in context for this project type. Baselines are starting points the user bends, never rules — and look decisions, not prompt boilerplate: a default enters a prompt only where the beat needs it and is listed in `Crew choices` (economy doctrine, SKILL rule 7).
 
-Tags and confidence labels: legend in sources.md. **Always in context regardless of genre:** SKILL.md (routing + always-rules). Add per the filter lines below (SKILL.md routing step 5 opens them only via this filter line, the spine runbook, or the per-prompt checklist); load video-prompting.md when prompts are actually being written.
+Tags and confidence labels: legend in sources.md. **Always in context regardless of genre:** SKILL.md (routing + always-rules). Add per the filter lines below (SKILL.md Task routing, operation 3, opens them only via this filter line, the spine runbook, or the per-prompt checklist); load video-prompting.md when prompts are actually being written.
 
 ---
 
