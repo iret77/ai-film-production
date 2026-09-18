@@ -48,7 +48,7 @@ Tags and confidence labels: legend in sources.md. **Always in context regardless
 ---
 
 ## How to use a baseline (agent instructions)
-1. Genre known → read this file's section → load the filter files → state the defaults to the user as the working assumption in TWO sentences, not a lecture.
+1. Genre known → read this file's section → open the filter files through their contents blocks and read only the parts the runbook step or the task names (a bare file name in a filter line means "relevant for this genre", never "load it whole" — SKILL loading map) → state the defaults to the user as the working assumption in TWO sentences, not a lecture.
 2. Baseline + user wishes → concrete craft plan; deviations from baseline are normal and the user's call.
 3. Subgenre named → apply the shift on top of the base genre.
 4. Genre mix ("horror comedy") → one genre owns STRUCTURE, the other owns TEXTURE; say which, ask only if truly ambiguous.

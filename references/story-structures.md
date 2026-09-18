@@ -1,5 +1,7 @@
 # Story Structures: Dramaturgical Containers (Ch. 23)
 
+**Contents — read only the part the spine, checklist or routing row names:** 23a story intake gate (run first) · 23b classic containers · 23c alternative containers · 23d format-specific containers · 23e masters' rules (applied as lints) · 23f choosing and mixing · 23g the causal chain and the mandatory change lint.
+
 Tags and confidence labels: legend in sources.md. The story comes from the USER — this file never replaces it (candidate-synopsis ideation only when asked, production-pipeline ch. 2). It exists for the moment after intake: the user has a story seed, and it needs a dramaturgical container before treatment work starts (production-pipeline ch. 2). Same seed, different container, different film: a Simpsons episode, a Python film, Star Wars, and a Tarantino picture could all start from "someone loses everything over a small lie" and land in four different worlds. Offer containers like recipes: max 2 candidates, one line each, the user picks.
 
 ## 23a. Story intake gate (run BEFORE offering structures)

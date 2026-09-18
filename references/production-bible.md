@@ -1,5 +1,7 @@
 # Production Bible: Project State Across Sessions (Ch. 22)
 
+**Contents — read only the part the spine, checklist or routing row names:** 22a rules · 22b template (copy, fill, keep): B1 frame · B1b platform/UI/MCP receipts · B2 style contract · B3 asset registry · B3b storyboard & camera setup system · B4 shot board · B4b render/take log · B5 reroll budget · B6 decision log · B7 continuity ledger · B8 handoff · B9 iteration log · ARCHIVE · 22c platform mapping · 22d why this exists · 22e ID grammar (Render ID tokens, instance chain, bootstrap).
+
 One living markdown document per project — the single source of truth for everything a fresh session needs to continue losslessly. Industry ground rule: **if it isn't in the bible, it isn't canon** — a decision that lives only in a chat that ended does not exist. The bible is operational memory; the creative grammar it carries (recipe, style anchor) is decided once and then quoted, not re-litigated. Bible sections are cited as `bible section B3`, never as `ch. 3`.
 
 ## 22a. Rules

@@ -205,13 +205,13 @@ CAMERA LANGUAGE: The camera moves like a hand across a scroll — slow lateral d
 ANALOGUE CHARACTER: Dosed subtle — paper tooth in every wash, faint mottling where the sizing is uneven, the odd stray bristle caught in the ink. The fibres stay fixed; only the ink moves.
 MOTION GRAMMAR: Painted on twos and threes, about ten held drawings a second, each pose a fresh sheet so the strokes flicker slightly between frames. Fast motion stretches the figure into an ink mark — a wingbeat becomes a brush arc, a splash a black star — and reforms when it stops. Water is a few parallel dry strokes that redraw themselves. Movement keeps the slight stutter of photographed sheets.
 
-0–4 s, wide: a heron stands on a river stone in mist, one dark stroke on bare paper; the current slides past as three dry lines.
-4–7 s, close-up: the heron strikes; its neck stretches into one brush arc, the splash bursts as a black star, and it lifts a fish.
-7–10 s, wide: the heron opens its wings and rises; each wingbeat smears into an arc and reforms at the top of the stroke.
+0–4 s, wide: a heron stands motionless on a river stone in mist; the current slides past.
+4–7 s, close-up: the heron strikes down through the surface and lifts a fish clear of the splash.
+7–10 s, wide: the heron opens its wings and rises off the stone.
 End with the heron gone out of the top of frame and the river stone alone on the sheet.
 MUST NOT APPEAR: digital watercolour filter, glossy surfaces, photographic depth of field, rendered 3D volume, motion blur, smooth interpolated motion, on-screen text, music.
 ```
-Lint: words 460/500 (C, block 343) · negations 1/1 (the terminal list) · numerals outside TC 0/0 · absolute measures 0/0 · double mentions none.
+Lint: words 433/500 (C, block 343) · negations 1/1 (the terminal list) · numerals outside TC 0/0 · absolute measures 0/0 · double mentions none.
 
 Reading the table: pick ONE row, expand it into the seven layers above (the P51 document holds a full worked block per row), and never carry a second row into the same prompt (style soup, §6 meta rule). Stills for the same project (sheets, plates) carry the medium in the still model's structure (§2 section 4 / §3 end position) as a ≤ 100-word condensation of layers 1–4 and 6 — the still budget (§2) binds; layer 7 is video-only — the medium must already be in the anchor images, or the video fights them (§1 style stack). The story prompts in the P51 document keep per-shot lens sizes in millimetres — a divergence from 12d's FOV-in-degrees house unit, recorded in video-prompting 12d.
 
