@@ -113,7 +113,7 @@ The draft batch sits (§5: TK03 approved at 720p), so the production take is a N
 | Intent | as §3b — production take of sequence take S1 at target resolution |
 | Run in | Higgsfield → web UI → project LIGHTCAT → Video → Seedance 2.5 → t2v (UI label unverified — read the live task dropdown) — from reference HF-WEB@2026-09-04 (checked 2026-09-04), not live-checked this session; confirm model/mode/workspace on the live form before Generate |
 | Settings | 16:9 · 1080p · 10 s · audio on (production take, W3 step 6 — a new generation of the locked prompt, not an extension of the draft) |
-| Lint | as §3b (text unchanged) |
+| Lint | words 256 · negations 1/1 · numerals outside TC 0/0 · absolute measures 0/0 · double mentions none · contradictions none · beats complete (text unchanged from §3b) |
 | Inputs | as §3b (the same three Elements; references, not start frames) |
 | Store in | Higgsfield project LIGHTCAT / SC01 |
 Result (§5): Take IDs TK05–TK08, TK07 approved → `Approved-take Render ID` = `LIGHTCAT_1A__HF-SD25__T2V__P01` (TK07); S2 (§4) extends TK07 at 1080p. W3 step 6's exception (draft → scoped `video_edit` / upscale when the 1080p generation loses scale or structure) was not needed here.

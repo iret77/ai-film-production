@@ -262,13 +262,13 @@ Higgsfield MCP as loaded as a hosted MCP connector in an agent session on 2026-0
 
 | Endpoint `bytedance/seedance-2.5/…` | Mode (mode table below) | Inputs |
 |---|---|---|
-| `text-to-video` | `t2v` | `prompt` |
-| `reference-to-video` | `omni_reference` | `image_urls`, `video_urls`, `audio_urls` (arrays) |
+| `text-to-video` | `t2v` without references | `prompt` |
+| `reference-to-video` | `t2v` WITH image or audio references — the stills-first default — and `omni_reference` (a source clip in `video_urls`) | `image_urls`, `video_urls`, `audio_urls` (arrays, each optional) |
 | `video-edit` | `video_edit` | `video_url` required, reference arrays optional |
 | `video-extend` | `video_extension` | `video_url` required, reference arrays optional |
 | `image-to-video` | start / end frame (SKILL rule 1 cases) | `image_url` required, `end_image_url` optional |
 
-  Shared parameters: `duration` 4–30 s (default 5) · `resolution` `480p` or `720p` only · `aspect_ratio` 16:9, 4:3, 1:1, 3:4, 9:16, 21:9 (ByteDance's free ratios are not passed through) · `output_format` mp4 or mov · `generate_audio` default `true`. Seedance 2.0 has `text-to-video`, `image-to-video` and `reference-to-video` only, with resolutions up to 1080p and 4K per its price line. A 1080p production take of a 2.5 shot is therefore a web-UI job or an upscale (W3 step 6).
+  Parameters: every endpoint takes `prompt`, `resolution` (`480p` or `720p` only), `output_format` (mp4 or mov) and `generate_audio` (default `true`). `duration` 4–30 s (default 5) exists on `text-to-video`, `reference-to-video`, `image-to-video` and `video-extend` — not on `video-edit`, whose length follows the source. `aspect_ratio` (16:9, 4:3, 1:1, 3:4, 9:16, 21:9 — ByteDance's free ratios are not passed through) exists on `text-to-video` and `reference-to-video` only; the other three inherit the ratio from their input. Seedance 2.0 has `text-to-video`, `image-to-video` and `reference-to-video` only, with resolutions up to 1080p and 4K per its price line. A 1080p production take of a 2.5 shot is therefore a web-UI job or an upscale (W3 step 6).
 - **Price (2.5):** token-metered — tokens = (input video seconds + generated seconds) × width × height × 24 / 1024; 1,000 tokens cost 0.0214 US dollars without video input and 0.01284 with it (then input AND output seconds are billed; image and audio references are free). Read the estimate endpoint rather than computing; as an order of magnitude a 10-s 720p take is a few dollars, a draft batch of four four times that.
 - **References without Elements:** the API has no Elements library and no stable @names — only URL arrays. How the prompt addresses them is not documented by Higgsfield; the ByteDance convention is upload order (`@Image 1` = first entry of `image_urls`). 🟡 unverified on this surface: the slate's `Inputs` row maps every project @name to its array position and carries `🟡 token form unverified`.
 - **Other catalog models named at launch:** Kling 2.5 / 2.6 / 3.0 (`kling-video/v3.0/std/text-to-video`, `kling-video/o3/first-last-frame`), MiniMax H3, Grok Imagine Video 1.5 (`reference-to-video`), Wan, LTX, PixVerse; images: Soul 2, Soul Cinema, DoP, Marketing Studio Image, Recraft, Ideogram, Qwen. Veo, Nano Banana and GPT Image are not announced for the API — the still route stays web UI, MCP or ChatGPT.
