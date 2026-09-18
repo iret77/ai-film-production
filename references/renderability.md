@@ -55,7 +55,7 @@ One camera verb per shot · fixed camera grammar per sequence in the shot table'
 Memory hook: a phase instruction only wins when no contradicting brightness word stands next to it.
 
 ## 6. Model quick profiles (for shot assignment)
-**Prompt technique is a project decision (SKILL rule 4); the containers per model are in ch. 21 / 12g.** Seedance 2.0 and 2.5 are prompted identically under the economy doctrine.
+**Prompt technique is a project decision (SKILL rule 4); the containers per model are in ch. 21 / 12g.** Seedance 2.0 know-how holds on 2.5 unless a documented difference says otherwise (video-prompting ch. 14b table: timestamps, multi-view references, action wording, constraint words).
 
 Per-shot decision rule: Seedance 2.5 whenever references, edits, long takes or choreography matter; Seedance 2.0 for simple UGC-realism shots and drafts (production-pipeline ch. 11); H3 for 2D/anime line quality, quoted on-screen text or cheap hosted 2K; Veo 3.1 for photoreal environments; Kling 3.0 for directed movement in stylized-photoreal; Grok for stylized fast tests; Flux 3 Video for calm dialogue. Ties → the motion ladder; name the pick in the slate.
 | Model | Strengths | Limits / slop accent |

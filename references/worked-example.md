@@ -51,7 +51,7 @@ This example project chose technique A (§1); the same take in the block structu
 | Crew choices | Left to the model: the cat's body mechanics, wet-fur and brass rendering, the light bloom, the cut timing inside the declared ranges. Decided by the crew — the look controls technique B steers deliberately, each a paid line: medium-wide 63° / close-up 47°, window key 8500K, lamp key 3200K, camera height and distance as relations, the two-shake rain shed as the reaction cue |
 | Run in | Higgsfield → web UI → project LIGHTCAT → Video → Seedance 2.5 → t2v (UI label unverified — read the live task dropdown) — from reference HF-WEB@2026-09-04 (checked 2026-09-04), not live-checked this session; confirm model/mode/workspace on the live form before Generate |
 | Settings | 16:9 · 720p (draft tier) · 10 s · audio on · no Cinema Studio controls (Video page) |
-| Lint | words 467 · chars 2,645/5,000 · negations 1/1 (the AUDIO music exclusion — once per governing block) · numerals outside TC: 63°, 47°, 8500K, 3200K — deliberate look controls listed in Crew choices · absolute measures 0/0 · double mentions none (ENDING STATE restates the last frame by contract, ch. 14) |
+| Lint | words 467 · negations 1/1 (the AUDIO music exclusion — once per governing block) · numerals outside TC: 63°, 47°, 8500K, 3200K — deliberate look controls listed in Crew choices · absolute measures 0/0 · double mentions none (ENDING STATE restates the last frame by contract, ch. 14) · contradictions none · beats complete |
 | Inputs | 1. `@anchor_1A` = approved still 1A — opening composition of SHOT 1 and SHOT 3 (reference, not start frame) · 2. `@anchor_1B` = approved still 1B — opening composition of SHOT 2 from the HARD CUT (reference, not start frame) · 3. `@loc_lamproom` = lamp-room master plate — set only · 4. `@cat` = cat sheet, wet state — identity only · 5. `@prop_lever` = lever detail, state down — prop only (all five are Higgsfield Elements addressed by name; no upload) |
 | Store in | Higgsfield project LIGHTCAT / SC01 |
 
@@ -65,7 +65,7 @@ OPTICS: Shots 1 and 3 medium-wide at 63°; Shot 2 close-up at 47°; soft rounded
 CAMERA: Shots 1 and 3 static, lens at the height of the cat's shoulders; Shot 2 static, lens level with the lever and close enough that the lever fills the frame's height.
 ACTION: SHOT 1 (0.0–4.0 s): the cat lands on the floorboards, shakes rain off in two shakes — droplets catch the window light — then looks up at the lamp. HARD CUT; the cat's pose at the end of Shot 1 exactly matches its start in Shot 2. SHOT 2 (4.0–7.0 s): the cat rears up and pushes the brass lever with both forepaws and its whole body weight; the lever tips up with one heavy clunk; only then a warm glow blooms from above. HARD CUT. SHOT 3 (7.0–10.0 s): the cat settles onto its haunches in the amber light, eyes widening, ears rising, and goes still.
 LIGHTING: Shot 1 one cold key from the windows screen-right, 8500K, low exposure, the cat's far side in shadow; from the ignition in Shot 2 a warm 3200K top light, brighter than the window key, contact shadows under the cat.
-AUDIO: {rain on glass, continuous} {two wet shakes} {one heavy metallic clunk at 6.0 s} {low warm hum from the lamp from 6.0 s} 【no music, no BGM — room tone and effects only】
+AUDIO: <rain on glass, continuous> <two wet shakes> <one heavy metallic clunk at 6.0 s> <low warm hum from the lamp from 6.0 s> No music, no BGM — room tone and effects only.
 ENDING STATE: cat seated on its haunches facing the lit lamp, lever up, room in warm amber, rain continuing on the glass.
 STYLE: stylized 3D animated-feature look, matte rendered materials, soft global illumination; clean, grain-free image.
 POSITIVE LOCKS: exactly one cat in every frame.
@@ -81,7 +81,7 @@ The same canon as §3, written for a specialist model: the agent states what is 
 | Crew choices | Left to the model: camera composition inside the named shot sizes, the cut timing around the insert, the cat's body mechanics, wet-fur and brass rendering, the light bloom. Decided by the crew: shot-size words per beat; one camera line (low, looking toward the lever, holding still — continuity of the return cut); the rain shake as the reaction cue; window light cold / lamp light warm, as words |
 | Run in | Higgsfield → web UI → project LIGHTCAT → Video → Seedance 2.5 → t2v (UI label unverified — read the live task dropdown) — from reference HF-WEB@2026-09-04 (checked 2026-09-04), not live-checked this session; confirm model/mode/workspace on the live form before Generate |
 | Settings | 16:9 · 720p (draft tier) · 10 s · audio on · no Cinema Studio controls (Video page) |
-| Lint | words 256/300 · negations 1/1 · numerals outside TC 0/0 · absolute measures 0/0 · double mentions none |
+| Lint | words 256 · negations 1/1 · numerals outside TC 0/0 · absolute measures 0/0 · double mentions none · contradictions none · beats complete |
 | Inputs | 1. `@cat` = cat sheet, wet state — identity only · 2. `@anchor_1A` = approved still 1A — exact background and opening composition (reference, not start frame) · 3. `@anchor_1B` = approved still 1B — exact framing of the lever insert (reference, not start frame) (all three Higgsfield Elements addressed by name; no upload) |
 | Store in | Higgsfield project LIGHTCAT / SC01 |
 
@@ -128,7 +128,7 @@ On Seedance 2.5 a continuation is `video_extension` of the approved production t
 | Crew choices | Left to the model: composition inside the two shot sizes, the cut into the counter-angle, the beam's rendering and the light sweep. Decided by the crew: shot 1 holds the S1 end position (medium); shot 2 a low wide from the lamp side; the beam rotation as the light event |
 | Run in | Higgsfield → web UI → project LIGHTCAT → Video → Seedance 2.5 → video_extension ("Extend", forward) — from reference HF-WEB@2026-09-04, not live-checked this session; confirm the Extend control on the live form before Generate |
 | Settings | inherits 16:9 · 1080p · +10 s · audio on |
-| Lint | words 189/300 · negations 1/1 · numerals outside TC 0/0 · absolute measures 0/0 · double mentions none |
+| Lint | words 189 · negations 1/1 · numerals outside TC 0/0 · absolute measures 0/0 · double mentions none · contradictions none · beats complete |
 | Inputs | 1. `@Video 1` = approved production take of S1 `LIGHTCAT_1A__HF-SD25__T2V__P01__TK07` (source; 🟡 token form unverified — match the upload label before running) · 2. `@cat` = identity only · 3. `@loc_lamproom_rev` = exact background of shot 2 only |
 | Handoff | Boundary = S1 ENDING STATE at the last clean frame (9.8 s of TK07's raw export): cat seated facing the lit lamp, lever up, room warm amber, rain on glass |
 
