@@ -1,41 +1,36 @@
 # Pixar/3D Look: Sourced Design Rules
 
+**Contents — read only the § the routing row or checklist names:** §1 core philosophy · §2 shape language · §3 colour · §4 light · §5 camera · §6 case studies (Piper, La Luna, WALL-E) · §7 prompt-consequence checklist (the single checklist of this file) · §8 the figure as style anchor + model choice · §9 figure-less style-forced stills on GPT Image 2.5 (template, dark-scene method, refinements) · §10 case study Passport Rush (hybrid look, previs order, style donor). Every technique needs §7 and §8; §9 is a still-only path; §10's donor line takes the technique's reference-line shape.
+
 Look bible for Pixar/3D-stylized projects. Rule-oriented; tags and confidence labels: legend in sources.md; source per rule. **Verification note:** citations below are consistent with widely documented material and the model's training knowledge, but were not individually re-fetched — treat exact wordings as paraphrase-accurate, not quote-verified. This file owns look knowledge; model failure knowledge stays in renderability.md.
 
 ## 1. Core philosophy
 🟢 **Believability, not realism.** Pixar's stated goal is believability; pure physical realism doesn't guarantee it. Documented case: a technically perfect skateboard-wheel shader was rejected by the Toy Story art director — correct, but not believable in film context. (Communications of the ACM, "Creating Lifelike Characters in Pixar Movies")
 🟢 **Worlds are deliberately caricatured/idealized.** Ratatouille's Paris is "a loving caricature" per its makers; even Finding Nemo's near-photoreal water was intentionally caricatured. (AWN interviews)
-**Prompt consequence:** describe worlds as "idealized/caricatured" — never "photorealistic".
 
 ## 2. Shape language
 🟢 **"Simplexity"** (Ricky Nierva, production designer Up/Monsters Inc.): "the art of simplifying an image down to its essence; the complexity you layer on top — texture, design, detail — is masked by the simplicity of the form; simplexity is selective detail." (Cooper Hewitt exhibition text; The Art of Up)
 🟢 Pete Docter: everything must read at first glance as a simple base shape — squares, circles. (AWN)
 🟢 **Every shape is a symbol:** round = safe/warm, angular = threat.
-**Prompt consequence (characters and hero props):** rounded volumes as default; sharpness/edges only as designed exceptions with narrative purpose. Environments are NOT bound by this — see §9 refinements (faceted/planar silhouettes are style-conform; the invariant is flat graphic color separation + clean silhouettes).
 
 ## 3. Color
 🟢 **Color scripts are a mandatory document:** sequential paintings mapping light/color/mood per story beat — published by Pixar itself. (The Art of Pixar: The Complete Color Scripts)
 🟢 **Saturation dramaturgy, not just hue:** Up runs high saturation while Ellie lives; desaturation to near-grayscale for grief and looming threat. (Nierva) Muted palettes are Pixar-conform when they follow a deliberate emotional curve (Ratatouille: pastel/sepia after Degas/Monet).
-**Prompt consequence:** every project defines a mini color script with **temperature AND saturation per block** — the saturation column is not optional.
 
 ## 4. Light
 🟢 **Sharon Calahan's four criteria** (SIGGRAPH-anchored): light must (1) guide the eye, (2) support the story emotion, (3) keep continuity, (4) add beauty to the composition.
 🟢 **Explicit anti-physics stance:** "purely natural or physically correct lighting is often not interesting enough to create drama." (Calahan, SIGGRAPH 1996)
 🟢 **Character light convention:** strong rim on the shoulders, soft light on the face — avoid hard direct light on faces. (Pixar lighting artists)
-**Prompt consequence:** one motivated key is fine, but emotion beats correctness in the grade; specify "rim on shoulders, soft face light" for characters.
 
 ## 5. Camera
 🟢 **Real lenses including curated imperfection.** Lens character (flares, distortion, focus breathing, deliberate "mistakes" in zooms/framing) creates the feeling of being filmed — but Pixar deliberately dials real artifacts DOWN where they look bad in CG. Detail evidence: case study WALL-E (§6c).
-**Prompt consequence:** a stylized film may specify subtle lens character (soft flares, gentle DoF breathing) — never clean-CG perfection, never unfiltered full artifacts.
 
 ## 6. Case studies
 ### 6a. Piper — reference for miniature/macro worlds
 🟢 Look built on macro photography; painterly exaggeration ("at first glance realism, but everything deliberately exaggerated — textures almost become a character", Barillaro); Norman Rockwell as painterly reference; faux nature-doc lens set with unusually consistent shallow depth of field. Core production question: "What does the world look like at the eye level of a sandpiper — four inches tall?" (RenderMan/Pixar official story, fxguide)
-**Consequence:** for small-creature worlds, the shallow-DoF macro grammar IS the Pixar signal — set as the sequence-wide camera grammar, not a one-off effect.
 
 ### 6b. La Luna — license for material over physics
 🟢 An immense pearlescent moon that characters physically climb; watercolor textures mapped onto CG, the moonrise literally a watercolor painting. (IndieWire, Casarosa interviews)
-**Consequence:** celestial bodies may be scaled for wonder; painterly texture beats physical correctness.
 
 ### 6c. WALL-E — reference for lens character
 🟢 Real Panavision anamorphics rented, measured, rebuilt in software — then real lens artifacts deliberately dialed down where they read badly in CG; barrel distortion, lens flares, focus breathing, even intentional "mistakes" in zooms/framing for the filmed feel; Roger Deakins consulted. (AWN, 3D World, press)
@@ -44,37 +39,39 @@ Look bible for Pixar/3D-stylized projects. Rule-oriented; tags and confidence la
 1. **Shape language as symbol — characters and hero props:** round = safe/warm, angular = threat; rounded default, edges as designed exceptions. **Environments:** rounded OR faceted/planar, prompted as a deliberate mix; the style invariant is flat graphic color separation + clean readable silhouettes, not roundness (§9 refinements).
 2. **Idealized-not-photoreal vocabulary** — "caricatured, idealized, believable", never "photorealistic".
 3. **Color script per block** with two columns: temperature + saturation (saturation curve = emotion curve).
-4. **Motivated but emotional light** — "rim on shoulders, soft face light" for characters; drama before correctness.
-5. **Subtle lens character** — soft flares, gentle DoF breathing; never clean-CG perfection (figure-anchored stills and motion; not for the §9 figure-less method).
+4. **Motivated but emotional light** — write 'rim on shoulders, soft face light' once into the style contract and the character/anchor STILL prompts; in video prompts the anchor carries it — restate only as a deliberate look control; drama before correctness.
+5. **Lens character only as a deliberate look control** — when the look wants a filmed feel, ONE sentence (soft flares, gentle DoF breathing), once, listed in `Crew choices` (SKILL rule 7); by default the optics are the model's (figure-anchored stills and motion; not for the §9 figure-less method).
 6. **Macro-DoF grammar** for miniature/small-creature worlds (sequence-wide, not punctual).
 7. **Scale-for-wonder license** for celestial objects; painterly texture before physics.
+8. **Scale as a relation, on sheets and in every prompt** — a miniature or giant character's turnaround carries a comparison object on the sheet, and every still and video prompt repeats that ONE relation ("his back level with the top step"); never a height in metres or body-lengths (SKILL rule 7; production-pipeline ch. 3).
 
 ## 8. The figure as style anchor (hard rule)
 🟢 **A Pixar look without a figure in frame does not happen by itself [PP — production-proven].** Isolated Pixar environments default to photoreal on EVERY image model (GPT Image 2.5, Nano Banana Pro, Seedream, Soul Cinema) — because Pixar environments themselves are near-photoreal (*The Good Dinosaur*: photoreal landscapes under cartoon characters; *Soul*/*Elemental* cityscapes similarly). The model has nothing to stylize against. The figure in frame forces the ENTIRE render into Pixar mode. This is not a workaround — figure + environment together IS the Pixar look, carried by character design and motion (oversized eyes, caricatured proportions, squash & stretch, weight). Two proven counters exist: (a) the figure anchor below, and (b) the prompt-only style-forcing method for figure-less environment stills (pixar-look §9) — brightness-dependent; dark scenes combine both paths via the self-generated style anchor.
-🟢 **Pipeline consequence — inverted build order for stylized projects (production-pipeline ch. 1):** (1) character sheets first (neutral grey, no location dependency — they define the project's stylization level) → (2) location ANCHOR plates generated WITH a figure in frame → (3) empty location backgrounds derived via edit model: remove the figure, the style stays baked in. Location-first remains correct only for photoreal projects.
+🟢 **Pipeline consequence — inverted build order for stylized projects (production-pipeline ch. 1):** (1) character sheets first (neutral 18 % grey — white or hard-contrast studio backgrounds push the downstream video toward plastic skin, production-pipeline ch. 5; the vendor's cream sheet in §10 is that project's choice, not a rule; no location dependency — they define the project's stylization level) → (2) location ANCHOR plates generated WITH a figure in frame → (3) empty location backgrounds derived via edit model: remove the figure, the style stays baked in. Location-first remains correct only for photoreal projects.
 🟢 **Plate judging:** an empty plate derived this way still reads idealized-realistic — that is correct, not a failure. Criteria for figure-less plates: simplified, chunky geometry (rounded or faceted — §9 refinements) · clean uncluttered surfaces · controlled palette · soft light falloff · painted-CG material feel (subsurface glow, no photographic micro-noise). Never judge by "does it look cartoony" — that criterion produces endless, unwinnable regeneration loops.
 🟢 **Model choice for the anchor render:** Nano Banana Pro is the strongest Pixar-from-scratch model (environment+figure in one 4K render, superior AO and subsurface scattering) [PP]; GPT Image 2.5 handles geography consistency, edits, and derivatives — prompt structure per style-control §2 (4-section pattern with the anti-pattern closer). Cinema Studio settings play no role here: they are VIDEO controls, first relevant at the motion test (platforms-models ch. 13b).
 
 ## 9. Style-forced environment stills WITHOUT a figure (GPT Image 2.5, prompt-only) [PP] — for figure-less GPT Image 2.5 environment stills this template is the single source; style-control §2 holds only the selector and the figure-in-frame structure (image-model rule; never port the Avoid block into a video prompt — ch. 14 third class)
-⚠️ **Provenance:** this template and the brightness-dependence finding below were production-proven [PP] on the **gpt-image-2** generation. GPT Image 2.5 is the current model and this template carries forward as the default; because 2.5 *claims* steadier style hold (style-control §2 lead — 🔴 verify), re-run the §9 verify gate on 2.5 before treating the bright-vs-dark behaviour as unchanged.
-Scope: figure-less environment stills only. Here every photographic signal is a realism path and is forbidden (no DoF, flare, grain, no PBR). Once a figure anchors the style (§8) or at the video stage, the §5/§7 lens character and the style-control §2 rendering cues (subsurface scattering, physically based materials) return — never combine the two blocks in one prompt (image-model-logic 24b item 2).
+⚠️ **Provenance:** this template and the brightness-dependence finding below were production-proven [PP] on the **gpt-image-2** generation. GPT Image 2.5 is the current model and this template carries forward as the default; because 2.5 *claims* steadier style hold (style-control §2 lead — 🔴 verify), re-run the §9 check on 2.5 before treating the bright-vs-dark behaviour as unchanged: one bright and one dark still from the template; pass = both meet the §8 plate-judging criteria.
+Scope: figure-less environment stills only. Here every photographic signal is a realism path and is forbidden (no DoF, flare, grain, no PBR). Once a figure anchors the style (§8) or at the video stage, the §5/§7 lens character (as a look control, §7 item 5) and the style-control §2 rendering cues (subsurface scattering, physically based materials) return — never combine the two blocks in one prompt (image-model-logic 24b item 2).
 🟢 Refines the production-pipeline ch. 1 hard rule (inverted build order): there IS a reliable prompt-only path to flat stylized environment stills with no character in frame — the style must be actively FORCED and every realism path explicitly blocked. Five building blocks that work only together:
 1. **Priority sentence** placing style above realism: "stylized animated-feature design is more important than realism; favor appealing sculpted shapes and clean color separation over natural geology or accurate [material] physics."
 2. **Thumbnail rule:** "every major form must be readable at thumbnail size" — forces large, simple, readable forms over detail density.
 3. **Flat-graphic style block:** "graceful graphic color blocking, clean color separation, deliberately simplified sculpted forms, clean readable silhouettes, smooth matte surfaces, minimal surface noise; must read as stylized animated concept art, not as a photograph or physically based render."
 4. **Render-treatment block** killing photo signals: "soft global illumination, gentle ambient occlusion only, diffuse matte materials, restrained reflections, no photographic depth of field, no lens flare, no film grain."
-5. **Explicit avoid block** naming the realism traps: "photorealism, PBR-render look, gritty texture, fine realistic cracks, naturalistic documentary lighting" + scene-specific unwanted forms. Omission is not enough — the traps must be named and forbidden.
+5. **Explicit avoid block** naming the realism traps: "photorealism, PBR-render look, gritty texture, fine realistic cracks, naturalistic documentary lighting" + scene-specific unwanted forms. Omission is not enough — the traps must be named and forbidden. **But the block has a budget (ch. 24f): ~10 atomic entries, and every entry earns its place only after its error actually occurred.** The five realism traps of this item are the PROTECTED subset — they are never what you drop when the list has to be shortened; scene-specific forms are the volatile subset where cuts are taken. ⚠️ The proven run's list had 16 entries (traps + scene-specific forms), the documented working upper bound of a prompt that still delivered; in production, lists that grew past it displaced the Scene description and the prompt started failing on instructions it still contained [PP].
 
-IP wording is path-bound — never mix the two in one prompt (contradiction lint, SKILL rule 6 / ch. 24b): (a) the figure-bearing 4-section structure (style-control §2) names the studio and 2–3 film titles as aesthetic lineage (styles are free, post-audio-legal ch. 20); (b) THIS figure-less method uses generic wording only — "stylized 3D animated-feature aesthetic", never "Pixar" or a film title — plus the clause "do not imitate any particular studio, film, franchise, or character design" (part of the proven block; it also keeps the look generically stylized and festival-safe). Do NOT prepend the style-control §2 opener ("This is a still from a Pixar animated feature film…") to a §9 prompt — the §9 template is complete on its own. Contests/festivals/client briefs that require IP-clean output: use wording (b) on EVERY still, including figure-bearing ones (replace the studio name and titles in §2 sections 1 and 4 with "stylized animated-feature" and add the clause). Record the choice as the "IP wording" line of the style contract (production-bible section B2).
+IP wording is path-bound — never mix the two in one prompt (contradiction lint, SKILL rule 6 / ch. 24b): (a) the figure-bearing 4-section structure (style-control §2) names the studio and 2–3 film titles as aesthetic lineage (styles are free, post-audio-legal ch. 20); (b) THIS figure-less method uses generic wording only — "stylized 3D animated-feature aesthetic", never "Pixar" or a film title — plus the clause "do not imitate any particular studio, film, franchise, or character design" (part of the proven block; it also keeps the look generically stylized and festival-safe). Do NOT prepend the style-control §2 opener ("This is a still from a Pixar animated feature film…") to a §9 prompt — the §9 template is complete on its own. Contests/festivals/client briefs that require IP-clean output: use wording (b) on EVERY still, including figure-bearing ones (replace the studio name and titles in §2 sections 1 and 4 with "stylized animated-feature" and add the clause). Record the choice in the bible decision log and as the last clause of the B2 style-anchor paragraph.
 
-**Proven template (produced the target look directly, no reference image — bright daylight ice world; swap the Scene block for other environments). Note: the proven run stated the water ban in Scene AND Avoid; it is shown here deduplicated per SKILL rule 6 — every scene-specific exclusion once, in the Avoid block only (§9 item 5). The Style-block closer ("not a photograph or physically based render") plus the Avoid realism traps are the designed repulsion pair for GPT Image 2.5 (image-model-logic 24f) and are not a duplicate.**
+**Proven template (produced the target look directly, no reference image — bright daylight ice world; swap the Scene block for other environments). Note: the proven run stated the water ban in Scene AND Avoid; it is shown here deduplicated per SKILL rule 6 — every scene-specific exclusion once, in the Avoid block only (§9 item 5). The Style-block closer ("not a photograph or physically based render") plus the Avoid realism traps are the designed repulsion pair for GPT Image 2.5 (image-model-logic 24f) and are not a duplicate. The Scene block keeps the measured run's two quantifiers ("a few", "several"); a Scene block written for another environment follows image-model-logic 24e (an exact count of at most four, or a mass noun), so the adapted prompt passes the 24i quantifier check.**
 ```
 Create an original cinematic Antarctic ice-world establishing shot in a polished, highly
 stylized 3D animated-feature aesthetic.
-Scene: A vast Antarctic ice shelf stretching to the horizon, entirely frozen. Broad, smooth
-snow-covered ice floes form soft, irregular, naturally flowing shapes. Gentle pressure ridges,
-a few broad blue-ice fissures, several large tabular icebergs with softly rounded wind-eroded
-profiles. Sparse dark rocky nunataks far away on the horizon.
+Scene: A vast Antarctic ice shelf stretching to the horizon, entirely frozen — an empty,
+unbuilt landscape, no living thing in frame. Broad, smooth snow-covered ice floes form soft,
+irregular, naturally flowing shapes. Gentle pressure ridges, a few broad blue-ice fissures,
+several large tabular icebergs with softly rounded wind-eroded profiles. Sparse dark rocky
+nunataks far away on the horizon.
 Must read unmistakably as Antarctica — immense, wind-sculpted, frozen.
 Style: Premium family-animation environment design. Deliberately simplified sculpted large
 forms; clean readable silhouettes; smooth matte snow; translucent cyan blue-ice edges;
@@ -94,12 +91,11 @@ selected edges. Calm, inviting.
 Render treatment: Soft global illumination, gentle ambient occlusion only, diffuse matte
 materials, restrained reflections, no photographic depth of field, no lens flare, no film
 grain.
-Constraints: Environment only. No characters, animals, buildings, text, logos, watermark,
-frame.
 Avoid: Open water, ocean surface, meltwater, reflections, photorealism, PBR-render look,
-gritty texture, fine realistic cracks, naturalistic documentary lighting, hard right-angle
+gritty texture, fine realistic cracks, naturalistic documentary lighting, text, logos,
+watermark, frame [scene-specific forms — added only after they appeared: hard right-angle
 cliffs, cuboid icebergs, square slabs, ice castles, needle-like fantasy spires, forests,
-Arctic fjord scenery.
+Arctic fjord scenery].
 ```
 
 🟢 **Brightness is the deciding factor — and the method for DARK scenes:** bright + saturated + daylight drives GPT Image 2.5 into the flat cartoon mode on its own; dark/night scenes (twilight, black sky) pull it back to photo, where prompt mechanics alone often fail. For dark target scenes:
@@ -107,11 +103,16 @@ Arctic fjord scenery.
 2. Attach that self-generated bright image as the STYLE reference to the actual dark prompt.
 3. Restrict the reference strictly to style/rendering/flatness/stylization level; explicitly instruct NOT to copy lighting, sky, composition, or forms.
 4. Mark the dark lighting as a deliberate deviation ("key change from the reference") and add an anti-relapse anchor: the forms stay as graphic and flat in the darkness as in the bright reference — never grim-photographic.
+
+Copy-ready reference line for steps 2–4 (one line, style-control §7 Rule 1b shape):
+```
+Style, rendering and stylization level as in @style_bright; its lighting, sky, composition and forms are not used. Key change from the reference: polar night, black sky, one cold moon. The large forms stay as graphic and flat in the dark as in the reference — matte, clean colour separation, never grim-photographic.
+```
 The flat look then survives the dark palette that would otherwise destroy it. Where platform rules require all assets generated in-project (contests/festivals), such a style anchor is only admissible if it was itself generated in-project by prompt — never external imagery.
 
 🟢 **Proven refinements:**
 - **"Everything round" is wrong:** the look does not require uniformly round forms. Angular, pointed, faceted, planar silhouettes are fully style-conform — the look comes from flat graphic color separation and clean silhouettes, not from roundness. Prompt shapes as a deliberate mix (pointed spires, planar faces, faceted blocks, some softer forms).
-- **Separate silhouette from surface:** demand angular/faceted silhouettes AND flat graphic surfaces at the same time, so faceted material doesn't tip into PBR via realistic shading ("faceted, but every facet a flat color plane — like a low-poly gemstone in an animated feature").
+- **Separate silhouette from surface — and SCOPE the line, or it becomes a global material rule [PP]:** demand angular/faceted silhouettes AND flat graphic surfaces at the same time, so faceted material doesn't tip into PBR via realistic shading. ⚠️ **Scoping bug, documented:** the refinement is about the SILHOUETTE of the scene's large forms. Written bare, "faceted, but every facet a flat colour plane" reads as a material instruction — an agent files it into the prompt's material block and the run comes back with a facetted low-poly tiled FLOOR. Always carry the scope with the line: **"the large [forms] read faceted in silhouette — faceted, but every facet a flat colour plane, like a low-poly gemstone in an animated feature; ground and floor surfaces stay smooth and unfaceted."** Never write the faceting clause on its own, and never next to a material list (contradiction lint, image-model-logic 24b item 2).
 - **Force monumental scale explicitly** (towering, seen from a very small observer's viewpoint) or the world reads too small.
 - **Key sky objects (e.g. a moon) as a clearly readable disc** with soft surface shading and a clean round edge — otherwise the model renders only a vague glow.
 
@@ -126,17 +127,11 @@ Source: Higgsfield's first-look thread with a side-by-side of storyboard / Blend
 
 🟢 **Wide shots are the failure class of stylized 3D — scale and distance break at wide range.** The fix that held: generate the take as a short CUT SEQUENCE that opens on a close or medium of the character and transitions INTO the wide within the same generation; the model carries scale from the close shot into the wide. A wide shot generated on its own kept breaking. ⚠️ This refines the photoreal habit "open on a wide establishing to lock positions" (renderability §5): in stylized 3D, lock positions with the previs/clay render and let the wide arrive by transition.
 
-🟢 **Faces that must stay blank are hidden by design, not animated.** Two silent passengers in a taxi: instead of asking for neutral faces (the model animates them anyway — micro-expressions, drift), the film hides them behind reflective glass. Copy-ready block (verbatim from the thread; also filed under video-prompting 12e):
-```
-GLASS: all the taxi's windows are semi-transparent and heavily reflective, sky, road and
-passing scenery slide across them, and the interior sits in shadow. The two passengers are
-almost invisible, present only as soft dark silhouettes veiled by the reflections and the
-tint, their poses and gestures readable purely by shape.
-```
-Generalize: any performer without a beat gets an occlusion motivated by the world — glass, backlight silhouette, hat brim, distance, frame edge — written as a positive description of what IS visible (ellipsis over simulation, SKILL rule 7).
+🟢 **Faces that must stay blank are hidden by design, not animated.** Two silent passengers in a taxi: instead of asking for neutral faces (the model animates them anyway — micro-expressions, drift), the film hides them behind reflective glass. Block: video-prompting 12e (generic form).
+Generalize: any performer without a beat gets an occlusion motivated by the world — glass, backlight silhouette, hat brim, distance, frame edge — written as a positive description of what IS visible (ellipsis over simulation, SKILL rule 8).
 
 🟢 **Closing rule of the vendor's thread:** "Don't ask AI to do everything. Use Blender to control the things that need control. Use AI where it gives you leverage." — camera, composition, timing from previs; surfaces, light, motion detail from the model.
-🟢 **Style unification by declared donor:** character and background came from two different styles; the prompt that closed the gap: **"take the style of the character and apply it to the background"** — pushed harder or softer to control the blend. Observed effect: the taxi that entered as untextured previs geometry left with watercolor texture on hood and cabin, picked up from the character. This is the §8 figure-anchor rule confirmed by the vendor's own production, with the operational form: name the donor reference and the receiver in the STYLE role line ("@hero donates rendering style to @loc_highway and @taxi; geometry from @Clay Render"), and dose the blend in words (subtle / partial / full transfer).
+🟢 **Style unification by declared donor:** character and background came from two different styles; the prompt that closed the gap: **"take the style of the character and apply it to the background"** — pushed harder or softer to control the blend. Observed effect: the taxi that entered as untextured previs geometry left with watercolor texture on hood and cabin, picked up from the character. This is the §8 figure-anchor rule confirmed by the vendor's own production, with the operational form: in @hero's reference line (job sentence in A, ACTIVE REFERENCES in B): '@hero is the man in the cap and donates his rendering style to @loc_highway and @taxi' — the declared donor is the ONE case where a reference carries two jobs, named in the same line (style-control §7 Rule 1); geometry from @Clay Render in its own reference line; dose the blend in words (subtle / partial / full transfer).
 
 🟡 [our read of the published frames] **Comedy physics survive because the look absorbs them:** a log through a cabin, a mushroom-cloud explosion — rendered as painted/drawn FX, not simulated. The stylized register forgives what photoreal would expose (renderability §4 format matrix); keep hero physics in stylized projects, never in photoreal ones.
 

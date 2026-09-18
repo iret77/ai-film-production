@@ -21,7 +21,7 @@ Every craft choice answers the same question: **what should the audience feel, a
 **Combination logic:** pick ONE dominant compositional idea per shot; a second one only in service of the first. Composition changes across a scene should track the emotional arc (ordered → fragmented as a situation degrades).
 
 ## 3. Camera: position, angle, movement, lens
-**Height/angle:** eye level = neutral/human · low angle = power, monumentality, threat · high angle = weakness, overview, fate · overhead/top-down = pattern, godview, death · dutch = instability. Child/creature worlds: camera AT the character's eye height turns sets monumental (pairs with FOV table, video-prompting ch. 12d).
+**Height/angle:** eye level = neutral/human · low angle = power, monumentality, threat · high angle = weakness, overview, fate · overhead/top-down = pattern, godview, death · dutch = instability. Child/creature worlds: camera AT the character's eye height turns sets monumental (write the height as a relation — "lens level with the child's eyes"; a specific FOV only as a deliberate look control, ch. 12d).
 **Distance is intimacy:** EWS context → WS body language → MS conversation → CU emotion → ECU obsession/detail. Move closer as stakes rise; a scene's tightest framing should land on its emotional peak.
 **Movement grammar (motivate every move):**
 | Move | Reads as | Motivated by |
@@ -35,7 +35,10 @@ Every craft choice answers the same question: **what should the audience feel, a
 | Handheld | Presence, nervousness, documentary truth | Subjectivity, chaos — dose it, don't default |
 | Orbit | Inspection, disorientation, iconization | Hero moments, revelations; expensive — earn it |
 | Zoom (vs dolly) | Artificial attention, period flavor | 70s look, crash-zoom comedy/doc |
-**Lens psychology:** wide = space dominates, distortion near the lens, energy · normal = human truth · tele = compression, surveillance, intimacy-from-distance, isolated subject on creamy BG. Depth of field: deep = the world matters; shallow = only the subject matters. (Degrees per video-prompting ch. 12d.)
+| Crash zoom in / out | Shock, sudden realisation, comic emphasis (in); absurd context reveal, punchline (out) | A discovery or a gag beat — the 70s / Kill Bill register [P59] |
+| Snorricam / body mount | Panic, intoxication, dissociation — the head locked, the world lurching | Subjective crisis; the worn-product shot (video-prompting 12e) [P59] |
+| Earth zoom-out · infinite zoom · tilt-shift | From one human moment to the whole world · surreal reveal · model-world detachment | Openings, closings, dream and scale devices — cheap in AI, dose them [P59] |
+**Lens psychology:** wide = space dominates, distortion near the lens, energy · normal = human truth · tele = compression, surveillance, intimacy-from-distance, isolated subject on creamy BG. Depth of field: deep = the world matters; shallow = only the subject matters. (Degrees per video-prompting ch. 12d — a deliberate look control, never a default; by default the lens is the model's and the psychology is written as words: SKILL rule 7.)
 
 ## 4. Editing
 **Cut types & when:**
@@ -74,10 +77,10 @@ Every craft choice answers the same question: **what should the audience feel, a
 **Payoff economics:** every setup pays off (Chekhov), every payoff was set up; the gap between them is proportional to the payoff's weight.
 
 ## 8. Dramaturgy
-**Macro:** three acts (setup 25% / confrontation 50% / resolution 25%) with turning points; or the sequence approach — the film as 6–8 mini-films, each with its own goal and turn (maps 1:1 onto AI production: one sequence = one production block). Short-form (< 5 min): ONE want, ONE obstacle, ONE turn, ONE image that says the ending — no subplots.
+**Macro:** the container is chosen in story-structures ch. 23 (23b three-act, 23e non-submersible units = sequence blocks, 23d short-film); one sequence = one production block.
 **Scene level:** every scene has an owner (whose scene is it?), a want, an obstacle, and a turn; write the audience question the scene asks and make the last shot answer or sharpen it.
 **Openings:** cold open on motion/question; establish the WORLD-rule of the film in the first 30 s (tone, style, what kind of film promises what kind of ending). **Endings:** the final image is the thesis — plan it first, shoot toward it.
-**Blocking & staging (the director's invisible language):** blocking = who stands/moves where; staging = the whole frame's orchestration around it. Working vocabulary: **crosses** (a move across the space = energy shift, re-anchors attention) and **counter-crosses** (opposed movement = conflict made spatial) · **levels** (sitting/standing/elevated = power dynamics without a word) · **foreground shift** (moving a character forward = agency claimed; backward = retreat) · **anchors & business** (props and small physical tasks ground performances and motivate pauses) · **stillness as statement** (the one who does NOT move owns the scene) · distance between bodies = the relationship's current temperature; who turns their back = the scene's verdict. Blocking also sets TEMPO: movement accelerates a scene, stillness forces the audience to sit in it. Plan blocking on a floor plan before framing — the frame then selects from truthful movement instead of inventing it (in AI production this IS the layout-map/3D-blockout layer, production-pipeline ch. 8).
+**Blocking & staging (the director's invisible language):** blocking = who stands/moves where; staging = the whole frame's orchestration around it. Working vocabulary: **crosses** (a move across the space = energy shift, re-anchors attention) and **counter-crosses** (opposed movement = conflict made spatial) · **levels** (sitting/standing/elevated = power dynamics without a word) · **foreground shift** (moving a character forward = agency claimed; backward = retreat) · **grounding props & business** (props and small physical tasks ground performances and motivate pauses) · **stillness as statement** (the one who does NOT move owns the scene) · distance between bodies = the relationship's current temperature; who turns their back = the scene's verdict. Blocking also sets TEMPO: movement accelerates a scene, stillness forces the audience to sit in it. Plan blocking on a floor plan before framing — the frame then selects from truthful movement instead of inventing it (in AI production this IS the layout-map/3D-blockout layer, production-pipeline ch. 8).
 **Character in shots:** want vs. need readable in behavior, not dialogue; props as externalized inner state.
 
 ## 9. Combining the elements (the DoP conversation)
