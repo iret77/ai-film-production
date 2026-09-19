@@ -4,7 +4,7 @@
 
 [![Download the latest skill (.skill)](https://img.shields.io/badge/download-latest%20skill%20(.skill)-2563eb?style=flat-square)](https://github.com/iret77/ai-film-production/releases/latest/download/ai-film-production.skill)
 
-A complete film-production methodology for Claude — 25 chapters of sourced, confidence-labeled craft that turn the model into your crew: DoP, editor, gaffer, script consultant, line producer. You stay the director. Built for a **Seedance 2.5 / Higgsfield Cinema Studio** stills-first pipeline, with a MiniMax H3 profile rebuilt on MiniMax's official prompt-writing guides and compact syntax profiles for Kling 3.0, Veo 3.1, and Grok Imagine.
+A complete film-production methodology for Claude and ChatGPT — 25 chapters of sourced, confidence-labeled craft that turn the model into your crew: DoP, editor, gaffer, script consultant, line producer. You stay the director. Built for a **Seedance 2.5 / Higgsfield Cinema Studio** stills-first pipeline, with a MiniMax H3 profile rebuilt on MiniMax's official prompt-writing guides and compact syntax profiles for Kling 3.0, Veo 3.1, and Grok Imagine.
 
 ## The problem
 
@@ -38,19 +38,19 @@ Same model. The difference is method: every aspect has one home, every relation 
 
 It starts the moment you say "plan my short film." The skill doesn't jump into prompts. It reads your genre's craft baseline, asks for the story before the style, and offers a dramaturgical container. Then it builds the way productions build: locations and cast as approved reference assets first, every shot as an approved still before any video — attached as a reference anchor, not as a start frame, unless a take must chain frame-exactly onto an existing clip or interpolate between two approved stills — every prompt through a fixed seven-step checklist — canon, routing, references, writing, lint, delivery, review — and delivered under a Render Slate that names the platform, the surface, the model and mode, every input and where the result is stored. Platform facts are never invented: each slate carries a receipt that says whether the route was live-checked or taken from the skill's dated ledger. When a take comes back 90% right, it doesn't reroll; it repairs the 10% with the platform's edit modes. And everything that survives your approval becomes canon in a living production bible, so the next session picks up exactly where this one stopped.
 
-Claude just runs a film production.
+Claude or ChatGPT just runs a film production.
 
 ## Quick start
 
 1. [Download the latest `ai-film-production.skill`](https://github.com/iret77/ai-film-production/releases/latest/download/ai-film-production.skill) — built automatically for every release. It's a zip with a custom suffix; macOS won't auto-extract it.
-2. Upload it in Claude's skill settings (the dialog takes `.skill` directly), or unzip into your agent's skills path (e.g. `~/.claude/skills/` for Claude Code).
+2. **Claude:** upload it in Claude's skill settings (the dialog takes `.skill` directly), or unzip into your agent's skills path (e.g. `~/.claude/skills/` for Claude Code). **ChatGPT / Codex:** unzip it and point the agent at the folder — "read `SKILL.md` first, then only what its loading map names". The skill text is model-neutral; `references/agent-models.md` records how Claude Fable 5.1 and GPT-5.6 Sol and Terra (Codex CLI) ran it in cold tests.
 3. Talk to it like a director:
 
 > "Break this logline into a treatment with a shot list: a lighthouse keeper finds a message that was never sent."
 > "Make this scene AI-ready — can it even be generated?"
 > "The take is perfect except the camera. Fix it without touching the performance."
 
-The skill triggers on its own whenever the production path is clearly generative video — treatments, scripts, shot lists, asset orders, Seedance/Veo/Kling/Higgsfield prompts.
+As an installed Claude skill it triggers on its own whenever the production path is clearly generative video — treatments, scripts, shot lists, asset orders, Seedance/Veo/Kling/Higgsfield prompts.
 
 ## What's inside
 
