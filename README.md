@@ -4,7 +4,7 @@
 
 [![Download the latest skill (.skill)](https://img.shields.io/badge/download-latest%20skill%20(.skill)-2563eb?style=flat-square)](https://github.com/iret77/ai-film-production/releases/latest/download/ai-film-production.skill)
 
-A complete film-production methodology for Claude — 25 chapters of sourced, confidence-labeled craft that turn the model into your crew: DoP, editor, gaffer, script consultant, line producer. You stay the director. Built for a **Seedance 2.5 / Higgsfield Cinema Studio** stills-first pipeline, with a MiniMax H3 profile rebuilt on MiniMax's official prompt-writing guides and compact syntax profiles for Kling 3.0, Veo 3.1, and Grok Imagine.
+A complete film-production methodology for Claude and ChatGPT — 25 chapters of sourced, confidence-labeled craft that turn the model into your crew: DoP, editor, gaffer, script consultant, line producer. You stay the director. Built for a **Seedance 2.5 / Higgsfield Cinema Studio** stills-first pipeline, with a MiniMax H3 profile rebuilt on MiniMax's official prompt-writing guides and compact syntax profiles for Kling 3.0, Veo 3.1, and Grok Imagine.
 
 ## The problem
 
@@ -38,29 +38,29 @@ Same model. The difference is method: every aspect has one home, every relation 
 
 It starts the moment you say "plan my short film." The skill doesn't jump into prompts. It reads your genre's craft baseline, asks for the story before the style, and offers a dramaturgical container. Then it builds the way productions build: locations and cast as approved reference assets first, every shot as an approved still before any video — attached as a reference anchor, not as a start frame, unless a take must chain frame-exactly onto an existing clip or interpolate between two approved stills — every prompt through a fixed seven-step checklist — canon, routing, references, writing, lint, delivery, review — and delivered under a Render Slate that names the platform, the surface, the model and mode, every input and where the result is stored. Platform facts are never invented: each slate carries a receipt that says whether the route was live-checked or taken from the skill's dated ledger. When a take comes back 90% right, it doesn't reroll; it repairs the 10% with the platform's edit modes. And everything that survives your approval becomes canon in a living production bible, so the next session picks up exactly where this one stopped.
 
-Claude just runs a film production.
+Claude or ChatGPT just runs a film production.
 
 ## Quick start
 
 1. [Download the latest `ai-film-production.skill`](https://github.com/iret77/ai-film-production/releases/latest/download/ai-film-production.skill) — built automatically for every release. It's a zip with a custom suffix; macOS won't auto-extract it.
-2. Upload it in Claude's skill settings (the dialog takes `.skill` directly), or unzip into your agent's skills path (e.g. `~/.claude/skills/` for Claude Code).
+2. **Claude:** upload it in Claude's skill settings (the dialog takes `.skill` directly), or unzip into your agent's skills path (e.g. `~/.claude/skills/` for Claude Code). **ChatGPT / Codex:** unzip it and point the agent at the folder — "read `SKILL.md` first, then only what its loading map names". The skill text is model-neutral; `references/agent-models.md` records how Claude Fable 5.1 and GPT-5.6 Sol and Terra (Codex CLI) ran it in cold tests.
 3. Talk to it like a director:
 
 > "Break this logline into a treatment with a shot list: a lighthouse keeper finds a message that was never sent."
 > "Make this scene AI-ready — can it even be generated?"
 > "The take is perfect except the camera. Fix it without touching the performance."
 
-The skill triggers on its own whenever the production path is clearly generative video — treatments, scripts, shot lists, asset orders, Seedance/Veo/Kling/Higgsfield prompts.
+As an installed Claude skill it triggers on its own whenever the production path is clearly generative video — treatments, scripts, shot lists, asset orders, Seedance/Veo/Kling/Higgsfield prompts.
 
 ## What's inside
 
-**25 chapters · 17 always-on rules · an economy doctrine with a division of labour between agent and model · a prompting-technique menu (Caption Spine · block structure · Master Style Block + story) chosen per project · a 7-step per-prompt checklist · a Render Slate per prompt · 10 workflow runbooks incl. the storyboard-first production model · 13 genre baselines · 31 director recipes + 11 DoP signatures · 11 animation style vocabularies + footage/era/optics packages + ~30 medium-emulation packages with motion signatures · 7 video models profiled · a platform ledger re-verified 2026-09-04 with a live MCP tool receipt of 2026-09-12.**
+**25 chapters · 17 always-on rules · an economy doctrine with a division of labour between agent and model · a prompting-technique menu (Caption Spine · block structure · Master Style Block + story) chosen per project · a 7-step per-prompt checklist · a Render Slate per prompt · 10 workflow runbooks incl. the storyboard-first production model · 13 genre baselines · 32 director recipes (incl. the Pixar pointer and the UGC anti-recipe) + 11 DoP signatures · 11 animation style vocabularies + footage/era/optics packages + ~30 medium-emulation packages with motion signatures · 9 video models in the shot-assignment table (the Seedance family with full doctrine, MiniMax H3 with a full profile, Kling, Veo and Grok with compact profiles) · a platform ledger re-verified 2026-09-04 with a live MCP tool receipt of 2026-09-12 and the Higgsfield API key of 2026-09-18.**
 
 - **Direction & craft** — model-independent film language (composition, editing, light, color, dramaturgy), director and DoP recipes with per-recipe verify gates, genre entry points, story structures from three-act to kishōtenketsu.
 - **Prompting method** — a menu of three video prompting techniques, chosen per project with the director and never one-size-fits-all: the Caption Spine (eight elements, one negation, one job per reference — no word ceiling: a prompt states what belongs in it, once), the block structure (explicit per-axis control), the Master Style Block + story (medium emulation) — all under an economy doctrine (only what is necessary or deliberately steered; nothing twice; look values as deliberate controls, never defaults; scale as relations) and a division of labour that leaves camera, cutting, body mechanics and light to the model by default; how image models actually read prompts (position, scale, count, negation — with the research receipts); style enforcement that survives more than one shot.
 - **Production operations** — stills-first pipeline, the storyboard-first production model (nine gated stages: idea → bible + beat lint → storyboard with camera setup system and take/cut table → animatic [optional] → sheets → 3D blockout → location anchors → draft takes → production takes), asset and reference-pool build-out, renderability linting with green/red lists and rescue paths, coverage ladder, continuity ledger, a living production-bible convention for multi-session projects.
 - **Built to be executed, not just read** — v3.0 reworked the whole skill for weaker agents: one meaning per term (`references/glossary.md`), a precedence ladder for conflicting sources, a citation convention that makes every chapter reference unambiguous, fixed order of operations, slate rows with fixed labels, receipt states that forbid fabricated platform facts, a copy-ready worked example, and six review passes with a fixed take-verdict order.
-- **Platform knowledge** — Seedance 2.5 doctrine (50-reference control incl. clay-render staging — Blender-built or Seedance-generated — the edit suite, extension chains), Higgsfield Cinema Studio settings, the MiniMax H3 official schema (cut-point timestamps, six-section reference form, retention markers), compact profiles for Kling, Veo, and Grok, production rules distilled from Higgsfield's open-sourced feature films (headless sheets, one asset per state, speech-count lock, crowd scale in three layers, the negation third class), dated platform caveats, and a real-face moderation plan for licensed likenesses.
+- **Platform knowledge** — Seedance 2.5 doctrine (the platform's 50 reference slots — 30 image, 10 video, 10 audio — planned at no more than eight image subjects per take, clay-render staging — Blender-built or Seedance-generated — the edit suite, extension chains, the documented 2.0 → 2.5 differences, the vendor's audio notation), new camera angles from an existing clip, generated or filmed, Higgsfield Cinema Studio settings and the Higgsfield API as an access route, the MiniMax H3 official schema (cut-point timestamps, six-section reference form, retention markers), compact profiles for Kling, Veo, and Grok, production rules distilled from Higgsfield's open-sourced feature films (headless sheets, one asset per state, speech-count lock, crowd scale in three layers, the negation third class), dated platform caveats, and a real-face moderation plan for licensed likenesses.
 
 ## Why you'd use it — and why you wouldn't
 
@@ -70,7 +70,7 @@ The skill triggers on its own whenever the production path is clearly generative
 
 ## Where the rules come from
 
-No rule ships without a label: 🟢 verified across sources / official / production-proven · 🟡 plausible but single-source or untested · 🔴 marketing claim — test yourself. Source tags ([H-off], [BD-off], [MM-off], [F], [P17–P69] — itemized in `references/sources.md`; P1–P16 unitemized —, [PP], [W], …) trace every rule to its origin — official platform docs and prompt-writing guides, the vendor's own open-sourced feature-film breakdowns, practitioner protocols, deep-research passes over papers and benchmarks, and first-party production sessions whose lessons flow back here as generalized rules. Where sources conflict, the conflict is documented with ⚠️ instead of silently resolved.
+No rule ships without a label: 🟢 verified across sources / official / production-proven · 🟡 plausible but single-source or untested · 🔴 marketing claim — test yourself. Source tags ([H-off], [BD-off], [G-off], [K-off], [xAI-off], [OAI-off], [MM-off], [F], [P17–P69] — itemized in `references/sources.md`; P1–P16 unitemized —, [PP], [W], …) trace every rule to its origin — official platform docs and prompt-writing guides, the vendor's own open-sourced feature-film breakdowns, practitioner protocols, deep-research passes over papers and benchmarks, and first-party production sessions whose lessons flow back here as generalized rules. Sources are weighted in tiers: vendor documentation and first-party measurement, then platform tutorials and established practitioners, then single social finds, which never win a frontal contradiction with a vendor statement without striking proof. Where sources conflict, the conflict is documented with ⚠️ instead of silently resolved.
 
 ## Philosophy
 
@@ -83,22 +83,22 @@ No rule ships without a label: 🟢 verified across sources / official / product
 ## Structure
 
 <details>
-<summary>All 20 files at a glance</summary>
+<summary>All 21 files at a glance</summary>
 
 | File | Role |
 |---|---|
 | `SKILL.md` | Entry point, compressed to the binding core: language rule and role, the economy doctrine with the division of labour, the receipt line, a loading map (what to open for which job — nothing for the always-rules), citation convention, precedence ladder, compact task routing (order of operations + spine table), 17 inline always-rules, each one imperative with at most three duty bullets (incl. rule 4: the prompting-technique menu; rule 7: scale and distance as relations, look values as deliberate controls), the mandatory per-prompt checklist with the seven-measure video-prompt lint, Render Slate contract with `Lint` row and ID grammar, 5-step project workflow; no reference-file index — the routing table and the loading map replace it |
 | `references/genre-baselines.md` | 13 genre entry points (incl. Commercial/Ad): craft defaults, subgenres, recipe shortlists, per-genre skill filters |
-| `references/production-pipeline.md` | Ch. 1–11 + 16: pipeline principles, assets, QA, model choice, coverage ladder, interview production path (7b) |
-| `references/video-prompting.md` | Technique menu + ch. 12h + 12 + 14 + 14b: the Caption Spine (technique A, with lint and copy-ready skeleton), the block structure (technique B), cross-model adaptation, sequence prompting, negation classes, Seedance 2.5 doctrine (reference-maximal control, edit suite, extension chains, large casts, montage ceiling, Dreamina-only surfaces) |
+| `references/production-pipeline.md` | Ch. 1–11 + 16: pipeline principles, shot-writing grammar, assets, QA, model choice, coverage ladder incl. new camera angles from an existing clip (generated or filmed), interview production path (7b) |
+| `references/video-prompting.md` | Technique menu + ch. 12h + 12 + 12b + 12g + 14 + 14b: the Caption Spine (technique A, with lint and copy-ready skeleton), the block structure (technique B), reference tokens and the audio notation (12b), cross-model adaptation (12g), sequence prompting, negation classes, Seedance 2.5 doctrine (reference-maximal control, edit suite, extension chains, large casts, montage ceiling, Dreamina-only surfaces) |
 | `references/platforms-models.md` | Ch. 13 + 21: archival Higgsfield Cinema Studio notes; MiniMax H3 profile on the official guides (three-field base form, six-section Ref2VA, camera vocabulary, dialogue tags); Kling/Veo/Grok compact profiles |
-| `references/platform-ui-workflows.md` | Current, source-linked UI/workflow reference and version ledger: which web/MCP/ChatGPT surface owns each selectable setting in Higgsfield, fal.ai, Runway, OpenArt, Arcads, and GPT Image 2.5; plus re-verification rules |
+| `references/platform-ui-workflows.md` | Current, source-linked UI/workflow reference and version ledger: which web/MCP/ChatGPT/API surface owns each selectable setting in Higgsfield (incl. the Higgsfield API, `HF-API@2026-09-18`), fal.ai, Runway, OpenArt, Arcads, and GPT Image 2.5; KEY grammar for receipts; plus re-verification rules |
 | `references/post-audio-legal.md` | Ch. 17–20: post, audio/music/voices, continuity, legal & AI disclosure |
 | `references/style-control.md` | Style enforcement across image and video models, vocabularies, reference protocol |
 | `references/image-model-logic.md` | Ch. 24: how generators read prompts — writing contract, position/scale/count/negation recipes, mask strictness per platform |
 | `references/renderability.md` | Green/red lists, rescue paths, format matrix, model quick profiles |
 | `references/film-craft.md` | Model-independent film language: composition, camera, editing, light, color, timing, dramaturgy |
-| `references/director-recipes.md` | 31 director recipes + 11 DoP signatures; selection index, per-recipe Verify gates, harmony map |
+| `references/director-recipes.md` | 32 director recipes (incl. the Pixar pointer and the UGC anti-recipe) + 11 DoP signatures; selection index, per-recipe Verify gates, harmony map |
 | `references/pixar-look.md` | Sourced Pixar look bible incl. figure-anchor rule, style-forcing method, and the hybrid previs-to-AI case study (wide-shot rescue, hidden faces, style donor) |
 | `references/production-bible.md` | Ch. 22: living project-state document — template (incl. storyboard canon section B3b and take/cut columns on the shot board), session rules, platform mapping, ID grammar (Render ID tokens, instance chain, bootstrap) |
 | `references/story-structures.md` | Ch. 23: dramaturgical containers — intake gate, classic/alternative structures, series poles & online-native formats |
