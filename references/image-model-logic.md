@@ -18,7 +18,7 @@ Why this file exists: the agent writing prompts is a text-to-text LLM — traine
 
 🟢 **First-mention bias is real and measurable:** the first-named object is rendered far more reliably, and earlier tokens win conflicts (VISOR; ComCO; M3T2IBench). Token order is a control channel: must-have object first.
 
-🟢 **A shape simile renders as the object it names [H-off, P70].** "Unmentioned = improvised" has a mirror image: a comparison is not read as a comparison. The vendor's effects sheet asked for a "mushroom-shaped explosion" and got a mushroom with smoke; the fix was the thing's own name ("nuclear mushroom cloud", described by its parts — cap, rolled rim, stem, ring-shaped skirt). Name the object by its own class and describe its form in its own parts; a simile only where the compared object may appear.
+🟢 **A shape simile renders as the object it names [H-off, P70].** "Unmentioned = improvised" has a mirror image: a comparison is not read as a comparison. The vendor's effects sheet asked for a "mushroom-shaped explosion" and got a mushroom with smoke; the fix was the thing's own name ("nuclear mushroom cloud", described by its parts: cap, rolled rim, stem, ring-shaped skirt). Name the object by its own class and describe its form in its own parts; a simile only where the compared object may appear.
 
 🟢 **Most "spatial failure" is omission, not misplacement:** when both objects actually render, the stated relation is right much more often (VISOR: ~60% vs ~19%). Before blaming position wording, check whether the second object exists at all — the fix is then presence (first position, simpler scene), not placement language.
 
