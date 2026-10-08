@@ -34,7 +34,7 @@
       ],
       "expected_behavior": [
         "Reads SKILL.md first, then the fixture, then workflows.md W3, video-prompting.md ch. 12 (technique B) with 12b, ch. 14 and 14b, renderability.md §2–3 and platform-ui-workflows.md §0 + §1; of ch. 12h only the Lint paragraph",
-        "Delivers a block-structure prompt (the labelled blocks of ch. 12, including ACTIVE REFERENCES, ACTION, AUDIO and POSITIVE LOCKS) under a Render Slate with Render ID WHEELHOUSE_3A__HF-SD25__T2V__P01, Crew choices in two halves, the 'from reference HF-WEB@2026-09-04' receipt state, Settings, Lint and Inputs",
+        "Delivers a block-structure prompt (the labelled blocks of ch. 12 in their order, including ACTIVE REFERENCES, ACTION and AUDIO; every canon-fixed state locked once, in POSITIVE LOCKS or in its governing block) under a Render Slate with Render ID WHEELHOUSE_3A__HF-SD25__T2V__P01, Crew choices in two halves, the 'from reference HF-WEB@2026-09-04' receipt state, Settings, Lint and Inputs",
         "The AUDIO block uses exactly ONE audio notation (the vendor's symbols or plain prose with the quoted line), never both; the music exclusion is one plain sentence, written once",
         "A speech-count lock is present (only Bram speaks, one line; Ida says nothing) and the line 'You tied it wrong.' appears exactly once, verbatim, in the dialogue channel and not again in ACTION",
         "@voice_bram is addressed as the voice reference with its job line (timbre and manner only); every reference has one job; cause before reaction (Bram speaks, then Ida looks at her hands)",
