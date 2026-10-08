@@ -45,8 +45,9 @@ jobs:
           mkdir -p "$stage/$name"
           # Everything the skill ships with, wrapped in a top-level
           # `ai-film-production/` folder (the layout Claude's upload expects).
-          # Repo-only machinery (git, CI, build artefacts) and repo docs are excluded —
-          # the skill loader reads only SKILL.md + references/; README is repo-facing.
+          # Repo-only machinery (git, CI, build artefacts), repo docs and the eval
+          # suite are excluded — the skill loader reads only SKILL.md + references/;
+          # README, assets and evals are repo-facing.
           rsync -a \
             --exclude='.git' \
             --exclude='.github' \
@@ -54,6 +55,7 @@ jobs:
             --exclude='*.skill' \
             --exclude='README.md' \
             --exclude='assets' \
+            --exclude='evals' \
             ./ "$stage/$name/"
           # `.skill` = zip bytes, custom extension: Claude accepts it on upload,
           # and macOS/Safari won't auto-extract it on download.

@@ -111,6 +111,8 @@ No rule ships without a label: 🟢 verified across sources / official / product
 
 </details>
 
+Repo-only, not in the package: `evals/` holds the three cold tests of `references/agent-models.md` as evaluation files (query, fixture, expected behaviour) plus the harness wording and the run commands; `.github/workflows/release.yml` excludes it from the `.skill`.
+
 ## Versioning
 
 v3.5 (2026-09). Universal: contains nothing project- or person-specific. Version strings carry no language suffix: English is the only edition, and the published versions have always been named this way (`v3.3`, `v3.2` …). This repository is the source of truth for the skill; lessons from production flow back here via commits, and every release ships an upload-ready `.skill` package.
