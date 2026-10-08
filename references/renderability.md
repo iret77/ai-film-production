@@ -1,5 +1,7 @@
 # Renderability: Green/Red Lists, Formats, Model Profiles
 
+**Contents — read only the part the spine, checklist or routing row names:** §1 green list (what renders reliably) · §2 red/yellow list, element → failure → mitigation (in-frame text unified rule, crowds, hands and fine manipulation, vehicles, long camera moves, instrument fingering, hero physics, tiny hero objects, dark figure-less macro, continuous approach over distance, cut-backs onto an emissive object, wide shots, blank faces, mirror beats, subtle acting, empty vehicle; the red-list lint of SKILL rule 8 and the feasibility answer shape read §2) · §3 rescue paths for red/yellow action (fights as attack–reaction clips, shoot the stunt yourself, dance move by move, vehicles, subject vs. camera motion, animals, moving crowds, crowd scale in three layers, degradation looks) · §4 format matrix (what each look forgives) · §5 camera & cut rules · §5b lighting consistency (directional light vs. whole-body brightness; light as its own layer) · §6 model quick profiles for shot assignment (Seedance 2.0/2.5, Veo 3.1, Kling 3.0, MiniMax H3, Flux 3 Video, Grok Imagine 1.5, Wan, PixVerse; the other-model route of SKILL rule 15).
+
 What current video models render reliably vs. what fails. Tags and confidence labels: legend in sources.md.
 
 ## 1. Green list (reliable)

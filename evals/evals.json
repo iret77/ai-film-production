@@ -1,0 +1,63 @@
+{
+  "skill_name": "ai-film-production",
+  "harness": "Follow the skill exactly as an agent would when it is triggered: read SKILL.md first, then only what its loading map and routing tell you to read. Do not generate anything on any platform. Deliver exactly what the skill requires. At the end, list every file and chapter you actually read, in order.",
+  "evals": [
+    {
+      "id": 1,
+      "name": "prompt-test-caption-spine",
+      "skills": [
+        "ai-film-production"
+      ],
+      "query": "Follow the skill exactly as an agent would when it is triggered: read SKILL.md first, then only what its loading map and routing tell you to read. Do not generate anything on any platform. Deliver exactly what the skill requires. At the end, list every file and chapter you actually read, in order. The skill lives in the current working directory. Modify nothing. The project frame is the bible excerpt in evals/fixtures/saltline/bible-excerpt.md; read it as the project's bible. Write the video prompt for shot 2B as a complete delivery.",
+      "files": [
+        "evals/fixtures/saltline/bible-excerpt.md"
+      ],
+      "expected_behavior": [
+        "Reads SKILL.md first, then the fixture, then workflows.md W3, video-prompting.md ch. 12h (the project's technique) with ch. 14 and 14b, renderability.md §2–3 and platform-ui-workflows.md §0 + §1; never a large file whole; never the other technique's chapter beyond its Lint paragraph",
+        "Delivers a Render Slate above the code block with Render ID SALTLINE_2B__HF-SD25__T2V__P01, Intent, Crew choices in two halves (left to the model / decided by the crew), Run in with the receipt state 'from reference HF-WEB@2026-09-04, not live-checked this session', Settings, Lint and Inputs (one numbered line per reference with its one job)",
+        "The prompt is a Caption Spine in English: title sentence, STYLE line from bible section B2, character lines, timecode beats with cause before reaction, an 'End with …' ending state (Mara's upturned face, line still in her hand), one closing sentence; one positive job sentence per reference, no exclusion list",
+        "The Lint row survives a recount of the fenced prompt: words counted, negations at most 1, numerals outside timecodes 0, absolute measures 0, no double mentions, no contradictions, beats complete",
+        "Every content claim traces to the scene-2 treatment passage: no new props, no dialogue, no invented weather or light; the hands-on-the-cleat risk is kept as the shot board's rescue (tie-off as one short beat, cut to her face before the knot) and listed in the risk register after the slate",
+        "No sizes in metres or unit counts; at most one camera line; nothing on a model-owned axis without a reason named in Crew choices; no music in the prompt (diegetic sound only, music exclusion as one plain sentence if audio is on)",
+        "Ends with the ordered list of files and chapters actually read"
+      ]
+    },
+    {
+      "id": 2,
+      "name": "dialogue-test-block-structure",
+      "skills": [
+        "ai-film-production"
+      ],
+      "query": "Follow the skill exactly as an agent would when it is triggered: read SKILL.md first, then only what its loading map and routing tell you to read. Do not generate anything on any platform. Deliver exactly what the skill requires. At the end, list every file and chapter you actually read, in order. The skill lives in the current working directory. Modify nothing. The project frame is the bible excerpt in evals/fixtures/wheelhouse/bible-excerpt.md; read it as the project's bible. Write the video prompt for shot 3A as a complete delivery.",
+      "files": [
+        "evals/fixtures/wheelhouse/bible-excerpt.md"
+      ],
+      "expected_behavior": [
+        "Reads SKILL.md first, then the fixture, then workflows.md W3, video-prompting.md ch. 12 (technique B) with 12b, ch. 14 and 14b, renderability.md §2–3 and platform-ui-workflows.md §0 + §1; of ch. 12h only the Lint paragraph",
+        "Delivers a block-structure prompt (the labelled blocks of ch. 12 in their order, including ACTIVE REFERENCES, ACTION and AUDIO; every canon-fixed state locked once, in POSITIVE LOCKS or in its governing block) under a Render Slate with Render ID WHEELHOUSE_3A__HF-SD25__T2V__P01, Crew choices in two halves, the 'from reference HF-WEB@2026-09-04' receipt state, Settings, Lint and Inputs",
+        "The AUDIO block uses exactly ONE audio notation (the vendor's symbols or plain prose with the quoted line), never both; the music exclusion is one plain sentence, written once",
+        "A speech-count lock is present (only Bram speaks, one line; Ida says nothing) and the line 'You tied it wrong.' appears exactly once, verbatim, in the dialogue channel and not again in ACTION",
+        "@voice_bram is addressed as the voice reference with its job line (timbre and manner only); every reference has one job; cause before reaction (Bram speaks, then Ida looks at her hands)",
+        "The ending state is Ida turning toward the door with Bram still facing forward; no camera move (the style contract says static on the chart table); no sizes in metres; the Lint row survives a recount",
+        "A risk register follows the slate (may be empty rows only for kept risks); the delivery ends with the ordered list of files and chapters actually read"
+      ]
+    },
+    {
+      "id": 3,
+      "name": "intake-test-new-project",
+      "skills": [
+        "ai-film-production"
+      ],
+      "query": "Follow the skill exactly as an agent would when it is triggered: read SKILL.md first, then only what its loading map and routing tell you to read. Do not generate anything on any platform. Deliver exactly what the skill requires. At the end, list every file and chapter you actually read, in order. The skill lives in the current working directory. Modify nothing. I want a 60-second photoreal short, coastal noir, Seedance 2.5 on Higgsfield, 16:9 for YouTube. The story: a ferry deckhand finds a letter her late father never sent. Get me started.",
+      "files": [],
+      "expected_behavior": [
+        "Reads SKILL.md first, then workflows.md W1, genre-baselines.md (the noir/drama entry) and story-structures.md ch. 23a; no prompt-technique chapter yet, no large file whole",
+        "Answers with ONE grouped question message that holds the story-gate gaps (want, engine, turn, ending, POV) and the open intake items; nothing else is delivered before it",
+        "The prompting-technique question lists all three menu entries (A Caption Spine, B block structure, C Master Style Block + story), recommends one with its reason in one sentence and offers the draft-batch test",
+        "Every item it decides on its own is marked ASSUMED and named as going into the bible decision log; bible section B1 is named as the place the frame decisions are kept",
+        "Does not write a treatment, shot list or prompt yet and does not invent story content (the letter's text, the father's story) beyond what the director said",
+        "Ends with the ordered list of files and chapters actually read"
+      ]
+    }
+  ]
+}

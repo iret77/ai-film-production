@@ -83,7 +83,7 @@ No rule ships without a label: 🟢 verified across sources / official / product
 ## Structure
 
 <details>
-<summary>All 21 files at a glance</summary>
+<summary>All 22 files at a glance</summary>
 
 | File | Role |
 |---|---|
@@ -107,9 +107,12 @@ No rule ships without a label: 🟢 verified across sources / official / product
 | `references/glossary.md` | One meaning per term: shot/take/sequence, plates and sheets, the seven kinds of anchor, locks, channel/axis, camera setup / panel / take-cut table / state ladder, artefact names |
 | `references/agent-models.md` | Which agent model runs this skill well: first-party cold-test results per model (Claude Fable 5.1, GPT-5.6 Sol and Terra), delegation rules for subagents and batch runs, the cold-test protocol |
 | `references/sources.md` | Canonical tag legend; registry of practitioner and vendor-thread protocols P17–P69 plus [MM-off] (date, URL, sponsorship flag); dated evidence notes: ledger re-verification, OpenAI image-model refresh, first-party [PP] production sessions |
+| `scripts/lint_prompt.py` | The seven-measure Lint row of a video prompt, counted by machine (words, prohibition sentences, numerals outside the exceptions, absolute measures, beat timeline); the reading checks are marked CHECK; standard library only |
 | `LICENSE` | MIT |
 
 </details>
+
+Repo-only, not in the package: `evals/` holds the three cold tests of `references/agent-models.md` as evaluation files (query, fixture, expected behaviour) plus the harness wording and the run commands; `.github/workflows/release.yml` excludes it from the `.skill`.
 
 ## Versioning
 
