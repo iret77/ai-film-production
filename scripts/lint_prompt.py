@@ -154,16 +154,19 @@ def lint(raw):
     # --- negations -------------------------------------------------------
     counted, reference_clauses = [], []
     blocks_with_ban = set()
-    c_list_seen = False
+    c_list_seen = False  # technique C: the terminal MUST NOT APPEAR list is ONE negation
     for idx, (label, body) in enumerate(blocks):
+        if technique == "C" and label and MUST_NOT_APPEAR.search(label):
+            c_list_seen = True
+            counted.append((label + ": " + " ".join(body.split()))[:160])
+            continue
         for s in sentences(body):
             probe = QUOTED.sub("", s)  # a quoted dialogue line is canon, never a ban
-            if not PROHIBITION.search(probe):
-                continue
-            if technique == "C" and (MUST_NOT_APPEAR.search(s) or c_list_seen):
+            if technique == "C" and MUST_NOT_APPEAR.search(s):
                 c_list_seen = True
-                blocks_with_ban.add("MUST NOT APPEAR")
                 counted.append(s)
+                continue
+            if not PROHIBITION.search(probe):
                 continue
             if (label in REFERENCE_BLOCKS) or REFERENCE_LINE.match(s):
                 reference_clauses.append(s)
@@ -173,7 +176,9 @@ def lint(raw):
     if technique == "B":
         negations = len(blocks_with_ban)  # once per governing block (12h)
     elif technique == "C":
-        negations = 1 if blocks_with_ban else 0  # the terminal list is the one negation
+        # the list counts once; any ban written before it, in the medium block or the
+        # story part, counts on its own (12h)
+        negations = len(blocks_with_ban) + (1 if c_list_seen else 0)
     else:
         negations = len(counted)
     report["negations"] = negations

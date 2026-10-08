@@ -35,6 +35,6 @@ jq -r 'select(.type=="assistant") | .message.content[]? | select(.type=="tool_us
 ## Judge
 
 - Check every `expected_behavior` line against the delivery. The first line of each eval (what was read) is scored separately as loading discipline, the way the table in `references/agent-models.md` keeps it in its own column; the remaining lines decide pass/fail, and a test passes only when all of them hold.
-- A self-reported reading list and a claimed word count are claims, not measurements: compare the list against the harness's own read log, and recount the Lint row with `python3 scripts/lint_prompt.py` on the fenced prompt.
+- A self-reported reading list and a claimed word count are claims, not measurements: compare the list against the harness's own read log, and recount the Lint row with `python3 scripts/lint_prompt.py <file>` (from the skill checkout) on the fenced prompt.
 - One to three runs per cell; a result shows what a model CAN do with this skill, never a rate. Record the outcome as a row in the table of `references/agent-models.md` and the run as a dated [PP] entry in `references/sources.md`.
 - Re-run after a change to the always-rules, the loading map or the per-prompt checklist; a row measured on an older SKILL.md revision is cited with that caveat.
