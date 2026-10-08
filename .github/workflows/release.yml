@@ -56,6 +56,8 @@ jobs:
             --exclude='README.md' \
             --exclude='assets' \
             --exclude='evals' \
+            --exclude='__pycache__' \
+            --exclude='.gitignore' \
             ./ "$stage/$name/"
           # `.skill` = zip bytes, custom extension: Claude accepts it on upload,
           # and macOS/Safari won't auto-extract it on download.
