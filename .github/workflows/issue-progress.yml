@@ -1,0 +1,166 @@
+name: issue-progress
+
+# Setzt bei einem neuen Issue den Arbeitsstand (Progress) nach der
+# Issue-Klassifikation der engineering-standards (repo-setup reference/issues.md):
+#   privates Repo -> immer Accepted (anlegen kann dort nur, wer Zugriff hat)
+#   oeffentliches Repo -> Accepted, wenn author_association OWNER, MEMBER oder
+#     COLLABORATOR ist oder die Rolle des Autors im Repo triage oder hoeher ist
+#     (GET repos/{o}/{r}/collaborators/{user}/permission, Feld role_name);
+#     sonst Needs triage. Die Rolle wird gelesen, weil author_association im
+#     Event fuer Org-Mitglieder mit privater Mitgliedschaft CONTRIBUTOR ist.
+#     Scheitert die Abfrage, bleibt es bei Needs triage (Warnung im Log).
+#   ohne Type -> immer Needs triage (Warnung im Log), auch in privaten Repos:
+#     Org-Repo = Issue Type, persoenlicher Account = Label "type: ...". Fehlt
+#     er, fragt der Lauf bis zu 30 s lang alle 5 s nach, weil Agents den Type
+#     oft erst kurz nach dem Anlegen setzen.
+# Nur wenn Progress noch leer ist (z.B. schon von einer Issue-Vorlage oder von
+# Hand gesetzt). Feldwert bzw. Labels liest der Lauf per API zur Laufzeit, nicht
+# aus dem Event: das Event ist der Stand beim Anlegen, der Lauf kann spaeter
+# starten (Warteschlange, Rerun).
+#
+# Welcher Fall gilt, steht im Event: github.event.repository.owner.type
+#   Organization -> Org-Feld "Progress" per
+#                   POST /repos/{o}/{r}/issues/{n}/issue-field-values
+#                   (nie PUT: PUT ersetzt alle Feldwerte, z.B. auch Priority)
+#   User         -> Label "progress: accepted" bzw. "progress: needs triage".
+#                   Die Labels legt script/issue-labels --apply an. Fehlt eins,
+#                   bricht der Lauf ab, statt es mit Zufallsfarbe anzulegen.
+#
+# Einsetzen als .github/workflows/issue-progress.yml. Optionale Einstellungen
+# (Actions-Variablen und -Secrets, Repo oder Org):
+#   ISSUE_PROGRESS_FIELD_ID         Variable: ID des Felds Progress
+#                                   (script/issue-field-id ORG Progress);
+#                                   ohne sie sucht der Lauf das Feld per GraphQL
+#   ISSUE_PROGRESS_APP_CLIENT_ID    Variable: Client-ID einer GitHub App mit
+#                                   Repo-Recht "Issues: write"
+#   ISSUE_PROGRESS_APP_PRIVATE_KEY  Secret: Private Key dieser App
+# Ohne App-Variable laeuft alles mit dem GITHUB_TOKEN (permissions unten).
+#
+# Belegt (privates Org-Repo 2026-10-23, oeffentliches 2026-10-30): Das
+# GITHUB_TOKEN liest repository.issueFields per GraphQL und setzt Feldwerte.
+# Der Label-Weg nutzt nur die Labels-API.
+
+on:
+  issues:
+    types: [opened]
+
+permissions:
+  issues: write
+
+jobs:
+  progress:
+    name: progress
+    runs-on: ubuntu-24.04
+    # Haengeschutz; der Lauf dauert wenige Sekunden.
+    timeout-minutes: 5
+    steps:
+      - name: App-Token (optional)
+        id: app
+        if: vars.ISSUE_PROGRESS_APP_CLIENT_ID != ''
+        uses: actions/create-github-app-token@64ab729a6294000f5aa4a4bc0b73d1f32bc45510 # v3.3.0
+        with:
+          client-id: ${{ vars.ISSUE_PROGRESS_APP_CLIENT_ID }}
+          private-key: ${{ secrets.ISSUE_PROGRESS_APP_PRIVATE_KEY }}
+          permission-issues: write
+
+      - name: Progress setzen
+        env:
+          GH_TOKEN: ${{ steps.app.outputs.token || github.token }}
+          REPO: ${{ github.repository }}
+          ISSUE: ${{ github.event.issue.number }}
+          OWNER_TYPE: ${{ github.event.repository.owner.type }}
+          AUTHOR_ASSOCIATION: ${{ github.event.issue.author_association }}
+          AUTHOR: ${{ github.event.issue.user.login }}
+          PRIVATE: ${{ github.event.repository.private }}
+          FIELD_ID: ${{ vars.ISSUE_PROGRESS_FIELD_ID }}
+        run: |
+          set -euo pipefail
+          if [ "$PRIVATE" = "true" ]; then
+            value="Accepted"
+          else
+            case "$AUTHOR_ASSOCIATION" in
+              OWNER|MEMBER|COLLABORATOR) value="Accepted" ;;
+              *)
+                value="Needs triage"
+                encoded_author="$(jq -rn --arg s "$AUTHOR" '$s | @uri')"
+                # role_name nennt auch triage und eigene Rollen; permission
+                # (admin, write, read, none) deckt eigene Rollen mit Schreibrecht ab.
+                if access="$(gh api "repos/$REPO/collaborators/$encoded_author/permission" \
+                    --jq '(.role_name // "") + " " + (.permission // "")')"; then
+                  case "$access" in
+                    admin\ *|maintain\ *|write\ *|triage\ *|*\ admin|*\ write) value="Accepted" ;;
+                  esac
+                  echo "Rolle von $AUTHOR: $access"
+                else
+                  echo "::warning::Rolle von $AUTHOR nicht lesbar, Progress bleibt Needs triage."
+                fi
+                ;;
+            esac
+          fi
+
+          # Ohne Type ist das Issue nicht eingeordnet: Needs triage. Agents
+          # setzen den Type oft erst kurz nach dem Anlegen: bis zu 30 s nachfragen.
+          typ_lesen() {
+            if [ "$OWNER_TYPE" = "Organization" ]; then
+              gh api "repos/$REPO/issues/$ISSUE" --jq '.type.name // ""'
+            else
+              gh api "repos/$REPO/issues/$ISSUE/labels" --paginate \
+                --jq '.[].name | select(startswith("type: "))'
+            fi
+          }
+          versuche=0
+          until typ="$(typ_lesen)"; [ -n "$typ" ] || [ "$versuche" -ge 6 ]; do
+            versuche=$((versuche + 1))
+            sleep 5
+          done
+          if [ -z "$typ" ]; then
+            value="Needs triage"
+            echo "::warning::Issue ohne Type, Progress Needs triage."
+          fi
+
+          case "$OWNER_TYPE" in
+            Organization)
+              if [ -z "${FIELD_ID:-}" ]; then
+                FIELD_ID="$(gh api graphql \
+                  -f query='query($owner: String!, $name: String!) { repository(owner: $owner, name: $name) { issueFields(first: 100) { nodes { ... on IssueFieldSingleSelect { name fullDatabaseId } } } } }' \
+                  -f owner="${REPO%%/*}" -f name="${REPO#*/}" \
+                  --jq '.data.repository.issueFields.nodes[] | select(.name == "Progress") | .fullDatabaseId')"
+              fi
+              case "$FIELD_ID" in
+                ''|*[!0-9]*)
+                  echo "::error::Org-Feld Progress nicht gefunden (Feld fehlt in der Org oder Token darf es nicht lesen). Siehe repo-setup reference/issues.md."
+                  exit 1 ;;
+              esac
+              set_count="$(gh api "repos/$REPO/issues/$ISSUE/issue-field-values" \
+                --jq "[.[] | select((.issue_field_id | tostring) == \"$FIELD_ID\")] | length")"
+              if [ "$set_count" != "0" ]; then
+                echo "Progress ist schon gesetzt, nichts zu tun."
+                exit 0
+              fi
+              jq -cn --argjson id "$FIELD_ID" --arg v "$value" \
+                '{issue_field_values: [{field_id: $id, value: $v}]}' \
+                | gh api -X POST "repos/$REPO/issues/$ISSUE/issue-field-values" --input - > /dev/null
+              echo "Progress: $value"
+              ;;
+            User)
+              # Aktuelle Labels per API, nicht aus dem Event: zwischen Anlegen
+              # und Lauf (Warteschlange, Rerun) kann schon eins gesetzt sein.
+              labels="$(gh api "repos/$REPO/issues/$ISSUE/labels" --paginate --jq '.[].name')"
+              if printf '%s\n' "$labels" | grep -q '^progress: '; then
+                echo "progress-Label ist schon gesetzt, nichts zu tun."
+                exit 0
+              fi
+              label="progress: $(printf '%s' "$value" | tr '[:upper:]' '[:lower:]')"
+              encoded="$(jq -rn --arg s "$label" '$s | @uri')"
+              if ! gh api "repos/$REPO/labels/$encoded" > /dev/null 2>&1; then
+                echo "::error::Label '$label' fehlt. Einmal script/issue-labels --apply -R $REPO ausfuehren."
+                exit 1
+              fi
+              gh api -X POST "repos/$REPO/issues/$ISSUE/labels" -f "labels[]=$label" > /dev/null
+              echo "Label: $label"
+              ;;
+            *)
+              echo "::error::Unbekannter owner.type '$OWNER_TYPE'."
+              exit 1
+              ;;
+          esac
